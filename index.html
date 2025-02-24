@@ -4,17 +4,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>
-        Tailwind Starter Template - Landing Page Template: Tailwind Toolbox
-    </title>
-    <meta name="description" content="Simple landind page" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    <!--Replace with your tailwind.css once created-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-    <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+    <meta name="description"
+        content="番茄回国加速器，海外华人和留学生的专业回国VPN选择。一键解锁中国影音、游戏加速，全平台兼容。享受无缝访问国内网站和应用的体验，包括热门视频、音乐平台和游戏。稳定、快速、易用，为海外生活的中国人提供完美的网络解决方案。" />
+    <meta name="description"
+        content="番茄回国加速器，海外华人和留学生的专业回国VPN选择。一键解锁中国影音、游戏加速，全平台兼容。享受无缝访问国内网站和应用的体验，包括热门视频、音乐平台和游戏。稳定、快速、易用，为海外生活的中国人提供完美的网络解决方案。" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="番茄回国加速器 - 海外华人的专业回国VPN与游戏加速器" />
+    <meta property="og:description"
+        content="番茄回国加速器，海外华人和留学生的专业回国VPN选择。一键解锁中国影音、游戏加速，全平台兼容。享受无缝访问国内网站和应用的体验，包括热门视频、音乐平台和游戏。稳定、快速、易用，为海外生活的中国人提供完美的网络解决方案。" />
+    <meta property="og:url" content="https://www.fanqiejsq.com/" />
+    <meta property="og:site_name" content="番茄加速器" />
+    <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
+    <meta property="og:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:locale" content="zh_CN" />
+    <meta property="twitter:type" content="website" />
+    <meta property="twitter:title" content="番茄回国加速器 - 海外华人的专业回国VPN与游戏加速器" />
+    <meta property="twitter:description"
+        content="番茄回国加速器，海外华人和留学生的专业回国VPN选择。一键解锁中国影音、游戏加速，全平台兼容。享受无缝访问国内网站和应用的体验，包括热门视频、音乐平台和游戏。稳定、快速、易用，为海外生活的中国人提供完美的网络解决方案。" />
+    <meta property="twitter:url" content="https://www.fanqiejsq.com/" />
+    <meta property="twitter:site_name" content="番茄加速器" />
+    <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
+    <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+
+
+
+
+    <title>番茄回国加速器 - 海外华人的专业回国VPN与游戏加速器</title>
+
+
+
+    <link rel="stylesheet" href="/css/tailwind.min.css" />
+    <link rel="stylesheet" href="/css/family.css" />
     <style>
         .gradient {
             background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
@@ -23,13 +47,8 @@
         /* 按钮渐变 */
         .down-btn-gradient {
             background: linear-gradient(90deg, #f06d8e 0%, #f7c857 100%);
-            /* 一个与整体背景相似的渐变色 */
-            border-radius: 9999;
-            color: #fff;
-            /* 按钮文字颜色 */
+            /* background: linear-gradient(90deg, #d53369 0%, #f7c857 50%, #f06d8e 100%); */
             text-align: center;
-            transition: background 0.3s ease;
-            /* 添加过渡效果 */
         }
 
 
@@ -51,6 +70,9 @@
             opacity: 1;
         }
 
+        /* 当父元素悬浮时，给 <a> 元素添加 hover 样式 */
+
+
         @media (min-width: 1024px) {
             .sub-menu {
                 width: 10rem;
@@ -61,6 +83,12 @@
                 opacity: 1;
 
                 background-color: #fff;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .hover-effect:hover .toggleColour {
+                color: #00FF00;
             }
         }
 
@@ -89,8 +117,7 @@
                 <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center"
                     href="#">
                     <!--Icon from: http://www.potlabicons.com/ -->
-                    <img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器"
-                        decoding="async" />
+                    <img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器" decoding="async" />
                     <span class="ml-1">番茄加速器</span>
 
                 </a>
@@ -119,7 +146,7 @@
                             href="https://www.fanqiejsq.com/vip/">购买VIP</a>
                     </li>
                     <li class="relative parent-menu-item">
-                        <div class="flex justify-between">
+                        <div class="flex justify-between hover-effect group">
                             <a class="toggleColour touch-manipulation lg:inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
                                 href="https://www.fanqiejsq.com/vip/">
                                 使用番茄
@@ -174,17 +201,17 @@
                         </div>
                         <!-- end 子菜单 -->
                     </li>
-                    <li class="">
+                    <li class="cursor-pointer">
                         <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
                             href="https://www.fanqiejsq.com/vip/">影音加速器</a>
 
 
                     </li>
-                    <li class="">
+                    <li class="cursor-pointer">
                         <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
                             href="https://www.fanqiejsq.com/vip/">加速国内游戏</a>
                     </li>
-                    <li class="">
+                    <li class="cursor-pointer">
                         <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
                             href="https://www.fanqiejsq.com/vip/">翻回国内VPN</a>
                     </li>
@@ -847,115 +874,19 @@
         <section class="container mx-auto px-6 flex items-center justify-center ">
             <div class=" rounded-full down-btn-gradient bg-white w-full  lg:w-5/6 auto "
                 style="animation: breathing 2s infinite;">
-                <a class="w-full   inline-block text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
-                    href="https://www.fanqiejsq.com/download/">客户端下载</a>
+                <a class="w-full   inline-block text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4"
+                    href="https://www.fanqiejsq.com/download/">番茄回国加速器,立即下载</a>
             </div>
         </section>
 
     </div>
 
-    <!-- jQuery if you need it
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
-    <script>
-        var scrollpos = window.scrollY;
-        var header = document.getElementById("header");
-        var navcontent = document.getElementById("nav-content");
-        var navaction = document.getElementById("navAction");
-        var brandname = document.getElementById("brandname");
-        var toToggle = document.querySelectorAll(".toggleColour");
 
-        document.addEventListener("scroll", function () {
-            /*Apply classes for slide in bar*/
-            scrollpos = window.scrollY;
 
-            if (scrollpos > 10) {
-                header.classList.add("bg-white");
-                for (var i = 0; i < toToggle.length; i++) {
-                    toToggle[i].classList.add("text-gray-800");
-                    toToggle[i].classList.remove("text-white");
-                    toToggle[i].classList.remove("lg:text-white");
-                }
-                header.classList.add("shadow");
-                navcontent.classList.remove("bg-gray-100");
-                navcontent.classList.add("bg-white");
-            } else {
-                header.classList.remove("bg-white");
-                for (var i = 0; i < toToggle.length; i++) {
-                    toToggle[i].classList.add("lg:text-white");
-                    toToggle[i].classList.remove("text-gray-800");
-                    toToggle[i].classList.remove("text-black");
-                }
+    <script src="/js/utils/scroll.js"></script>
+    <script src="/js/utils/menu.js"></script>
+    <script src="/js/utils/subMenu.js"></script>
 
-                header.classList.remove("shadow");
-                navcontent.classList.remove("bg-white");
-                navcontent.classList.add("bg-gray-100");
-            }
-        });
-    </script>
-    <script>
-        /*Toggle dropdown list*/
-        /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
-
-        var navMenuDiv = document.getElementById("nav-content");
-        var navMenu = document.getElementById("nav-toggle");
-
-        document.onclick = check;
-
-        function check(e) {
-            var target = (e && e.target) || (event && event.srcElement);
-
-            //Nav Menu
-            if (!checkParent(target, navMenuDiv)) {
-                // click NOT on the menu
-                if (checkParent(target, navMenu)) {
-                    // click on the link
-                    if (navMenuDiv.classList.contains("hidden")) {
-                        navMenuDiv.classList.remove("hidden");
-                    } else {
-                        navMenuDiv.classList.add("hidden");
-                    }
-                } else {
-                    // click both outside link and outside menu, hide menu
-                    navMenuDiv.classList.add("hidden");
-                }
-            }
-        }
-
-        function checkParent(t, elm) {
-            while (t.parentNode) {
-                if (t == elm) {
-                    return true;
-                }
-                t = t.parentNode;
-            }
-            return false;
-        }
-    </script>
-
-    <script>
-        // 控制子菜单 的显示和隐藏。
-        var showSubMenuBtnDom = document.getElementById("show_sub_menu");
-        var subMenuDom = document.getElementById("sub_menu_3");
-
-        showSubMenuBtnDom.onclick = function () {
-            console.log("showSubMenuBtnDom.parentElement", showSubMenuBtnDom.parentElement)
-            // 检查是否已经包含 "show" 类
-            if (subMenuDom.classList.contains("show")) {
-                subMenuDom.classList.remove("show"); // 如果存在，删除
-                showSubMenuBtnDom.parentElement.classList.remove('text-red-400')
-            } else {
-                subMenuDom.classList.add("show"); // 如果不存在，添加
-                showSubMenuBtnDom.parentElement.classList.add('text-red-400')
-            }
-        }
-        window.onresize = function () {
-            if (window.innerWidth < 1024) {
-                subMenuDom.classList.remove("show");
-                showSubMenuBtnDom.parentElement.classList.remove('text-red-400')
-            }
-        }
-    </script>
 </body>
 
 </html>
