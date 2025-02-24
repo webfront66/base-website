@@ -20,6 +20,19 @@
             background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
         }
 
+        /* 按钮渐变 */
+        .down-btn-gradient {
+            background: linear-gradient(90deg, #f06d8e 0%, #f7c857 100%);
+            /* 一个与整体背景相似的渐变色 */
+            border-radius: 9999;
+            color: #fff;
+            /* 按钮文字颜色 */
+            text-align: center;
+            transition: background 0.3s ease;
+            /* 添加过渡效果 */
+        }
+
+
         .tomato__header-img {
             width: 1.75rem;
             height: 1.75rem;
@@ -50,8 +63,22 @@
                 background-color: #fff;
             }
         }
+
+        @keyframes breathing {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
-    <!-- <script src="/static/js/utils/flexible.js"></script> -->
+    <!-- <script src="/js/utils/flexible.js"></script> -->
 </head>
 
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
@@ -62,7 +89,7 @@
                 <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center"
                     href="#">
                     <!--Icon from: http://www.potlabicons.com/ -->
-                    <img src="/static/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器"
+                    <img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器"
                         decoding="async" />
                     <span class="ml-1">番茄加速器</span>
 
@@ -629,7 +656,7 @@
 
 
     <!--Footer-->
-    <footer class="bg-white">
+    <footer class="bg-white pb-10">
         <section class="container mx-auto px-8 py-4">
             <div class="w-full my-1 ">
                 <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
@@ -688,7 +715,7 @@
                         <div class="toggleColour text-white no-underline hover:no-underline font-bold text-lg  flex items-center"
                             href="https://www.fanqiejsq.com/download/">
                             <!--Icon from: http://www.potlabicons.com/ -->
-                            <!-- <img src="/static/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器"
+                            <!-- <img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器"
                                 decoding="async" /> -->
                             <span class="ml-1">下载应用</span>
                         </div>
@@ -815,6 +842,18 @@
         <!-- end 尾部第三部分 -->
 
     </footer>
+
+    <div class="fixed bottom-2 w-full">
+        <section class="container mx-auto px-6 flex items-center justify-center ">
+            <div class=" rounded-full down-btn-gradient bg-white w-full  lg:w-5/6 auto "
+                style="animation: breathing 2s infinite;">
+                <a class="w-full   inline-block text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
+                    href="https://www.fanqiejsq.com/download/">客户端下载</a>
+            </div>
+        </section>
+
+    </div>
+
     <!-- jQuery if you need it
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   -->
