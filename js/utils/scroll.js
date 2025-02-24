@@ -22,8 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         } else {
             header.classList.remove("bg-white", "shadow");
-            navcontent.classList.remove("bg-white");
-            navcontent.classList.add("bg-gray-100");
+            // 不能直接这样去做。应该要判断 
+            // if (window.innerWidth >= 1024) {
+            //     navcontent.classList.remove("bg-white");
+            // }
+           
+            // navcontent.classList.remove("bg-white")
+            // navcontent.classList.add("bg-gray-100");
 
             // 处理颜色恢复
             toToggle.forEach(el => {
@@ -40,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentScrollPos !== scrollpos) {
             scrollpos = currentScrollPos;
             updateHeaderClass(); // 调用更新函数
+        }
+    });
+    window.addEventListener('resize', function () {
+        if (window.innerWidth < 1024) {
+            updateHeaderClass();
         }
     });
 
