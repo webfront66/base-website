@@ -1,25 +1,24 @@
-# [Tailwind Toolbox](https://www.tailwindtoolbox.com/) - [Landing Page Template](https://www.tailwindtoolbox.com/templates/landing-page)
+# [Tailwind Toolbox](https://www.tailwindtoolbox.com/) - [着陆页模板](https://www.tailwindtoolbox.com/templates/landing-page)
 
-[Landing Page](https://www.tailwindtoolbox.com/templates/landing-page) is an open source, generic landing page template for [Tailwind CSS](https://tailwindcss.com/) created by [Tailwind Toolbox](https://www.tailwindtoolbox.com/).
+[着陆页](https://www.tailwindtoolbox.com/templates/landing-page) 是一个由 [Tailwind Toolbox](https://www.tailwindtoolbox.com/) 创建的开源通用着陆页模板，使用 [Tailwind CSS](https://tailwindcss.com/) 编写。
 
-![Landing Page](https://www.tailwindtoolbox.com/templates/landing-page.png)
+![着陆页](https://www.tailwindtoolbox.com/templates/landing-page.png)
 
+## 入门指南
 
-## Getting Started
+选择以下选项之一开始使用：
+* [下载最新版本](https://github.com/tailwindtoolbox/Landing-Page/archive/master.zip)
+* 克隆仓库：`git clone https://github.com/tailwindtoolbox/Landing-Page.git`
+* Fork 仓库
 
-Choose one of the following options to get started:
-* [Download the latest release](https://github.com/tailwindtoolbox/Landing-Page/archive/master.zip)
-* Clone the repo: `git clone https://github.com/tailwindtoolbox/Landing-Page.git`
-* Fork the repo
+## 使用模板
 
-## Using the Template
+该模板只是一个使用完整 CDN 托管的 Tailwind CSS 文件的 HTML 文件。
 
-The template is just a HTML file using a full CDN hosted Tailwind CSS file.
+为了充分利用 Tailwind CSS，您需要开始进行自定义。
+查看我们的 [设置指南](https://www.tailwindtoolbox.com/setup) 来开始调整！
 
-To get the best out of Tailwind CSS, you need to really start customising it.
-Take a look at our [setup guide](https://www.tailwindtoolbox.com/setup) to start tweaking!
-
-## Sites created using this template
+## 使用此模板创建的网站
 
 * [AnonAddy.com](https://anonaddy.com)
 * [MentorCV.com](https://mentorcv.com)
@@ -29,27 +28,33 @@ Take a look at our [setup guide](https://www.tailwindtoolbox.com/setup) to start
 * [Hosted Git](https://hosted-git.com)
 * [Qiusheji](https://qiusheji.com)
 
-## Bugs and Issues
+## 错误和问题
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/tailwindtoolbox/Landing-Page/issues/new) here on GitHub.
+遇到错误或问题？请在 GitHub 上 [打开新问题](https://github.com/tailwindtoolbox/Landing-Page/issues/new)。
 
-## Creator
+## 创建者
 
-[Tailwind Toolbox](https://www.tailwindtoolbox.com/) was created by and is maintained by **[Amrit Nagi](https://amritnagi.info/)**, Co-owner of [Astrava.Solutions](https://astrava.solutions).
+[Tailwind Toolbox](https://www.tailwindtoolbox.com/) 由 **[Amrit Nagi](https://amritnagi.info/)** 创建并维护，Amrit 是 [Astrava.Solutions](https://astrava.solutions) 的共同拥有者。
 
 * https://twitter.com/tailwindtoolbox
 * https://twitter.com/amritnagi
 * https://github.com/tailwindtoolbox
 
-Tailwind Toolbox is based on the [Tailwind CSS](https://www.tailwindcss.com/) framework created by [Adam Wathan](https://twitter.com/adamwathan), [Jonathan Reinink](https://twitter.com/reinink), [David Hemphill](https://twitter.com/davidhemphill) and [Steve Schoger](https://twitter.com/steveschoger)
+Tailwind Toolbox 基于 [Tailwind CSS](https://www.tailwindcss.com/) 框架，Tailwind CSS 是由 [Adam Wathan](https://twitter.com/adamwathan)、[Jonathan Reinink](https://twitter.com/reinink)、[David Hemphill](https://twitter.com/davidhemphill) 和 [Steve Schoger](https://twitter.com/steveschoger) 创建的。
+
+## 图片归属
+
+[Hero 向量图由 freepik.com 创建](https://www.freepik.com/free-vector/isometric-education-illustration_3940819.htm#page=1&query=isometric%20plane&position=1)
+
+可用于个人和商业用途，需注明出处。
+
+## 版权和许可
+
+版权 © 2018-2022 Astrava.Solutions Ltd. 代码以 MIT 许可证发布。
 
 
-## Image Attribution
+### 导航条颜色适配
 
-[Hero vector created by freepik.com](https://www.freepik.com/free-vector/isometric-education-illustration_3940819.htm#page=1&query=isometric%20plane&position=1)
-
-Free for personal and commercial purpose with attribution
-
-## Copyright and License
-
-Copyright 2018-2022 Astrava.Solutions Ltd. Code released under the MIT license.
+1. 默认情况下，黑色。
+2. lg:text-white
+3. 滚动之后，要去掉
