@@ -26,7 +26,6 @@
         }
 
         .sub-menu {
-            width: 10rem;
             display: none;
             opacity: 0;
             top: 100%;
@@ -40,9 +39,14 @@
         }
 
         @media (min-width: 1024px) {
+            .sub-menu {
+                width: 10rem;
+            }
+
             .parent-menu-item:hover .sub-menu {
                 display: block;
                 opacity: 1;
+
                 background-color: #fff;
             }
         }
@@ -107,36 +111,36 @@
 
                         <!-- start 子菜单  -->
                         <div id="sub_menu_3" class="sub-menu relative lg:absolute">
-                            <ul class="sub-menu-inner flex flex-col gap-2 p-2 pl-10 lg:p-6">
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page  ">
+                            <ul class="sub-menu-inner flex flex-col gap-2 p-2 pl-10 lg:p-4">
+                                <li class="menu-item menu-item-type-post_type w-full menu-item-25975">
                                     <a href="https://www.fanqiejsq.com/game/" aria-current="page"
-                                        class="sub-menu-link w-full flex flex-1 hover:text-red-400	">
+                                        class="sub-menu-link w-full inline-block hover:text-red-400	">
                                         游戏加速
                                     </a>
                                 </li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25975">
+                                <li class="menu-item menu-item-type-post_type w-full menu-item-25975">
                                     <a href="https://www.fanqiejsq.com/study/"
-                                        class="sub-menu-link w-full flex flex-1 hover:text-red-400	">
+                                        class="sub-menu-link w-full inline-block hover:text-red-400	">
                                         海外留学</a>
                                 </li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25970">
+                                <li class="menu-item menu-item-type-post_type w-full menu-item-25970">
                                     <a href="https://www.fanqiejsq.com/overseas/"
-                                        class="sub-menu-link w-full flex flex-1 hover:text-red-400	">
+                                        class="sub-menu-link w-full inline-block hover:text-red-400	">
                                         海外华人</a>
                                 </li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25974">
+                                <li class="menu-item menu-item-type-post_type w-full menu-item-25974">
                                     <a href="https://www.fanqiejsq.com/travel/"
-                                        class="sub-menu-link w-full flex flex-1 hover:text-red-400	">
+                                        class="sub-menu-link w-full inline-block hover:text-red-400	">
                                         出国旅行</a>
                                 </li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25971">
+                                <li class="menu-item menu-item-type-post_type w-full menu-item-25971">
                                     <a href="https://www.fanqiejsq.com/office/"
-                                        class="sub-menu-link w-full flex flex-1 hover:text-red-400	">
+                                        class="sub-menu-link w-full inline-block hover:text-red-400	">
                                         海外办公</a>
                                 </li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25972">
+                                <li class="menu-item menu-item-type-post_type w-full menu-item-25972">
                                     <a href="https://www.fanqiejsq.com/live/"
-                                        class="sub-menu-link w-full flex flex-1 hover:text-red-400	">
+                                        class="sub-menu-link w-full inline-block hover:text-red-400	">
                                         海外直播</a>
                                 </li>
                             </ul>
@@ -689,7 +693,7 @@
                             <span class="ml-1">下载应用</span>
                         </div>
                     </div>
-                    <div class="text-gray-800 flex flex-col items-center text-sm">
+                    <div class="text-gray-800 flex flex-col items-center text-sm text-center">
                         <ul>
                             <li class="py-1">
                                 <a class="hover:text-red-400"
