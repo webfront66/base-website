@@ -1,4 +1,15 @@
+
+### amp 在线校验
+
+[在线校验地址](https://validator.ampproject.org/)
+
+<br />
+
+[在线测试](https://search.google.com/test/amp)
+
 ### amp 检验的相关规则。
+
+
 
 1. 自定义样式只允许存在一个 `amp-custom`
 2. 所有的非按钮元素上，如果有交互，例如点击，需要加 `role` `tabindex` 属性。例如： `role="button" tabindex="0"`
