@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					if (checkParent(target, navMenu)) {
 							toggleMenu();
 					} else {
-							// 点击了菜单外部，隐藏菜单
+							// 点击了菜单外部，隐藏菜单1
 							navMenuDiv.classList.add("hidden");
 					}
 			}

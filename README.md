@@ -58,3 +58,11 @@ Tailwind Toolbox 基于 [Tailwind CSS](https://www.tailwindcss.com/) 框架，Ta
 1. 默认情况下，黑色。
 2. lg:text-white
 3. 滚动之后，要去掉
+
+
+
+
+### 不允许 滚动
+
+
+log.js:232 [Action] "scroll" event with "low" trust is not allowed to invoke "amp.setState".

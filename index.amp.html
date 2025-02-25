@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ⚡ lang="en">
+<html amp lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -1509,13 +1509,35 @@ Ensure the default browser behavior of the `hidden` attribute.
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js">
     </script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
 
     <!-- <script src="/js/utils/flexible.js"></script> -->
 </head>
 
-<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;"
+    on="tap:AMP.setState({navState: {expand: false, submenuexpand: false}})">
+
+    <amp-state id="navState">
+        <script type="application/json">
+            {
+                "expand": false,
+                "submenuexpand": false,
+                "other": 0
+            }
+        </script>
+    </amp-state>
+
+    <amp-state id="noscript">
+        <script type="application/json">
+            {
+                "value": 0
+            }
+        </script>
+    </amp-state>
+
     <!--Nav-->
-    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <nav id="header" class="fixed gradient w-full z-30 top-0 text-white">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
                 <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center"
@@ -1528,7 +1550,8 @@ Ensure the default browser behavior of the `hidden` attribute.
             </div>
             <div class="block lg:hidden pr-4">
                 <button id="nav-toggle"
-                    class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                    on="tap:AMP.setState({navState: {expand: !navState.expand}})">
                     <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <title>Menu</title>
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -1536,12 +1559,15 @@ Ensure the default browser behavior of the `hidden` attribute.
                 </button>
             </div>
             <div class="w-full flex-grow  lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
-                id="nav-content">
+                id="nav-content"
+                [class]="' w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 ' + (navState.expand ? 'show' : 'hidden')"
+                on="tap:AMP.setState({navState: {expand: true}})">
+
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
                     <!-- <li class="mr-3">
                         <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Active</a>
                     </li> -->
-                    <li class="">
+                    <li>
                         <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
                             href="https://www.fanqiejsq.com/download/">客户端下载</a>
                     </li>
@@ -1550,7 +1576,8 @@ Ensure the default browser behavior of the `hidden` attribute.
                             href="https://www.fanqiejsq.com/vip/">购买VIP</a>
                     </li>
                     <li class="relative parent-menu-item">
-                        <div class="flex justify-between hover-effect group">
+                        <div class="flex justify-between hover-effect group"
+                            on="tap:AMP.setState({navState: {'submenuexpand': !navState.submenuexpand}})">
                             <a class="toggleColour touch-manipulation lg:inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
                                 href="https://www.fanqiejsq.com/vip/">
                                 使用番茄
@@ -1568,7 +1595,8 @@ Ensure the default browser behavior of the `hidden` attribute.
                         </div>
 
                         <!-- start 子菜单  -->
-                        <div id="sub_menu_3" class="sub-menu relative lg:absolute bg-white">
+                        <div id="sub_menu_3" class="sub-menu relative lg:absolute bg-white"
+                            [class]="'sub-menu relative lg:absolute bg-white ' + (navState.submenuexpand ? 'show' : 'hidden')">
                             <ul class="sub-menu-inner flex flex-col gap-2 p-2 pl-10 lg:p-4">
                                 <li class="menu-item menu-item-type-post_type w-full menu-item-25975">
                                     <a href="https://www.fanqiejsq.com/game/" aria-current="page"
@@ -2286,20 +2314,22 @@ Ensure the default browser behavior of the `hidden` attribute.
     </div>
 
 
-    <script src="/js/utils/scroll.js"></script>
-    <script src="/js/utils/menu.js"></script>
-    <script src="/js/utils/subMenu.js"></script>
 
-    <amp-script layout="container" src="/js/utils/scroll.js">
+    <!-- <amp-iframe width="600" height="400" sandbox="allow-scripts allow-same-origin" layout="responsive"
+        src="/js/utils/scroll.js">
+    </amp-iframe> -->
+
+    <!-- <script src="/js/utils/scroll.js"></script> -->
+    <!-- <script src="/js/utils/menu.js"></script> -->
+    <!-- <script src="/js/utils/subMenu.js"></script> -->
+
+    <!-- <amp-script layout="container" src="/js/utils/scroll.js">
         <div>222</div>
-        <!-- 即使这里没有内容，仍然需要一个容器来包含 amp-script -->
     </amp-script>
     <amp-script layout="container" src="/js/utils/menu.js">
-        <!-- 即使这里没有内容，仍然需要一个容器来包含 amp-script -->
     </amp-script>
     <amp-script layout="container" src="/js/utils/subMenu.js">
-        <!-- 即使这里没有内容，仍然需要一个容器来包含 amp-script -->
-    </amp-script>
+    </amp-script> -->
 
 
 </body>
