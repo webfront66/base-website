@@ -127,13 +127,6 @@
             --tw-content: '';
         }
 
-        /*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-*/
-
         html {
             line-height: 1.5;
             /* 1 */
@@ -148,10 +141,7 @@
             /* 4 */
         }
 
-        /*
-1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
-*/
+
 
         body {
             margin: 0;
@@ -160,11 +150,7 @@
             /* 2 */
         }
 
-        /*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
+
 
         hr {
             height: 0;
@@ -1310,9 +1296,7 @@ Ensure the default browser behavior of the `hidden` attribute.
                 gap: 1.5rem;
             }
         }
-    </style>
 
-    <style amp-custom>
         /* cyrillic-ext */
         @font-face {
             font-family: 'Source Sans Pro';
@@ -1438,8 +1422,7 @@ Ensure the default browser behavior of the `hidden` attribute.
             src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
-    </style>
-    <style amp-custom>
+
         .gradient {
             background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
         }
@@ -1507,7 +1490,6 @@ Ensure the default browser behavior of the `hidden` attribute.
         }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js">
     </script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
@@ -1515,7 +1497,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     <!-- <script src="/js/utils/flexible.js"></script> -->
 </head>
 
-<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;"
+<body role="document" tabindex="0" class="leading-normal tracking-normal text-white gradient"
+    style="font-family: 'Source Sans Pro', sans-serif;"
     on="tap:AMP.setState({navState: {expand: false, submenuexpand: false}})">
 
     <amp-state id="navState">
@@ -1544,7 +1527,7 @@ Ensure the default browser behavior of the `hidden` attribute.
                     href="#">
                     <!--Icon from: http://www.potlabicons.com/ -->
                     <amp-img src="/image/logox512.png" layout="responsive" width="512" height="512"
-                        class="tomato__header-img w-28rem" alt="番茄加速器" decoding="async"></amp-img>
+                        class="tomato__header-img w-28rem" alt="番茄加速器"></amp-img>
 
                     <span class="ml-1">番茄加速器</span>
 
@@ -1561,7 +1544,7 @@ Ensure the default browser behavior of the `hidden` attribute.
                 </button>
             </div>
             <div class="w-full flex-grow  lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
-                id="nav-content"
+                id="nav-content" role="button" tabindex="0"
                 [class]="' w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 ' + (navState.expand ? 'show' : 'hidden')"
                 on="tap:AMP.setState({navState: {expand: true}})">
 
@@ -1578,7 +1561,7 @@ Ensure the default browser behavior of the `hidden` attribute.
                             href="https://www.fanqiejsq.com/vip/">购买VIP</a>
                     </li>
                     <li class="relative parent-menu-item">
-                        <div class="flex justify-between hover-effect group"
+                        <div class="flex justify-between hover-effect group" role="button" tabindex="0"
                             on="tap:AMP.setState({navState: {'submenuexpand': !navState.submenuexpand}})">
                             <a class="toggleColour touch-manipulation lg:inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
                                 href="https://www.fanqiejsq.com/vip/">
@@ -1791,7 +1774,7 @@ Ensure the default browser behavior of the `hidden` attribute.
             <div class="w-full flex flex-wrap justify-between">
                 <div class=" w-1/2 lg:w-1/4 pt-6 px-2 flex flex-col flex-grow flex-shrink">
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                        <a href="javascript:void(0)"
+                        <a on="tap:someAction"
                             class="flex items-center justify-center flex-wrap no-underline hover:no-underline">
                             <div>
                                 <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp"
@@ -1946,7 +1929,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     <!-- end sss -->
 
     <!-- start -->
-    <section class="bg-white border-b py-8">
+    <section class="bg-white border-b py-8 ">
         <div class="container px-6 mx-auto mt-8">
             <div class="w-full my-2 ">
                 <h2 class="text-lg font-bold leading-tight text-center text-gray-800"> 为什么选择番茄加速器</h2>
@@ -2158,8 +2141,7 @@ Ensure the default browser behavior of the `hidden` attribute.
                 <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
             </div>
             <div class="text-black flex gap-1	">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F"
-                    alt="facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F">
                     <span class="heateor_sss_svg"
                         style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg
                             style="display:block;border-radius:999px;" focusable="false" aria-hidden="true"
@@ -2169,8 +2151,8 @@ Ensure the default browser behavior of the `hidden` attribute.
                                 fill="#fff"></path>
                         </svg></span>
                 </a>
-                <a href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F"
-                    alt="twitter">
+                <a
+                    href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F">
                     <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter"
                         style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg
                             style="display:block;border-radius:999px;" focusable="false" aria-hidden="true"
@@ -2181,8 +2163,8 @@ Ensure the default browser behavior of the `hidden` attribute.
                         </svg>
                     </span>
                 </a>
-                <a href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5"
-                    alt="weibo">
+                <a
+                    href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5">
                     <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo"
                         style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
                         <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true"
