@@ -1,6 +1,13 @@
 {
+  "scripts": {
+    "create-meta": "node .sh/add-meta.js",
+    "create-amp-style": "node .sh/create-amp-style.js", 
+    "lint-amp": "node .sh/amp.linter.js",
+    "lint-index-amp": "amphtml-validator index.amp.html"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.8",
+    "amphtml-validator": "^1.0.38",
     "tailwindcss": "^3.0.0"
   }
 }

@@ -56,6 +56,7 @@
             height: 1.75rem;
         }
 
+
         .sub-menu {
             display: none;
             opacity: 0;
@@ -82,6 +83,11 @@
                 opacity: 1;
 
                 background-color: #fff;
+            }
+
+            .sub-menu-trigger-btn {
+                fill: #fff;
+
             }
         }
 
@@ -110,7 +116,7 @@
 
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
-    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <nav id="header" class="gradient fixed w-full z-30 top-0 text-white">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
                 <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center"
@@ -151,7 +157,7 @@
                                 使用番茄
                             </a>
                             <span id="show_sub_menu"
-                                class="ast-icon icon-arrow flex  flex-1 items-center justify-end text-right ">
+                                class="sub-menu-trigger-btn ast-icon icon-arrow flex  flex-1 items-center justify-end text-right ">
                                 <svg class="ast-arrow-svg" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                                     width="12px" height="16.043px" viewBox="57 35.171 26 16.043"
@@ -884,7 +890,7 @@
 
 
 
-    <script defer src="/js/utils/scroll.js"></script>
+    <!-- <script defer src="/js/utils/scroll.js"></script> -->
     <script defer src="/js/utils/menu.js"></script>
     <script defer src="/js/utils/subMenu.js"></script>
 

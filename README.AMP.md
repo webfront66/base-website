@@ -7,6 +7,25 @@
 
 [在线测试](https://search.google.com/test/amp)
 
+### amp本地校验。
+
+如果不想使用线上的校验。
+
+可使用 `amphtml-validator` 对代码 做校验。
+
+1.  安装 AMP Linter
+```bash
+npm install -g amphtml-validator
+
+```
+
+2. 使用 AMP Linter 校验 HTML 文件
+```bash
+amphtml-validator index.amp.html
+```
+
+3. 将 AMP Linter 集成到开发流程
+
 ### amp 检验的相关规则。
 
 
@@ -21,3 +40,5 @@
 	- 如果不需要跳转，可以删除 href, 例如：`<a on="tap:someAction">点击我</a>`
 
 5. `a` 标签不需要 `alt` 属性。对于`<a>`标签，AMP 并不允许使用alt属性，因为它没有需要描述的图像内容。
+
+
