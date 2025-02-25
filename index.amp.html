@@ -1540,10 +1540,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     <nav id="header" class="fixed gradient w-full z-30 top-0 text-white">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
-                <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center"
+                <a class="toggleColour text-white no-underline hover:no-underline  font-bold text-2xl lg:text-4xl flex items-center"
                     href="#">
                     <!--Icon from: http://www.potlabicons.com/ -->
-                    <img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器" decoding="async" />
+                    <amp-img src="/image/logox512.png" layout="responsive" width="512" height="512"
+                        class="tomato__header-img w-28rem" alt="番茄加速器" decoding="async"></amp-img>
+
                     <span class="ml-1">番茄加速器</span>
 
                 </a>
@@ -1677,8 +1679,16 @@ Ensure the default browser behavior of the `hidden` attribute.
             <!--Right Col-->
             <div class="w-full md:w-3/5 px-6  pt-2 pb-6 lg:py-6 text-center flex justify-end">
                 <!-- style="max-width: 424px; max-height: 290px;" -->
-                <img class="w-full md:w-4/5  z-10" style="max-width: min(530px, 100%); "
-                    src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/%E5%9B%BE1-1-1.webp" />
+                <amp-img class="w-full md:w-4/5  z-10" style="max-width: min(530px, 100%);" width="636" height="435"
+                    layout="responsive" alt=""
+                    src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/%E5%9B%BE1-1-1.webp">
+
+                </amp-img>
+
+
+                <!-- <img class="w-full md:w-4/5  z-10" layout="responsive" max-width="530"
+                    style="max-width: min(530px, 100%);" height="" layout="responsive"
+                    src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/%E5%9B%BE1-1-1.webp" /> -->
             </div>
         </div>
     </div>
@@ -1714,26 +1724,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 
                 <a class="flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
                     href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/">
-                    <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161742-1.png"
-                        alt="Windows版">
+                    <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161742-1.png"
+                        width="48" height="48" layout="fixed" alt="Windows版">
+                    </amp-img>
                     <span class="">Windows版</span>
                 </a>
                 <a class="flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
                     href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/">
-                    <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161731-1.png"
-                        alt="Windows版">
+                    <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161731-1.png"
+                        width="48" height="48" layout="fixed" alt="Windows版">
+                    </amp-img>
                     <span class="">macOS版</span>
                 </a>
                 <a class="flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
                     href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/">
-                    <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161725-1.png"
-                        alt="Windows版">
+                    <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161725-1.png"
+                        alt="Windows版" width="48" height="48" layout="fixed">
+                    </amp-img>
                     <span class="">iOS版</span>
                 </a>
                 <a class="flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
                     href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/">
-                    <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161716-1.png"
-                        alt="Windows版">
+                    <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/微信图片_20231216161716-1.png"
+                        alt="Windows版" width="48" height="48" layout="fixed">
+                    </amp-img>
                     <span class="">Android版</span>
                 </a>
             </div>
@@ -1777,10 +1791,12 @@ Ensure the default browser behavior of the `hidden` attribute.
             <div class="w-full flex flex-wrap justify-between">
                 <div class=" w-1/2 lg:w-1/4 pt-6 px-2 flex flex-col flex-grow flex-shrink">
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                        <a href="#" class="flex items-center justify-center flex-wrap no-underline hover:no-underline">
+                        <a href="javascript:void(0)"
+                            class="flex items-center justify-center flex-wrap no-underline hover:no-underline">
                             <div>
-                                <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp"
-                                    width="140" height="140" alt="全球游戏加速">
+                                <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp"
+                                    width="140" height="140" layout="fixed" alt="全球游戏加速">
+                                </amp-img>
                             </div>
                             <p class="flex items-center justify-center text-gray-800 font-bold text-lg px-6 mb-5">
                                 全球游戏加速
@@ -1796,8 +1812,9 @@ Ensure the default browser behavior of the `hidden` attribute.
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                         <a href="#" class="flex items-center justify-center flex-wrap no-underline hover:no-underline">
                             <div>
-                                <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/影音-1@2x-1.webp"
-                                    width="140" height="140" alt="全球游戏加速">
+                                <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/影音-1@2x-1.webp"
+                                    width="140" height="140" layout="fixed" alt="全球游戏加速">
+                                </amp-img>
                             </div>
                             <p class="flex items-center justify-center text-gray-800 font-bold text-lg px-6 mb-5">
                                 国内影音解锁
@@ -1813,8 +1830,9 @@ Ensure the default browser behavior of the `hidden` attribute.
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                         <a href="#" class="flex items-center justify-center flex-wrap no-underline hover:no-underline">
                             <div>
-                                <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/直播-1@2x-1-1.webp"
-                                    width="140" height="140" alt="全球游戏加速">
+                                <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/直播-1@2x-1-1.webp"
+                                    width="140" height="140" layout="fixed" alt="全球游戏加速">
+                                </amp-img>
                             </div>
                             <p class="flex items-center justify-center text-gray-800 font-bold text-lg px-6 mb-5">
                                 直播稳定推流
@@ -1830,8 +1848,9 @@ Ensure the default browser behavior of the `hidden` attribute.
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                         <a href="#" class="flex items-center justify-center flex-wrap no-underline hover:no-underline">
                             <div>
-                                <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/学习办公-1@2x-1.webp"
-                                    width="140" height="140" alt="全球游戏加速">
+                                <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/学习办公-1@2x-1.webp"
+                                    width="140" height="140" layout="fixed" alt="全球游戏加速">
+                                </amp-img>
                             </div>
                             <p class="flex items-center justify-center text-gray-800 font-bold text-lg px-6 mb-5">
                                 办公学习增效
@@ -1868,18 +1887,21 @@ Ensure the default browser behavior of the `hidden` attribute.
                             href="https://www.fanqiejsq.com/download/">立即安装</a>
                     </div>
                 </div>
-                <div class="w-full lg:w-1/2 p-6 flex items-center justify-center">
-                    <img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Frame-46-1.webp" alt="回国VPN使用方法">
+                <div class="w-full lg:w-1/2 p-6 ">
+                    <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Frame-46-1.webp" width="566"
+                        height="268" layout="responsive" alt="回国VPN使用方法">
+                    </amp-img>
                 </div>
             </div>
             <!-- end one  -->
 
             <!-- start two -->
             <div class="flex flex-wrap flex-col-reverse lg:flex-row	items-center">
-                <div class="w-full lg:w-1/2 p-6 items-center justify-center">
-                    <img style="max-width: min(400px, 100%);"
+                <div class="w-full lg:w-1/2 p-6 flex items-center justify-center">
+                    <amp-img style="max-width: min(400px, 100%);" width="910" height="664" layout="intrinsic"
                         src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Group-8@2x-1.webp"
                         alt="一键加速，不限流量，超稳定">
+                    </amp-img>
                 </div>
                 <div class="w-full lg:w-1/2 p-6">
                     <h3 class="text-lg text-gray-800 font-bold leading-none mb-3">
@@ -1913,8 +1935,9 @@ Ensure the default browser behavior of the `hidden` attribute.
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 p-6 flex tems-center justify-center">
-                    <img style="max-width: min(440px, 100%);"
+                    <amp-img style="max-width: min(440px, 100%);" width="966" height="674" layout="intrinsic"
                         src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Group-9@2x-1.webp" alt="回国VPN使用方法">
+                    </amp-img>
                 </div>
             </div>
             <!-- end three  -->
@@ -1940,13 +1963,15 @@ Ensure the default browser behavior of the `hidden` attribute.
                         <p class="text-sm text-gray-800">“德国留学生一枚，常年王者 荣耀延迟在300以上，尝试过 市面大部分回国加速器，都不 太稳定。 用番茄加速王者荣
                             耀现在稳定延迟能在120左 右，在海外能有这样稳定的网 络我已经很满足了，墙裂推荐”</p>
                         <div class="pt-2">
-                            <img class="w-32"
+                            <amp-img class="w-32" width="240" height="48" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/div.star-wrapper@2x-4.png"
                                 alt="">
+                            </amp-img>
                         </div>
                         <div class="w-full flex items-cetner pt-2">
-                            <img class="w-16"
+                            <amp-img class="w-16" width="64" height="64" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/user-head-1@2x-1.webp" alt="">
+                            </amp-img>
                             <span
                                 class="flex flex-wrap items-center justify-center ml-2 text-base text-gray-800">在欧流浪</span>
                         </div>
@@ -1960,14 +1985,16 @@ Ensure the default browser behavior of the `hidden` attribute.
                             在国外看国内视频网站，听网易云和Q音的歌都会有地区限制。用番茄加速器回国之后就能正常看剧听歌了，加载速度非常快，看超清妥妥的，而且不耗流量，用了快半年了没遇到过什么问题，五星好评！
                         </p>
                         <div class="pt-2">
-                            <img class="w-32"
+                            <amp-img class="w-32" class="w-32" width="240" height="48" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/div.star-wrapper@2x-4.png"
                                 alt="">
+                            </amp-img>
                         </div>
                         <div class="w-full flex items-cetner pt-2">
-                            <img class="w-16"
+                            <amp-img class="w-16" width="64" height="64" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/user-head-3-1.png-1.png"
                                 alt="">
+                            </amp-img>
                             <span
                                 class="flex flex-wrap items-center justify-center ml-2 text-base text-gray-800">加(加拿大)班汪</span>
                         </div>
@@ -1980,14 +2007,16 @@ Ensure the default browser behavior of the `hidden` attribute.
                         <p class="text-sm text-gray-800">番茄现已全面支持苹果iPhone & iPad移动设备、Android手机、Windows
                             PC系列、苹果macOS电脑、也可以支持 Android 系统的TV电视盒子。确保您在任何一个设备和平台上都可以顺畅加速回国。</p>
                         <div class="pt-2">
-                            <img class="w-32"
+                            <amp-img class="w-32" width="240" height="48" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/div.star-wrapper@2x-4.png"
                                 alt="">
+                            </amp-img>
                         </div>
                         <div class="w-full flex items-cetner pt-2">
-                            <img class="w-16"
+                            <amp-img class="w-16" width="64" height="64" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/user-head-2-1.png-1.png"
                                 alt="">
+                            </amp-img>
                             <span
                                 class="flex flex-wrap items-center justify-center ml-2 text-base text-gray-800">拉斯维加斯</span>
                         </div>
@@ -2000,13 +2029,15 @@ Ensure the default browser behavior of the `hidden` attribute.
                         <p class="text-sm text-gray-800">在海外访问公司的国内服务器，必须要用这款加速器。另外平 时访问富途牛牛、通达信、雪球等软件都非常快速稳定，可以说是办公必备了。
                         </p>
                         <div class="pt-2">
-                            <img class="w-32"
+                            <amp-img class="w-32" width="240" height="48" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/div.star-wrapper@2x-4.png"
                                 alt="">
+                            </amp-img>
                         </div>
                         <div class="w-full flex items-cetner pt-2">
-                            <img class="w-16"
+                            <amp-img class="w-16" width="64" height="64" layout="intrinsic"
                                 src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/user-head-1@2x-1.webp" alt="">
+                            </amp-img>
                             <span
                                 class="flex flex-wrap items-center justify-center ml-2 text-base text-gray-800">烟花国</span>
                         </div>
@@ -2061,43 +2092,49 @@ Ensure the default browser behavior of the `hidden` attribute.
             <ul class="flex flex-wrap">
                 <li class="w-full md:w-1/2 p-2 xl:flex items-center justify-center">
                     <p class="text-sm flex  ">
-                        <img class="w-6 h-6" src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Frame-50.png"
-                            alt="">
+                        <amp-img class="w-6 h-6" width="40" height="40" layout="intrinsic"
+                            src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Frame-50.png" alt="">
+                        </amp-img>
                         <span class="text-left">全球节点分布 全球节点紧密部署,海量专属优质加速线路,智能推荐最优线路</span>
                     </p>
                 </li>
                 <li class="w-full md:w-1/2 p-2 xl:flex items-center justify-center">
                     <p class="text-sm flex  ">
-                        <img class="w-6 h-6" src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Icon-3.png"
-                            alt="">
+                        <amp-img class="w-6 h-6" width="40" height="40" layout="intrinsic"
+                            src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Icon-3.png" alt="">
+                        </amp-img>
                         <span class="flex-1 text-left">多个平台支持 支持Android/iOS/Windows/mocOS支持一人多端设备同时用</span>
                     </p>
                 </li>
                 <li class="w-full md:w-1/2 p-2 xl:flex items-center justify-center">
                     <p class="text-sm flex  ">
-                        <img class="w-6 h-6" src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Icon-1.png"
-                            alt="">
+                        <amp-img class="w-6 h-6" width="40" height="40" layout="intrinsic"
+                            src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Icon-1.png" alt="">
+                        </amp-img>
                         <span class="text-left">稳定无限流量 稳定加速各大音频软件,不限流量,有效解决卡顿,延迟等常见问题</span>
                     </p>
                 </li>
                 <li class="w-full md:w-1/2 p-2 xl:flex items-center justify-center">
                     <p class="text-sm flex ">
-                        <img class="w-6 h-6" src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon-4.png"
-                            alt="">
+                        <amp-img class="w-6 h-6" width="40" height="40" layout="intrinsic"
+                            src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon-4.png" alt="">
+                        </amp-img>
                         <span class="text-left">精选游戏加速 精选回国游戏加速线路，加速各类在线游戏，低延迟超稳定</span>
                     </p>
                 </li>
                 <li class="w-full md:w-1/2 p-2 xl:flex items-center justify-center">
                     <p class="text-sm flex  ">
-                        <img class="w-6 h-6" src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon-2.png"
-                            alt="">
+                        <amp-img class="w-6 h-6" width="40" height="40" layout="intrinsic"
+                            src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon-2.png" alt="">
+                        </amp-img>
                         <span class="text-left">数据安全加密 全程高强度数据加密,专线传输,保证每一位用户的隐私安全</span>
                     </p>
                 </li>
                 <li class="w-full md:w-1/2 p-2 xl:flex items-center justify-center">
                     <p class="text-sm flex  ">
-                        <img class="w-6 h-6" src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Icon-5.png"
-                            alt="">
+                        <amp-img class="w-6 h-6" width="40" height="40" layout="intrinsic"
+                            src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Icon-5.png" alt="">
+                        </amp-img>
                         <span class="flex-1 text-left">售后实时保障 专业的技术团队,7*24小时实时线路监控,保障用户的加速体验</span>
                     </p>
                 </li>
@@ -2141,7 +2178,8 @@ Ensure the default browser behavior of the `hidden` attribute.
                             <path
                                 d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z"
                                 fill="#fff"></path>
-                        </svg></span>
+                        </svg>
+                    </span>
                 </a>
                 <a href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5"
                     alt="weibo">
@@ -2171,10 +2209,9 @@ Ensure the default browser behavior of the `hidden` attribute.
                 <!-- start 下载应用 -->
                 <div class="w-full sm:w-1/3 py-4">
                     <div class="flex-1  flex flex-col items-center mb-2 text-black">
-                        <div class="toggleColour text-white no-underline hover:no-underline font-bold text-lg  flex items-center"
-                            href="https://www.fanqiejsq.com/download/">
+                        <div class="font-bold text-lg  flex items-center">
                             <!--Icon from: http://www.potlabicons.com/ -->
-                            <!-- <img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器"
+                            <!-- <amp-img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器"
                                 decoding="async" /> -->
                             <span class="ml-1">下载应用</span>
                         </div>
@@ -2206,8 +2243,7 @@ Ensure the default browser behavior of the `hidden` attribute.
                 <!-- start 关于我们 -->
                 <div class="w-full  sm:w-1/3 py-4">
                     <div class="flex-1 mb-2 text-black flex flex-col items-center">
-                        <div class="toggleColour text-white no-underline hover:no-underline font-bold text-lg  flex items-center"
-                            href="https://www.fanqiejsq.com/download/">
+                        <div class="font-bold text-lg  flex items-center">
                             <!--Icon from: http://www.potlabicons.com/ -->
                             <span class="ml-1">关于我们</span>
                         </div>
@@ -2230,8 +2266,7 @@ Ensure the default browser behavior of the `hidden` attribute.
                 <!-- start 最新资讯 -->
                 <div class="w-full flex-1 sm:w-1/3 py-4">
                     <div class="flex-1 mb-2 text-black flex flex-col items-center">
-                        <div class="toggleColour text-white no-underline hover:no-underline font-bold text-lg  flex items-center"
-                            href="https://www.fanqiejsq.com/download/">
+                        <div class="font-bold text-lg  flex items-center">
                             <!--Icon from: http://www.potlabicons.com/ -->
                             <span class="ml-1">最新资讯</span>
                         </div>
