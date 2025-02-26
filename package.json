@@ -2,6 +2,7 @@
   "scripts": {
     "create-meta": "node .sh/add-meta.js",
     "create-amp-style": "node .sh/create-amp-style.js", 
+    "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./css/tailwind.min.css --watch",
     "lint-amp": "node .sh/amp.linter.js",
     "lint-index-amp": "amphtml-validator index.amp.html"
   },

@@ -28,6 +28,7 @@
     <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
     <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="amp-script-src" content="sha384-X-_X1y1dtezrg2FAIUh44qP--Gg7rGRzRCpucCglzOJJk5kQgtEzH76pbZFMOky-">
 
 
 
@@ -1338,7 +1339,7 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     </script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 
     <!-- <script src="/js/utils/flexible.js"></script> -->
 </head>
@@ -1361,6 +1362,14 @@
         <script type="application/json">
             {
                 "value": 0
+            }
+        </script>
+    </amp-state>
+    <amp-state id="downJumpInfo">
+        <script type="application/json">
+            {
+                "platform": "unknown",
+                "link": ""
             }
         </script>
     </amp-state>
@@ -1399,8 +1408,11 @@
                         <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Active</a>
                     </li> -->
                     <li>
-                        <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
-                            href="https://www.fanqiejsq.com/download/">客户端下载</a>
+                        <amp-script layout="fixed-height" height="40" script="user-agent-script">
+                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4"
+                                href="https://www.fanqiejsq.com/download/">客户端下载</a>
+                        </amp-script>
+
                     </li>
                     <li class="">
                         <a class="w-full toggleColour inline-block text-black lg:text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4"
@@ -1609,13 +1621,17 @@
                         </p>
                     </a>
                 </div>
-                <div
-                    class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                    <a href="https://www.fanqiejsq.com/download/"
-                        class="to-download mx-auto lg:mx-0  gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                        一键加速国服应用和游戏
-                    </a>
-                </div>
+                <amp-script layout="flex-item" script="user-agent-script">
+                    <div
+                        class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+
+                        <a href="https://www.fanqiejsq.com/download/"
+                            class="to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            一键加速国服应用和游戏
+                        </a>
+                    </div>
+                </amp-script>
+
             </div>
             <div class="w-full flex flex-wrap justify-between">
                 <div class=" w-1/2 lg:w-1/4 pt-6 px-2 flex flex-col flex-grow flex-shrink">
@@ -1710,11 +1726,14 @@
                         处异国他乡的你，玩国服游戏延迟高，经常掉线？番茄回国游戏加速器，全球直连专线，专业回国游戏线路，一键加速国服游戏，降低海外延迟，极速稳定不丢包，加速王者荣耀、和平精英、LOL英雄联盟
                         、魔兽世界、原神、我的世界、永劫无间、阴阳师、逆水寒、剑网3、CF穿越火线、无畏契约等游戏，在海外也能享受和国内一样的游戏体验！
                     </p>
-                    <div
-                        class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                        <a class=" to-download mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-                            href="https://www.fanqiejsq.com/download/">立即安装</a>
-                    </div>
+                    <amp-script layout="flex-item" script="user-agent-script">
+                        <div
+                            class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+                            <a class=" to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                                href="https://www.fanqiejsq.com/download/">立即安装</a>
+                        </div>
+                    </amp-script>
+
                 </div>
                 <div class="w-full lg:w-1/2 p-6 ">
                     <amp-img src="https://www.fanqiejsq.com/wp-content/uploads/2023/12/Frame-46-1.webp" width="566"
@@ -1739,11 +1758,14 @@
                     <p class="text-gray-600 mb-2">
                         番茄回国加速器使用独创的边缘节点技术加速，服务器智能分流，按需加速回国，效果稳定快速回国。在全球提供上百条高速线路，实时监控带宽流量动态调整，保证节点通道畅通，不限流量，不限时长，满足各个地区和国家的加速需求。
                     </p>
-                    <div
-                        class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                        <a class=" to-download mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-                            href="https://www.fanqiejsq.com/download/">免费开启加速</a>
-                    </div>
+                    <amp-script layout="flex-item" script="user-agent-script">
+                        <div
+                            class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+                            <a class=" to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                                href="https://www.fanqiejsq.com/download/">免费开启加速</a>
+                        </div>
+                    </amp-script>
+
                 </div>
             </div>
             <!-- end two -->
@@ -1757,11 +1779,14 @@
                     <p class="text-gray-600 mb-2">
                         番茄加速器现已全面支持苹果iPhone & iPad移动设备、Android手机、Windows PC系列、苹果macOS电脑。确保您在任何一个设备和平台上都可以顺畅加速回国。
                     </p>
-                    <div
-                        class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                        <a class=" to-download mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-                            href="https://www.fanqiejsq.com/download/">下载免费使用</a>
-                    </div>
+                    <amp-script layout="flex-item" script="user-agent-script">
+                        <div
+                            class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+                            <a class=" to-download com-down-link mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                                href="https://www.fanqiejsq.com/download/">下载免费使用</a>
+                        </div>
+                    </amp-script>
+
                 </div>
                 <div class="w-full lg:w-1/2 p-6 flex tems-center justify-center">
                     <amp-img style="max-width: min(440px, 100%);" width="966" height="674" layout="intrinsic"
@@ -1968,12 +1993,15 @@
                     </p>
                 </li>
             </ul>
-            <div class="flex-1 flex items-center justify-center  rounded-b rounded-t-none overflow-hidden  ">
-                <a href="https://www.fanqiejsq.com/download/"
-                    class="to-download mx-auto lg:mx-0  no-underline gradient text-white font-bold rounded-full my-4 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    成为VIP，一键加速
-                </a>
-            </div>
+            <amp-script layout="flex-item" script="user-agent-script">
+                <div class="flex-1 flex items-center justify-center  rounded-b rounded-t-none overflow-hidden  ">
+                    <a href="https://www.fanqiejsq.com/download/"
+                        class="to-download com-down-link mx-auto lg:mx-0  no-underline gradient text-white font-bold rounded-full my-4 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        成为VIP，一键加速
+                    </a>
+                </div>
+            </amp-script>
+
 
         </div>
 
@@ -2193,6 +2221,72 @@
     </amp-script>
     <amp-script layout="container" src="/js/utils/subMenu.js">
     </amp-script> -->
+
+    <script id="user-agent-script" type="text/plain" target="amp-script">
+        function getOS() {
+            const userAgent = navigator.userAgent,
+                platform = navigator.platform,
+                macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+                iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+
+            if (macosPlatforms.includes(platform)) {
+                return 'Mac';
+            } else if (iosPlatforms.includes(platform)) {
+                return 'iOS';
+            } else if (windowsPlatforms.includes(platform)) {
+                return 'Windows';
+            } else if (/Android/.test(userAgent)) {
+                return 'Android';
+            } else if (/Linux/.test(platform)) {
+                return 'Linux';
+            }
+
+            return 'Unknown';
+        }
+
+        const linkInfo = {
+            Mac: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/',
+            iOS: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/',
+            Windows: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/',
+            Android: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/',
+            Linux: 'https://www.fanqiejsq.com/download/',
+            Unknown: 'https://www.fanqiejsq.com/download/'
+        }
+        let link = 'https://www.fanqiejsq.com/download/'
+        function setComDownLinkHref() {
+            const system = getOS()
+            const downPageLink = linkInfo[system]
+            if (!downPageLink) {
+                return
+            }
+
+            link = downPageLink
+            try {
+                const comDownLinkDom = Array.from(document.querySelectorAll('.com-down-link'));
+                if (!comDownLinkDom || !comDownLinkDom.length) {
+                    return;
+                }
+                comDownLinkDom.forEach(item => {
+                    if (item.hasAttribute('href')) {
+                        item.setAttribute('href', downPageLink)
+                    }
+                })
+            } catch (error) {
+                console.error('An error occurred:', error);
+                // 错误处理逻辑
+            }
+
+        }
+        setComDownLinkHref()
+        AMP.setState({
+            downJumpInfo: {
+                platform: getOS(),
+                link: link
+            }
+        });
+        
+    </script>
 
 
 </body>

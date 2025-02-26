@@ -42,3 +42,35 @@ amphtml-validator index.amp.html
 5. `a` 标签不需要 `alt` 属性。对于`<a>`标签，AMP 并不允许使用alt属性，因为它没有需要描述的图像内容。
 
 
+
+
+### 获取useAge
+
+1. 必须在头部加一个meta: `<meta name="amp-script-src" content="sha384-AyqUpxrf0kBDOgIwJYBIea7n5wsTaa2g9QRN6qE62WIujdJ4h-H6XC2IYr0bPCj9">`
+
+2. 
+
+
+### 自定义js相关 1
+
+[参考链接1，展示了amp-script与script的交互](https://amp.dev/documentation/guides-and-tutorials/develop/interactivity_guide/)
+
+[参考链接1的 playground](https://playground.amp.dev/?url=https%3A%2F%2Fpreview.amp.dev%2Fdocumentation%2Fguides-and-tutorials%2Fdevelop%2Finteractivity_guide%2Findex.example.3.html%3Fformat%3Dwebsites&mode=iPhone+6%2F7%2F8+Plus)
+
+
+核心代码。
+这部分代码是有点问题的，他没有正确 设置 `setState`,  `setState` 应该是一个 json 数据。
+```html
+<amp-script width="200" height="100" script="hello-world" [class]="scriptStyle">
+  <button>Hello amp-script!</button>
+</amp-script>
+<script id="hello-world" type="text/plain" target="amp-script">
+  const btn = document.querySelector('button');
+  btn.addEventListener('click', () => {
+    document.body.textContent = 'Hello World!';
+    AMP.setState({ scriptStyle: "clickedButton" })
+  });
+</script>
+```
+
+%s: &quot;%s&quot; is not a valid result for [class]. amp-bind null
