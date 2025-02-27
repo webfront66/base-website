@@ -2,7 +2,7 @@ module.exports = {
   content: [
     "./index.html",
     "./index.amp.html",
-    "./pages/down.html"
+    "./pages/**/*.html"
   ],
 
 	safelist: [],
