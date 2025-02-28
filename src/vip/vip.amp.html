@@ -4,7 +4,7 @@
 <head>
     <!-- 引入公共的meata -->
     @@include('src/vip/tpl/_meta.ejs')
-    <meta name="amp-script-src" content="sha384-apv4AUj285EKAKfSCnNQSttToLcOTmV-EkrhK1HuO0Ta8BM-rb0u_OMymeso-I6G">
+    <meta name="amp-script-src" content="sha384-Q5JcJRI-b9OwCx94ft3-bPvbQnrGxaXPUXParfATsqVTfuZPM-DiF8AJZy1uergf">
     <link rel="canonical" href="/vip/vip.amp.html">
     <!-- 引入样式 -->
     @@include('templates/cssTpl/_link.css.amp.ejs')
@@ -54,6 +54,16 @@
         </script>
     </amp-state>
 
+    <amp-state id="tabInfo">
+        <script type="application/json">
+            {
+                "index": 0,
+                "activeTabName": "",
+                "dataTargetId": "vip_tab_1_content"
+            }
+        </script>
+    </amp-state>
+
     <!-- 头部 -->
     @@include('templates/ampTpl/_header.amp.ejs')
     <!-- end 头部 -->
@@ -65,21 +75,27 @@
         <!-- tab  -->
         <div class="container px-4 mx-auto mb-8">
             <div class="flex flex-row h-12 text-center bg-gray-100 text-gray-700 rounded-lg overflow-hidden shadow-md">
-                <div class="relative vip-tab active vip-tab-1 flex-1 h-12" data-target-id="vip_tab_1_content">
+                <div class="relative vip-tab active vip-tab-1 flex-1 h-12" data-target-id="vip_tab_1_content"
+                    [class]=" 'relative vip-tab  vip-tab-1 flex-1 h-12 ' + (tabInfo.index == '0' ? 'active' : 'no-active')"
+                    role="button" tabindex="0"
+                    on="tap:AMP.setState({tabInfo: {index: '0', activeTabName: 'vip-tab-1', dataTargetId: 'vip_tab_1_content'}})">
                     <div class="">游戏+影音会员</div>
                 </div>
-                <div class="relative vip-tab vip-tab-2 flex-1 h-12" data-target-id="vip_tab_2_content">
+                <div class="relative vip-tab vip-tab-2 flex-1 h-12" data-target-id="vip_tab_2_content"
+                    [class]=" 'relative vip-tab  vip-tab-1 flex-1 h-12 ' + (tabInfo.index == '1' ? 'active' : 'no-active')  "
+                    role="button" tabindex="0"
+                    on="tap:AMP.setState({tabInfo: {index: '1', activeTabName: 'vip-tab-1', dataTargetId: 'vip_tab_1_content'}})">
                     <div class="">影音会员</div>
                 </div>
             </div>
         </div>
 
         <!-- start 游戏+影音会员 会员套餐 + 权益 -->
-        @@include('src/vip/tpl/vip.tab1.content.ejs')
+        @@include('src/vip/tpl/vip.tab1.content.amp.ejs')
         <!-- end 游戏+影音会员 会员套餐 + 权益 -->
 
         <!-- start 影音会员  -->
-        @@include('src/vip/tpl/vip.tab2.content.ejs')
+        @@include('src/vip/tpl/vip.tab2.content.amp.ejs')
         <!-- end 影音会员  -->
     </section>
     <!-- end 会员套餐 -->
@@ -133,7 +149,6 @@
                 link: link
             }
         });
-        
     </script>
 </body>
 

@@ -26,7 +26,7 @@
         <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <title>番茄回国加速器购买VIP</title>
-        <meta name="amp-script-src" content="sha384-apv4AUj285EKAKfSCnNQSttToLcOTmV-EkrhK1HuO0Ta8BM-rb0u_OMymeso-I6G">
+        <meta name="amp-script-src" content="sha384-Q5JcJRI-b9OwCx94ft3-bPvbQnrGxaXPUXParfATsqVTfuZPM-DiF8AJZy1uergf">
         <link rel="canonical" href="/vip/vip.amp.html">
         <!-- 引入样式 -->
         <style amp-boilerplate>
@@ -2531,6 +2531,16 @@ Ensure the default browser behavior of the `hidden` attribute.
             </script>
         </amp-state>
 
+        <amp-state id="tabInfo">
+            <script type="application/json">
+                {
+                    "index": 0,
+                    "activeTabName": "",
+                    "dataTargetId": "vip_tab_1_content"
+                }
+            </script>
+        </amp-state>
+
         <!-- 头部 -->
         <!-- start header -->
         <nav id="header" class="fixed gradient w-full z-30 top-0 text-white">
@@ -2640,17 +2650,17 @@ Ensure the default browser behavior of the `hidden` attribute.
             <!-- tab  -->
             <div class="container px-4 mx-auto mb-8">
                 <div class="flex flex-row h-12 text-center bg-gray-100 text-gray-700 rounded-lg overflow-hidden shadow-md">
-                    <div class="relative vip-tab active vip-tab-1 flex-1 h-12" data-target-id="vip_tab_1_content">
+                    <div class="relative vip-tab active vip-tab-1 flex-1 h-12" data-target-id="vip_tab_1_content" [class]=" 'relative vip-tab  vip-tab-1 flex-1 h-12 ' + (tabInfo.index == '0' ? 'active' : 'no-active')" role="button" tabindex="0" on="tap:AMP.setState({tabInfo: {index: '0', activeTabName: 'vip-tab-1', dataTargetId: 'vip_tab_1_content'}})">
                         <div class="">游戏+影音会员</div>
                     </div>
-                    <div class="relative vip-tab vip-tab-2 flex-1 h-12" data-target-id="vip_tab_2_content">
+                    <div class="relative vip-tab vip-tab-2 flex-1 h-12" data-target-id="vip_tab_2_content" [class]=" 'relative vip-tab  vip-tab-1 flex-1 h-12 ' + (tabInfo.index == '1' ? 'active' : 'no-active')  " role="button" tabindex="0" on="tap:AMP.setState({tabInfo: {index: '1', activeTabName: 'vip-tab-1', dataTargetId: 'vip_tab_1_content'}})">
                         <div class="">影音会员</div>
                     </div>
                 </div>
             </div>
 
             <!-- start 游戏+影音会员 会员套餐 + 权益 -->
-            <div id="vip_tab_1_content" class="vip-tab-content tab2-enter container px-4 mx-auto mb-8 active ">
+            <div id="vip_tab_1_content" class="vip-tab-content tab2-enter container px-4 mx-auto mb-8 active " [class]="'vip-tab-content tab2-enter container px-4 mx-auto mb-8  ' + (tabInfo.index == '0' ? 'active' : 'hidden') ">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="relative grid-item p-4 flex flex-col justify-around  border rounded-lg text-center" data-hot="首充特惠">
                         <p class="text-lg font-medium my-2">包月套餐</p>
@@ -2718,7 +2728,7 @@ Ensure the default browser behavior of the `hidden` attribute.
             <!-- end 游戏+影音会员 会员套餐 + 权益 -->
 
             <!-- start 影音会员  -->
-            <div id="vip_tab_2_content" class="vip-tab-content tab1-exit  container px-4 mx-auto mb-8 hidden">
+            <div id="vip_tab_2_content" class="vip-tab-content tab1-exit  container px-4 mx-auto mb-8 hidden" [class]="'vip-tab-content tab2-enter container px-4 mx-auto mb-8  ' + (tabInfo.index == '1' ? 'active' : 'hidden') ">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="relative grid-item p-4 flex flex-col justify-around  border rounded-lg text-center" data-hot="首充特惠">
                         <p class="text-lg font-medium my-2">包月套餐</p>
@@ -3261,7 +3271,6 @@ setComDownLinkHref()
                 link: link
             }
         });
-        
     </script>
     </body>
 
