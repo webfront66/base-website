@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "dev": "gulp",
     "create-meta": "node .sh/add-meta.js",
     "create-amp-style": "node .sh/create-amp-style.js",
     "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./css/tailwind.min.css --watch",
@@ -15,7 +16,9 @@
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-prettify": "^0.5.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "mkdirp": "^3.0.1"
   }
 }
