@@ -4,7 +4,7 @@
 <head>
 	<!-- 引入公共的meata -->
 	@@include('templates/htmlTpl/_meta.ejs')
-	<meta name="amp-script-src" content="sha384-Q5JcJRI-b9OwCx94ft3-bPvbQnrGxaXPUXParfATsqVTfuZPM-DiF8AJZy1uergf">
+	<meta name="amp-script-src" content="sha384-Q5JcJRI-b9OwCx94ft3-bPvbQnrGxaXPUXParfATsqVTfuZPM-DiF8AJZy1uergf" />
 	<link rel="canonical" href="/vip/vip.amp.html">
 
 	<!-- 引入样式 -->
@@ -118,7 +118,8 @@
 
 	<!-- <script defer src="/js/utils/scroll.js"></script> -->
 	<!-- 
-        <script id="user-agent-script" type="text/plain" target="amp-script">
+		正确的type应该是 text/plain,
+		如果有需要格式化，可将type去掉，格式化完成后，再加上去。
     -->
 	<script id="user-agent-script" type="text/plain" target="amp-script">
 		@@include('js/utils/down.js')
