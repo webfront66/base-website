@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- 引入公共的meata -->
+	@@include('templates/htmlTpl/_meta.ejs')
+	<link rel="canonical" href="/study/study.html">
+
+	<!-- 引入样式 -->
+	@@include('templates/cssTpl/_link.css.ejs')
+
+	<style>
+		@@include('src/vip/tpl/vip.css') .custom-auth-xjp {}
+	</style>
+
+
+</head>
+
+<body class=" gradient">
+	<!-- 头部 -->
+	@@include('templates/htmlTpl/_header.ejs')
+	<!-- end 头部 -->
+
+
+	<!-- 主体 -->
+	<!-- sss -->
+	@@include('src/study/tpl/study.ejs')
+	<!-- end sss -->
+
+	@@include('src/study/tpl/study.bottom.ejs')
+
+	<!-- 主体 -->
+
+	<!-- 引入公共的尾部 -->
+	@@include('templates/htmlTpl/_footer.ejs')
+
+	@@include('templates/htmlTpl/_com.down.link.ejs')
+
+	<!-- <script defer src="/js/utils/scroll.js"></script> -->
+	<script defer src="/js/utils/menu.js"></script>
+	<script defer src="/js/utils/subMenu.js"></script>
+	<script defer src="/js/utils/down.js"></script>
+	<script defer src="/js/vip/tab.js"></script>
+
+</body>
+
+</html>

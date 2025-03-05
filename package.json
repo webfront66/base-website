@@ -6,7 +6,9 @@
     "create-amp-style": "node .sh/create-amp-style.js",
     "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./css/tailwind.min.css --watch",
     "tailwind.article": "npx tailwindcss -i ./tailwind/input.css -o ./css/tailwind.article.amp.css --watch --minify --config ./tailwind.article.config.js",
+    "tailwind.study": "npx tailwindcss -i ./tailwind/input.css -o ./css/tailwind.study.amp.css --watch --minify --config ./tailwind.study.config.js",
     "clear.article": "npx postcss ./css/tailwind.article.amp.css -o ./css/tailwind.article.amp.css --config postcss.config.js",
+    "clear.tailwind": "npx postcss ./css/tailwind.min.css -o ./css/tailwind.min.css --config postcss.config.js",
     "gulp.tailwind.article": "gulp --gulpfile gulpfile.tailwind.article.js build",
     "lint-amp": "node .sh/amp.linter.js",
     "lint-index-amp": "amphtml-validator index.amp.html"

@@ -64,6 +64,8 @@ gulp.task('html', () => {
 
 // 实时监控模板文件和其他源文件的变化
 gulp.task('watch', () => {
+  gulp.watch('src/**/*.js', gulp.series('html')); // 监听 .amp.html 文件
+  gulp.watch('src/**/*.css', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('src/**/*.ejs', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('src/**/*.amp.html', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('src/**/*.html', gulp.series('html')); // 监听其他 HTML 文件
