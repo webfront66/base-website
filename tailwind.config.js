@@ -8,7 +8,10 @@ module.exports = {
 
 	safelist: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+      },
+    },
   },
   plugins: [],
 }

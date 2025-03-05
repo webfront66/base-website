@@ -31,10 +31,13 @@ gulp.task('html', () => {
       indent_size: 4,           // 缩进大小，单位为空格
       indent_char: ' ',         // 缩进字符，默认为空格
       max_preserve_newlines: 1, // 最大的保留换行数
-      preserve_newlines: true,  // 保留换行
+      preserve_newlines: false,  // 保留换行
       indent_inner_html: true,  // 格式化嵌套标签
       unformatted: ['code', 'pre', 'textarea'], // 不格式化的标签
     }))
+    .pipe(replace(/<!--[\s\S]*?-->/g, ''))  // **去除所有 HTML 注释**
+    .pipe(replace(/\n\s*\n+/g, '\n\n'))
+
     .pipe(gulp.dest('pages'))
     .pipe(through2.obj(function (file, enc, cb) {
       // 获取当前文件的路径
@@ -61,6 +64,7 @@ gulp.task('html', () => {
 
 // 实时监控模板文件和其他源文件的变化
 gulp.task('watch', () => {
+  gulp.watch('src/**/*.ejs', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('src/**/*.amp.html', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('src/**/*.html', gulp.series('html')); // 监听其他 HTML 文件
 });

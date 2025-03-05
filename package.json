@@ -5,6 +5,9 @@
     "create-meta": "node .sh/add-meta.js",
     "create-amp-style": "node .sh/create-amp-style.js",
     "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./css/tailwind.min.css --watch",
+    "tailwind.article": "npx tailwindcss -i ./tailwind/input.css -o ./css/tailwind.article.amp.css --watch --minify --config ./tailwind.article.config.js",
+    "clear.article": "npx postcss ./css/tailwind.article.amp.css -o ./css/tailwind.article.amp.css --config postcss.config.js",
+    "gulp.tailwind.article": "gulp --gulpfile gulpfile.tailwind.article.js build",
     "lint-amp": "node .sh/amp.linter.js",
     "lint-index-amp": "amphtml-validator index.amp.html"
   },
@@ -25,6 +28,10 @@
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
     "mkdirp": "^3.0.1",
+    "postcss": "^8.5.3",
+    "postcss-clean": "^1.2.2",
+    "postcss-cli": "^11.0.0",
+    "postcss-comment": "^2.0.0",
     "through2": "^4.0.2"
   }
 }
