@@ -418,7 +418,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.-translate-x-4, .translate-x-2, .translate-y-2, .translate-x-4, .rotate-\[1deg\], .rotate-\[0\.5deg\], .rotate-\[0\.3deg\], .rotate-\[0\.2deg\], .rotate-1, .-rotate-1, .skew-x-6, .-skew-y-12, .-skew-x-12, .transform, .hover\:scale-105, .lg\:translate-y-6, .lg\:-translate-y-6, .lg\:-translate-y-10, .lg\:rotate-1, .lg\:-rotate-1, .lg\:-rotate-2, .lg\:-rotate-3, .lg\:rotate-3, .lg\:-rotate-45, .lg\:rotate-45, .lg\:rotate-12, .lg\:-rotate-12, .lg\:rotate-6, .lg\:-rotate-6 {
+.translate-y-2, .-translate-x-4, .translate-x-2, .translate-x-4, .rotate-\[0\.5deg\], .rotate-1, .-rotate-1, .skew-x-6, .-skew-y-12, .-skew-x-12, .transform, .hover\:scale-105, .lg\:-translate-y-10, .lg\:-rotate-6, .lg\:rotate-6 {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -429,12 +429,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.border, .border-4, .border-x, .border-y, .border-b, .border-b-2, .border-t-4 {
+.border, .border-4, .border-y, .border-x, .border-b, .border-b-2, .border-t-4 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.shadow, .shadow-lg, .shadow-md, .shadow-2xl, .shadow-inner, .shadow-xl, .hover\:shadow-2xl {
+.shadow, .shadow-lg, .shadow-md, .shadow-xl, .shadow-2xl, .shadow-inner, .hover\:shadow-2xl {
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -927,6 +927,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-collapse: collapse;
 }
 
+.translate-y-2 {
+  --tw-translate-y: 0.5rem;
+  transform: var(--tw-transform);
+}
+
 .-translate-x-4 {
   --tw-translate-x: -1rem;
   transform: var(--tw-transform);
@@ -937,33 +942,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: var(--tw-transform);
 }
 
-.translate-y-2 {
-  --tw-translate-y: 0.5rem;
-  transform: var(--tw-transform);
-}
-
 .translate-x-4 {
   --tw-translate-x: 1rem;
   transform: var(--tw-transform);
 }
 
-.rotate-\[1deg\] {
-  --tw-rotate: 1deg;
-  transform: var(--tw-transform);
-}
-
 .rotate-\[0\.5deg\] {
   --tw-rotate: 0.5deg;
-  transform: var(--tw-transform);
-}
-
-.rotate-\[0\.3deg\] {
-  --tw-rotate: 0.3deg;
-  transform: var(--tw-transform);
-}
-
-.rotate-\[0\.2deg\] {
-  --tw-rotate: 0.2deg;
   transform: var(--tw-transform);
 }
 
@@ -1178,14 +1163,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 4px;
 }
 
-.border-x {
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-
 .border-y {
   border-top-width: 1px;
   border-bottom-width: 1px;
+}
+
+.border-x {
+  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 .border-b {
@@ -1886,6 +1871,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1895,12 +1886,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow-inner {
   --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -2067,10 +2052,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 640px) {
-  .sm\:h-72 {
-    height: 18rem;
-  }
-
   .sm\:w-1\/4 {
     width: 25%;
   }
@@ -2081,10 +2062,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:w-1\/2 {
     width: 50%;
-  }
-
-  .sm\:max-w-lg {
-    max-width: 32rem;
   }
 
   .sm\:grid-cols-2 {
@@ -2149,10 +2126,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 33.333333%;
   }
 
-  .md\:max-w-2xl {
-    max-width: 42rem;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -2198,10 +2171,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 1024px) {
   .lg\:absolute {
     position: absolute;
-  }
-
-  .lg\:right-5 {
-    right: 1.25rem;
   }
 
   .lg\:mx-0 {
@@ -2257,40 +2226,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 83.333333%;
   }
 
+  .lg\:w-\[20rem\] {
+    width: 20rem;
+  }
+
   .lg\:w-80 {
     width: 20rem;
   }
 
   .lg\:w-1\/5 {
     width: 20%;
-  }
-
-  .lg\:w-10 {
-    width: 2.5rem;
-  }
-
-  .lg\:w-\[100rem\] {
-    width: 100rem;
-  }
-
-  .lg\:w-\[80rem\] {
-    width: 80rem;
-  }
-
-  .lg\:w-\[20rem\] {
-    width: 20rem;
-  }
-
-  .lg\:max-w-3xl {
-    max-width: 48rem;
-  }
-
-  .lg\:max-w-2xl {
-    max-width: 42rem;
-  }
-
-  .lg\:max-w-4xl {
-    max-width: 56rem;
   }
 
   .lg\:max-w-6xl {
@@ -2301,73 +2246,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 80rem;
   }
 
-  .lg\:translate-y-6 {
-    --tw-translate-y: 1.5rem;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:-translate-y-6 {
-    --tw-translate-y: -1.5rem;
-    transform: var(--tw-transform);
-  }
-
   .lg\:-translate-y-10 {
     --tw-translate-y: -2.5rem;
     transform: var(--tw-transform);
   }
 
-  .lg\:rotate-1 {
-    --tw-rotate: 1deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:-rotate-1 {
-    --tw-rotate: -1deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:-rotate-2 {
-    --tw-rotate: -2deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:-rotate-3 {
-    --tw-rotate: -3deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:rotate-3 {
-    --tw-rotate: 3deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:-rotate-45 {
-    --tw-rotate: -45deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:rotate-45 {
-    --tw-rotate: 45deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:rotate-12 {
-    --tw-rotate: 12deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:-rotate-12 {
-    --tw-rotate: -12deg;
+  .lg\:-rotate-6 {
+    --tw-rotate: -6deg;
     transform: var(--tw-transform);
   }
 
   .lg\:rotate-6 {
     --tw-rotate: 6deg;
-    transform: var(--tw-transform);
-  }
-
-  .lg\:-rotate-6 {
-    --tw-rotate: -6deg;
     transform: var(--tw-transform);
   }
 
