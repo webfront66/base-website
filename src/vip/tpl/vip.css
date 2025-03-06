@@ -1,3 +1,6 @@
+body.gradient {
+  color: black;
+}
 .grid-item::before {
   content: attr(data-hot);
   position: absolute;
@@ -105,6 +108,7 @@
 }
 
 /* end 对应 Tab1 和 Tab2 的显示和隐藏 */
+
 .vip-icon {
   display: inline-block;
   background-image: url("/image/vip-icons.webp");
