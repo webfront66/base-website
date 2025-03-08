@@ -24,7 +24,7 @@
         <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
         <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="amp-script-src" content="sha384-wf_Cp5VhSOI-Hi_I-i-8JJBd_y-w-svdqlDzkMHRjCsCcfPyaW2RgjXzCmnkZra1" />
+        <meta name="amp-script-src" content="sha384-mnwP03qemFHpB8ym0LPvHlq4ohe6fOF2ix7FI0rX9spSyyw87KAkDgJ6WtKGTtlq" />
         <link rel="canonical" href="/vip/vip.amp.html">
 
         <style amp-boilerplate>
@@ -2907,6 +2907,11 @@
 
             @media (min-width: 521px)
             {
+                .navigation-wrap
+                {
+                    height: 96px;
+                }
+
                 .navigation .another-element
                 {
                     display: none;
@@ -2948,51 +2953,14 @@
         <amp-state id="pagination">
             <script type="application/json">
                 {
-                    "items": [
-                    {
-                        "content": "前一页",
-                        "href": "blob:///category/test/page/6",
-                        "type": "prev"
-                    },
-                    {
-                        "content": 1,
-                        "href": "blob:///category/test/page/1",
-                        "type": "number"
-                    },
-                    {
-                        "content": "...",
-                        "type": "dots"
-                    },
-                    {
-                        "content": 6,
-                        "href": "blob:///category/test/page/6",
-                        "type": "number"
-                    },
-                    {
-                        "content": 7,
-                        "href": "blob:///category/test/page/7",
-                        "type": "number",
-                        "active": true
-                    },
-                    {
-                        "content": 8,
-                        "href": "blob:///category/test/page/8",
-                        "type": "number"
-                    },
-                    {
-                        "content": "...",
-                        "type": "dots"
-                    },
-                    {
-                        "content": 1538,
-                        "href": "blob:///category/test/page/1538",
-                        "type": "number"
-                    },
-                    {
-                        "content": "后一页",
-                        "href": "blob:///category/test/page/8",
-                        "type": "next"
-                    }]
+                    "items": []
+                }
+            </script>
+        </amp-state>
+        <amp-state id="screenState">
+            <script type="application/json">
+                {
+                    "width": 375
                 }
             </script>
         </amp-state>
@@ -3208,10 +3176,10 @@
                                 </div>
                             </li>
                         </ul>
-                        <div>
-                            <amp-script layout="fixed-height" height="144" script="user-agent-script" data-ampdevmode>
+                        <div class="navigation-wrap py-6">
+                            <amp-script layout="fixed-height" height="96" script="user-agent-script">
 
-                                <nav class="navigation pagination py-6 px-2" id="list-page-container" data-max-page="1518" data-url="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/">
+                                <nav class="navigation pagination  px-2" id="list-page-container" data-max-page="1518" data-url="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/">
                                     <div class="nav-links flex justify-center items-center gap-2 sm:gap-4 flex-wrap">
                                         <span class="another-element"></span>
 
@@ -3581,6 +3549,9 @@ setComDownLinkHref()
     }
     getPageInfo()
 })()
+		window.addEventListener('resize', () => {
+			AMP.setState({ screenState: { width: window.innerWidth } });
+		});
     </script>
     </body>
 </html>
