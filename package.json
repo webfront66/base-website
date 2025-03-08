@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "gulp",
+    "build": "node .sh/build.js",
     "hash": "node .sh/hash.js",
     "create-meta": "node .sh/add-meta.js",
     "create-amp-style": "node .sh/create-amp-style.js",
@@ -25,9 +26,11 @@
     "amphtml-validator": "^1.0.38",
     "crypto": "^1.0.1",
     "gulp-replace": "^1.1.4",
-    "tailwindcss": "^3.0.0"
+    "tailwindcss": "^3.0.0",
+    "tar": "^7.4.3"
   },
   "devDependencies": {
+    "archiver": "^7.0.1",
     "del": "^8.0.0",
     "gulp": "^5.0.0",
     "gulp-clean": "^0.4.0",
@@ -39,6 +42,7 @@
     "gulp-watch": "^5.0.1",
     "gulp-zip": "^6.1.0",
     "mkdirp": "^3.0.1",
+    "ncp": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.5.3",
     "postcss-clean": "^1.2.2",
