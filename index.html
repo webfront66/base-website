@@ -6,6 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.box {
+			padding: 20px;
+			max-width: 75%;
+			margin: 30px auto;
+			box-shadow: 5px 5px 5px blue, -5px 5px 5px blue, 5px -5px 5px blue, -5px -5px 5px blue;
+			border-radius: 8px;
+		}
+
+		.amp-box {
+			color: red;
+		}
+
 		.card-list {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -47,7 +64,7 @@
 
 <body>
 
-	<div>
+	<div class="box amp-box">
 		<h3>amp页面导航</h3>
 		<div>
 			<ul class="card-list">
@@ -61,6 +78,24 @@
 				<li><a href="./pages/article/article.amp.html">文章详情</a></li>
 				<li><a href="./pages/study/study.amp.html">使用番茄(通用版)</a></li>
 				<li><a href="./pages/game-booster/game-booster.amp.html">使用番茄(游戏加速)</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="box">
+		<h3>普通自适应页面导航</h3>
+		<div>
+			<ul class="card-list">
+				<li><a href="./pages/home/index.html">首页</a></li>
+				<li><a href="./pages/down/android-down/android-down.html">Android 下载</a></li>
+				<li><a href="./pages/down/ios-down/ios-down.html">iOS 下载</a></li>
+				<li><a href="./pages/down/mac-down/mac-down.html">Mac 下载</a></li>
+				<li><a href="./pages/down/win-down/windows-down.html">Windows 下载</a></li>
+				<li><a href="./pages/vip/vip.html">VIP 页面</a></li>
+				<li><a href="./pages/media-accel-list/media-accel-list.html">文章列表</a></li>
+				<li><a href="./pages/article/article.html">文章详情</a></li>
+				<li><a href="./pages/study/study.html">使用番茄(通用版)</a></li>
+				<li><a href="./pages/game-booster/game-booster.html">使用番茄(游戏加速)</a></li>
 			</ul>
 		</div>
 	</div>
