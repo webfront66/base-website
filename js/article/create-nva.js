@@ -6,37 +6,21 @@
      *
      * @returns {Object} 包含 category、page、total 的对象
      */
-    function getPageInfo2() {
-        console.log("getpageInfo 进入")
+    function getPageInfo() {
         const defPage = 1; // 默认页码
         const navId = "list-page-container"; // 分页信息所在的 DOM 元素 ID
-        const path = window.location.pathname;
+        const demoPath = '/category/影音加速器/page/4'
+        const pathName = window.location.pathname;
+        const path = pathName.includes('category') ? pathName : demoPath
+
         const navContainer = document.getElementById(navId);
         // 正则匹配 category 和 page
         const regex = /\/category\/([^\/]+)(?:\/page\/(\d+))?(?:\.html)?\/?$/;
         const matches = path.match(regex);
 
-        // 初始化返回的默认配置
-        const retConfig = {
-            category: "",
-            page: defPage,
-            total: defPage,
-            navContainer
-        };
+        
 
-        // 如果 URL 匹配失败，则返回默认配置
-        if (!matches) {
-            return retConfig;
-        }
-
-        // 提取分类名，并进行 URL 解码
-        const category = decodeURIComponent(matches[1]);
-
-        // 提取页码，如果未找到则默认为 1
-        const page = matches[2] ? parseInt(matches[2], 10) : defPage;
-        console.log("getPageInfo matches", matches, page)
-
-        let total = page; // 默认总页数为当前页数
+        let total = 1; // 默认总页数为当前页数
 
         try {
             // 获取分页信息的 DOM 元素
@@ -55,6 +39,24 @@
         } catch (error) {
             console.error("获取总页数失败：", error);
         }
+        // 初始化返回的默认配置
+        const retConfig = {
+            category: "",
+            page: defPage,
+            total: total,
+            navContainer
+        };
+
+        // 如果 URL 匹配失败，则返回默认配置
+        if (!matches) {
+            return retConfig;
+        }
+
+        // 提取分类名，并进行 URL 解码
+        const category = decodeURIComponent(matches[1]);
+
+        // 提取页码，如果未找到则默认为 1
+        const page = matches[2] ? parseInt(matches[2], 10) : defPage;
 
 
         // 组装最终的返回数据
@@ -66,40 +68,12 @@
         });
     }
 
-    async function getPageInfo() {
-        const navId = "list-page-container";
-        const navContainer = document.getElementById(navId);
-        const pageDataStr = await AMP.getState('pageData');
-        const pageData = JSON.parse(pageDataStr)
-        const {
-            category
-        } = pageData
-        const page = Number(pageData.page)
-        if (!navContainer) {
-            console.warn("⚠️ 没有找到分页的元素：" + navId);
-            return {
-                category: "",
-                page: 1,
-                total: 1,
-                navContainer: null
-            };
-        }
-        // 使用 getAttribute 读取 data 属性
-        const total = parseInt(navContainer.getAttribute("data-max-page") || page, 10);
-        return {
-            category,
-            page,
-            total,
-            navContainer
-        };
-    }
-
+    
     /**
      * 生成分页列表，返回一个数组，每个元素包含页码信息
      * @returns {Array} 分页信息数组
      */
-    async function generatePagination() {
-        const pageInfo = await getPageInfo();
+    function generatePagination(pageInfo) {
         const domain = location.protocol + "//" + location.hostname;
 
         const {
@@ -123,11 +97,12 @@
             if (num === page + 1) {
                 pageType === 'after'
             }
+            const href = num == 1 ? `${domain}/category/${pageInfo.category}/` : `${domain}/category/${pageInfo.category}/page/${num}`
             return {
                 content: num,
                 pageType: num === 1 ? '' : '',
                 active: num === page ? 'active ' : ' ',
-                href: `${domain}/category/${pageInfo.category}/page/${num}`,
+                href: href,
                 type: 'number',
             }
         };
@@ -195,7 +170,7 @@
             if (page > 1) {
                 paginationList.unshift({
                     content: '前一页', // 也可以用 "Prev"
-                    href: `${domain}/category/${pageInfo.category}/page/${page - 1}`,
+                    href: page - 1 > 1 ? `${domain}/category/${pageInfo.category}/page/${page - 1}` : `${domain}/category/${pageInfo.category}`,
                     type: 'prev',
                 });
             }
@@ -244,12 +219,11 @@
                 <span class="page-numbers dots  text-gray-500">…</span>
             `
         }
-        const {
-            navContainer
-        } = await getPageInfo();
+        const pageInfo = getPageInfo();
         const {
             paginationList
-        } = await generatePagination()
+        } = await generatePagination(pageInfo)
+        const {navContainer} = pageInfo
 
         let navContentHtml = ''
         paginationList.forEach(item => {
@@ -276,9 +250,7 @@
                     ${navContentHtml}
                 </div>
             `
-        console.log("finalHTml", finalHTml)
-        // navContainer && (navContainer.innerHTML = finalHTml)
-        AMP.setState({pagination: paginationList})
+        navContainer && (navContainer.innerHTML = finalHTml)
     }
 
     generatePaginationHtml()

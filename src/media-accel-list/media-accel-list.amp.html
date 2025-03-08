@@ -55,19 +55,6 @@
 			}
     	</script>
 	</amp-state>
-	<amp-state id="pagination">
-		<script type="application/json">
-			{
-				"items": []
-			}
-    	</script>
-	</amp-state>
-	<amp-state id="screenState">
-		<script type="application/json">
-		  { "width": 375 } 
-		</script>
-	</amp-state>
-
 
 	<!-- 头部 -->
 	@@include('templates/ampTpl/_header.amp.ejs')
@@ -148,9 +135,6 @@
             }
         });
 		@@include('js/article/create-nva.amp.js')
-		window.addEventListener('resize', () => {
-			AMP.setState({ screenState: { width: window.innerWidth } });
-		});
     </script>
 
 </body>
