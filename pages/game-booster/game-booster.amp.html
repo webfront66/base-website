@@ -2479,6 +2479,11 @@
                     margin-right: .5rem
                 }
 
+                .md\:flex
+                {
+                    display: flex
+                }
+
                 .md\:w-1\/2
                 {
                     width: 50%
@@ -2499,9 +2504,19 @@
                     width: 80%
                 }
 
+                .md\:w-auto
+                {
+                    width: auto
+                }
+
                 .md\:flex-row
                 {
                     flex-direction: row
+                }
+
+                .md\:justify-between
+                {
+                    justify-content: space-between
                 }
 
                 .md\:p-4
@@ -2598,6 +2613,16 @@
                     max-width: 64rem
                 }
 
+                .lg\:max-w-7xl
+                {
+                    max-width: 80rem
+                }
+
+                .lg\:flex-row
+                {
+                    flex-direction: row
+                }
+
                 .lg\:items-center
                 {
                     align-items: center
@@ -2642,9 +2667,69 @@
                     padding-right: 2rem
                 }
 
+                .lg\:py-1
+                {
+                    padding-top: .25rem;
+                    padding-bottom: .25rem
+                }
+
+                .lg\:py-10
+                {
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem
+                }
+
+                .lg\:py-20
+                {
+                    padding-top: 5rem;
+                    padding-bottom: 5rem
+                }
+
+                .lg\:px-10
+                {
+                    padding-left: 2.5rem;
+                    padding-right: 2.5rem
+                }
+
+                .lg\:px-0
+                {
+                    padding-left: 0;
+                    padding-right: 0
+                }
+
                 .lg\:pt-24
                 {
                     padding-top: 6rem
+                }
+
+                .lg\:pr-1
+                {
+                    padding-right: .25rem
+                }
+
+                .lg\:pr-12
+                {
+                    padding-right: 3rem
+                }
+
+                .lg\:pl-12
+                {
+                    padding-left: 3rem
+                }
+
+                .lg\:pr-4
+                {
+                    padding-right: 1rem
+                }
+
+                .lg\:pl-10
+                {
+                    padding-left: 2.5rem
+                }
+
+                .lg\:pl-2
+                {
+                    padding-left: .5rem
                 }
 
                 .lg\:text-4xl
@@ -2663,6 +2748,12 @@
                 {
                     font-size: 1.125rem;
                     line-height: 1.75rem
+                }
+
+                .lg\:text-base
+                {
+                    font-size: 1rem;
+                    line-height: 1.5rem
                 }
 
                 .lg\:text-white
@@ -3016,20 +3107,24 @@
         </nav>
 
         <section class="bg-gray-100  px-6 lg:px-12  py-8 pt-16 lg:pt-24">
-            <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <div class="container px-2 lg:pl-12 lg:pr-4 mx-auto flex flex-wrap flex-col lg:flex-row items-center">
 
-                <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+                <div class="flex flex-1 flex-col lg:pr-12 lg:pl-2 w-full justify-center items-start text-center md:text-left">
 
                     <h1 class="my-4 text-lg lg:text-2xl font-bold leading-tight"> 番茄-游戏回国加速 </h1>
-                    <p class="leading-normal text-base mb-4 lg:text-lg"> 身在海外玩国服游戏延迟高经常掉线？使用番茄加速器，一键回国游戏加速，极速稳定不丢包，完美支持加速Window、iOS、Android多平台使用，王者荣耀、和平精英、英雄联盟、魔兽世界等国服游戏，玩游戏同时还支持YY语音、听音乐、看视频。 </p>
-                    <div class="w-full flex-1 flex items-center justify-center  rounded-b rounded-t-none overflow-hidden  ">
-                        <a href="https://www.fanqiejsq.com/download/" class="to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"> 一键加速国服应用和游戏 </a>
+                    <p class="leading-normal text-base mb-4 lg:text-base"> 身在海外玩国服游戏延迟高经常掉线？使用番茄加速器，一键回国游戏加速，极速稳定不丢包，完美支持加速Window、iOS、Android多平台使用，王者荣耀、和平精英、英雄联盟、魔兽世界等国服游戏，玩游戏同时还支持YY语音、听音乐、看视频。 </p>
+                    <div class="w-full">
+                        <amp-script layout="flex-item" script="user-agent-script">
+                            <div class="w-full flex-1 flex items-center justify-center my-6 rounded-b rounded-t-none overflow-hidden  ">
+                                <a href="https://www.fanqiejsq.com/download/" class="to-download com-down-link mx-auto lg:mx-0  gradient text-base text-white font-bold rounded-full  py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"> 一键加速国服应用和游戏 </a>
+                            </div>
+                        </amp-script>
                     </div>
                 </div>
 
-                <div class="w-full md:w-3/5 px-6  pt-2 pb-6 lg:py-6 text-center ">
+                <div class="w-full lg:w-auto px-2  pt-2 pb-6 lg:py-6 text-center ">
 
-                    <amp-img layout="intrinsic" width="550" height="428" src="/image/game/game-col-1.webp" style="max-width: min(520px, 100%); "></amp-img>
+                    <amp-img layout="intrinsic" width="550" height="428" src="/image/game/game-col-1.webp" style="max-width: min(480px, 100%); "></amp-img>
                 </div>
             </div>
         </section>
