@@ -2945,7 +2945,7 @@
                 {
                     "url": "https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8",
                     "category": "test",
-                    "page": 2,
+                    "page": 1518,
                     "total": 1518
                 }
             </script>
@@ -3186,7 +3186,7 @@
                                         </a>
 
                                         <span [hidden]="pageData.page + 1 >= pageData.total - 1 || pageData.total < 5 " class="page-numbers dots   text-gray-500">…</span>
-                                        <a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + pageData.total" [text]="pageData.total">
+                                        <a [class]="'page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all ' + (pageData.page == pageData.total ? ' active' : '') " [href]="pageData.url + 'page/' + pageData.total" [text]="pageData.total">
                                         </a>
                                         <a [hidden]="pageData.page == pageData.total || pageData.total < 5" class="next page-numbers flex items-center gap-1 p-2  h-10 text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + (pageData.page + 1)"> 后一页 <span class="ast-right-arrow text-lg sm:text-xl">→</span>
                                         </a>

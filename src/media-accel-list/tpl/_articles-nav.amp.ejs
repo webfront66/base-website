@@ -50,7 +50,7 @@
 		<span [hidden]="pageData.page + 1 >= pageData.total - 1 || pageData.total < 5 "
 			class="page-numbers dots   text-gray-500">…</span>
 
-		<a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
+		<a [class]="'page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all ' + (pageData.page == pageData.total ? ' active' : '') "
 			[href]="pageData.url + 'page/' + pageData.total" [text]="pageData.total">
 		</a>
 		<a [hidden]="pageData.page == pageData.total || pageData.total < 5"
