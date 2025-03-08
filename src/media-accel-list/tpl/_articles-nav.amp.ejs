@@ -10,6 +10,7 @@
 	<div class="nav-links flex justify-center items-center gap-2 sm:gap-4 flex-wrap">
 		<span class="another-element"></span>
 
+		<!-- page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all -->
 		<!-- 前一页的链接，需要做判断，如果前一页是第一页，则直接就是 pageData.url -->
 		<a hidden [hidden]="pageData.page  == 1 || pageData.total < 5"
 			class="prev page-numbers flex items-center gap-1 p-2 h-10  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
@@ -17,7 +18,7 @@
 			<span class="ast-left-arrow text-lg sm:text-xl ">←</span> 前一页
 		</a>
 		<!-- 第一页 -->
-		<a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
+		<a [class]="'page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all ' + (pageData.page == '1' ? ' active' : '') "
 			[href]="pageData.url">
 			1
 		</a>
@@ -27,14 +28,14 @@
 
 		<!-- page -1，但是如果page - 1 === 1,这里需要隐藏。 -->
 		<a [hidden]="pageData.page - 1 <= 1"
-			class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
+			class=" page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
 			[href]="(pageData.page - 1 == 1) ? pageData.url : pageData.url + 'page/' + (pageData.page - 1)"
 			[text]="pageData.page - 1">
 		</a>
 
 		<!-- page 当前页码如果 === 1，也需要隐藏。 -->
 		<a [hidden]="pageData.page == 1 || pageData.page == pageData.total"
-			class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
+			class="active page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
 			[href]="pageData.url + 'page/' + pageData.page " [text]="pageData.page">
 
 		</a>

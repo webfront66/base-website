@@ -3172,14 +3172,14 @@
                                         <a hidden [hidden]="pageData.page  == 1 || pageData.total < 5" class="prev page-numbers flex items-center gap-1 p-2 h-10  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="(pageData.page - 1 == 1) ?  pageData.url : pageData.url + 'page/' + (pageData.page - 1)">
                                             <span class="ast-left-arrow text-lg sm:text-xl ">←</span> 前一页 </a>
 
-                                        <a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url"> 1 </a>
+                                        <a [class]="'page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all ' + (pageData.page == '1' ? ' active' : '') " [href]="pageData.url"> 1 </a>
 
                                         <span [hidden]="pageData.page  < 4" class="page-numbers dots  text-gray-500">…</span>
 
-                                        <a [hidden]="pageData.page - 1 <= 1" class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="(pageData.page - 1 == 1) ? pageData.url : pageData.url + 'page/' + (pageData.page - 1)" [text]="pageData.page - 1">
+                                        <a [hidden]="pageData.page - 1 <= 1" class=" page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="(pageData.page - 1 == 1) ? pageData.url : pageData.url + 'page/' + (pageData.page - 1)" [text]="pageData.page - 1">
                                         </a>
 
-                                        <a [hidden]="pageData.page == 1 || pageData.page == pageData.total" class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + pageData.page " [text]="pageData.page">
+                                        <a [hidden]="pageData.page == 1 || pageData.page == pageData.total" class="active page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + pageData.page " [text]="pageData.page">
                                         </a>
 
                                         <a [hidden]="pageData.page + 1 >= pageData.total" class="after page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + (pageData.page + 1)" [text]="pageData.page + 1">
