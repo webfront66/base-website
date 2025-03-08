@@ -915,6 +915,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 0.875rem;
 }
 
+.min-w-0 {
+  min-width: 0px;
+}
+
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -929,6 +933,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-\[calc\(100\%-340px\)\] {
+  max-width: calc(100% - 340px);
 }
 
 .flex-1 {
@@ -2318,6 +2330,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:max-w-5xl {
     max-width: 64rem;
+  }
+
+  .lg\:max-w-\[calc\(100\%-340px\)\] {
+    max-width: calc(100% - 340px);
   }
 
   .lg\:-translate-y-10 {

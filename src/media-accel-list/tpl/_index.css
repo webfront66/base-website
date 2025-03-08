@@ -17,7 +17,7 @@
 .page-numbers.active {
   background: #d63869;
   color: #fff;
-  transform: scale(1.1);
+  font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .text-shadow-custom {
