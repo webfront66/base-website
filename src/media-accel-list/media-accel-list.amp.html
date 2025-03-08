@@ -58,19 +58,14 @@
 	<amp-state id="pagination">
 		<script type="application/json">
 			{
-				"items": [
-					{ "content": "前一页", "href": "blob:///category/test/page/6", "type": "prev" },
-					{ "content": 1, "href": "blob:///category/test/page/1", "type": "number" },
-					{ "content": "...", "type": "dots" },
-					{ "content": 6, "href": "blob:///category/test/page/6", "type": "number" },
-					{ "content": 7, "href": "blob:///category/test/page/7", "type": "number", "active": true },
-					{ "content": 8, "href": "blob:///category/test/page/8", "type": "number" },
-					{ "content": "...", "type": "dots" },
-					{ "content": 1538, "href": "blob:///category/test/page/1538", "type": "number" },
-					{ "content": "后一页", "href": "blob:///category/test/page/8", "type": "next" }
-				]
+				"items": []
 			}
     	</script>
+	</amp-state>
+	<amp-state id="screenState">
+		<script type="application/json">
+		  { "width": 375 } 
+		</script>
 	</amp-state>
 
 
@@ -98,16 +93,10 @@
 						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
 
 					</ul>
-					<div>
-						<amp-script layout="fixed-height" height="144" script="user-agent-script" data-ampdevmode>
-							<!-- <nav class="navigation pagination py-6 px-2" id="list-page-container"
-								data-url="category/test/page/5.amp.html" data-max-page="1538">
-
-							</nav> -->
+					<div class="navigation-wrap py-6">
+						<amp-script layout="fixed-height" height="96" script="user-agent-script">
 							@@include('src/media-accel-list/tpl/_articles-nav.amp.ejs')
 						</amp-script>
-
-
 					</div>
 				</div>
 				<div class="aside-nav-box  lg:w-80    lg:ml-5 h-full ">
@@ -159,6 +148,9 @@
             }
         });
 		@@include('js/article/create-nva.amp.js')
+		window.addEventListener('resize', () => {
+			AMP.setState({ screenState: { width: window.innerWidth } });
+		});
     </script>
 
 </body>
