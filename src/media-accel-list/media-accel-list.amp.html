@@ -13,6 +13,9 @@
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
 	<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 	<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+	<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+	<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
 	<style amp-custom>
 		@@include('css/tailwind.media.amp.css') @@include('css/family.css') @@include('css/com.page.css') @@include('src/media-accel-list/tpl/_index.css') .custom-auth-xjp {}
 	</style>
@@ -42,6 +45,34 @@
 			}
 		</script>
 	</amp-state>
+	<amp-state id="pageData">
+		<script type="application/json">
+			{
+				"url": "https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8",
+				"category": "test",
+				"page": 2,
+				"total": 1518
+			}
+    	</script>
+	</amp-state>
+	<amp-state id="pagination">
+		<script type="application/json">
+			{
+				"items": [
+					{ "content": "前一页", "href": "blob:///category/test/page/6", "type": "prev" },
+					{ "content": 1, "href": "blob:///category/test/page/1", "type": "number" },
+					{ "content": "...", "type": "dots" },
+					{ "content": 6, "href": "blob:///category/test/page/6", "type": "number" },
+					{ "content": 7, "href": "blob:///category/test/page/7", "type": "number", "active": true },
+					{ "content": 8, "href": "blob:///category/test/page/8", "type": "number" },
+					{ "content": "...", "type": "dots" },
+					{ "content": 1538, "href": "blob:///category/test/page/1538", "type": "number" },
+					{ "content": "后一页", "href": "blob:///category/test/page/8", "type": "next" }
+				]
+			}
+    	</script>
+	</amp-state>
+
 
 	<!-- 头部 -->
 	@@include('templates/ampTpl/_header.amp.ejs')
@@ -65,15 +96,18 @@
 					<ul class="flex flex-wrap">
 						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
 						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
-						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
-						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
-						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
-						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
-						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
-						@@include('src/media-accel-list/tpl/_articles-item.amp.ejs')
+
 					</ul>
 					<div>
-						@@include('src/media-accel-list/tpl/_articles-nav.ejs')
+						<amp-script layout="fixed-height" height="144" script="user-agent-script" data-ampdevmode>
+							<!-- <nav class="navigation pagination py-6 px-2" id="list-page-container"
+								data-url="category/test/page/5.amp.html" data-max-page="1538">
+
+							</nav> -->
+							@@include('src/media-accel-list/tpl/_articles-nav.amp.ejs')
+						</amp-script>
+
+
 					</div>
 				</div>
 				<div class="aside-nav-box  lg:w-80    lg:ml-5 h-full ">
@@ -96,10 +130,6 @@
 		<!-- end 文章列表 -->
 
 	</div>
-
-
-
-
 
 
 
@@ -128,6 +158,7 @@
                 link: link
             }
         });
+		@@include('js/article/create-nva.amp.js')
     </script>
 
 </body>

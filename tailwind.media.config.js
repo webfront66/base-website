@@ -10,6 +10,9 @@ module.exports = {
 	safelist: [],
   theme: {
     extend: {
+      screens: {
+        'xs': '520px', // 480px 以下的设备
+      },
       colors: {
       },
     },

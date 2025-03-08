@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="番茄回国加速器，海外华人和留学生的专业回国VPN选择。一键解锁中国影音、游戏加速，全平台兼容。享受无缝访问国内网站和应用的体验，包括热门视频、音乐平台和游戏。稳定、快速、易用，为海外生活的中国人提供完美的网络解决方案。" />
-    <meta name="amp-script-src" content="sha384-J6n2HQC8NjIRuKrMNdwQLkvPdNO4UlnIvnC4e9F_n-ua01C8xicyvNMmfKtbxdN8" />
+    <meta name="amp-script-src" content="sha384-16hMwOBBwIir2wewUqX8RmOaG-6O2Ok95BQbDT_Ywdmx_j_73h9qoeoDpxKnblfC" />
     <link rel="canonical" href="/article/article.amp.html">
 
     <style amp-boilerplate>
@@ -2213,7 +2213,7 @@
 
 
 
-    <script id="user-agent-script" target="amp-script">
+    <script id="user-agent-script" type="text/plain" target="amp-script">
         function getOS () {
             const userAgent = navigator.userAgent,
                 platform = navigator.platform,
@@ -2272,8 +2272,10 @@
         setComDownLinkHref()
 
         const acticleNavDom = document.getElementById('acticle-nav')
-        const params = new URLSearchParams(window.location.search);
+        const search = window.location.search
+        const params = [];
         let queryObj = {};
+        debugger
 
         params.forEach((value, key) => {
             queryObj[key] = value;

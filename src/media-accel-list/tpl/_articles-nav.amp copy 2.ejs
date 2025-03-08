@@ -7,8 +7,10 @@
 
 	<div class="nav-links flex justify-center items-center gap-2 sm:gap-4 flex-wrap">
 		<span class="another-element"></span>
-		<a class=" xs:bg-red-500 prev page-numbers flex items-center gap-1 p-2 h-10  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
-			href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/">
+
+		<a [hidden]="pageData.page  == 1 || pageData.total < 5"
+			class=" xs:bg-red-500 prev page-numbers flex items-center gap-1 p-2 h-10  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
+			href="https://www.baidu.com">
 			<span class="ast-left-arrow text-lg sm:text-xl ">←</span> 前一页
 		</a>
 
@@ -18,7 +20,7 @@
 			1
 		</a>
 		<!-- page 大于2的时候，这里需要显示。 -->
-		<span class="page-numbers dots  text-gray-500">…</span>
+		<span [hidden]="!pagination.hasBeforeDot" class="page-numbers dots  text-gray-500">…</span>
 
 		<!-- page -1，但是如果page - 1 === 1,这里需要隐藏。 -->
 		<a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
@@ -38,13 +40,14 @@
 		</a>
 
 		<!-- total - page > 1 , 显示，否则隐藏。 -->
-		<span class="page-numbers dots   text-gray-500">…</span>
+		<span [hidden]="!pagination.hasAfterDot" class="page-numbers dots   text-gray-500">…</span>
 
 		<a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
 			href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/page/1518/">
 			1,518
 		</a>
-		<a class="next page-numbers flex items-center gap-1 p-2  h-10 text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
+		<a [hidden]="pageData.page == pageData.total || pageData.total < 5"
+			class="next page-numbers flex items-center gap-1 p-2  h-10 text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all"
 			href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/page/3/">
 			后一页 <span class="ast-right-arrow text-lg sm:text-xl">→</span>
 		</a>

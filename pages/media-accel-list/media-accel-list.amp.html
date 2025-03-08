@@ -24,7 +24,7 @@
         <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
         <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="amp-script-src" content="sha384-J6n2HQC8NjIRuKrMNdwQLkvPdNO4UlnIvnC4e9F_n-ua01C8xicyvNMmfKtbxdN8" />
+        <meta name="amp-script-src" content="sha384-wf_Cp5VhSOI-Hi_I-i-8JJBd_y-w-svdqlDzkMHRjCsCcfPyaW2RgjXzCmnkZra1" />
         <link rel="canonical" href="/vip/vip.amp.html">
 
         <style amp-boilerplate>
@@ -115,6 +115,8 @@
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
         <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+        <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+        <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
         <style amp-custom>
             /*! tailwindcss v3.0.0 | MIT License | https://tailwindcss.com*/
             *,
@@ -394,6 +396,7 @@
             .-translate-x-4,
             .hover\:scale-105,
             .rotate-1,
+            .rotate-12,
             .skew-x-6,
             .transform,
             .translate-x-2,
@@ -482,6 +485,14 @@
             .container
             {
                 width: 100%
+            }
+
+            @media (min-width:520px)
+            {
+                .container
+                {
+                    max-width: 520px
+                }
             }
 
             @media (min-width:640px)
@@ -1106,9 +1117,14 @@
             }
 
             .-rotate-1,
-            .skew-x-6
+            .rotate-12
             {
                 transform: var(--tw-transform)
+            }
+
+            .rotate-12
+            {
+                --tw-rotate: 12deg
             }
 
             .skew-x-6
@@ -1116,15 +1132,15 @@
                 --tw-skew-x: 6deg
             }
 
+            .-skew-y-12,
+            .skew-x-6
+            {
+                transform: var(--tw-transform)
+            }
+
             .-skew-y-12
             {
                 --tw-skew-y: -12deg
-            }
-
-            .-skew-x-12,
-            .-skew-y-12
-            {
-                transform: var(--tw-transform)
             }
 
             .-skew-x-12
@@ -1132,6 +1148,7 @@
                 --tw-skew-x: -12deg
             }
 
+            .-skew-x-12,
             .transform
             {
                 transform: var(--tw-transform)
@@ -1270,6 +1287,13 @@
                 --tw-space-y-reverse: 0;
                 margin-top: calc(1.5rem*(1 - var(--tw-space-y-reverse)));
                 margin-bottom: calc(1.5rem*var(--tw-space-y-reverse))
+            }
+
+            .space-x-1>:not([hidden])~:not([hidden])
+            {
+                --tw-space-x-reverse: 0;
+                margin-right: calc(.25rem*var(--tw-space-x-reverse));
+                margin-left: calc(.25rem*(1 - var(--tw-space-x-reverse)))
             }
 
             .overflow-hidden,
@@ -2173,6 +2197,12 @@
                 color: rgb(30 58 138/var(--tw-text-opacity))
             }
 
+            .text-blue-700
+            {
+                --tw-text-opacity: 1;
+                color: rgb(29 78 216/var(--tw-text-opacity))
+            }
+
             .underline
             {
                 text-decoration: underline
@@ -2203,16 +2233,22 @@
                 opacity: .5
             }
 
+            .shadow-xl
+            {
+                --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1);
+                --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)
+            }
+
+            .shadow,
+            .shadow-xl
+            {
+                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+            }
+
             .shadow
             {
                 --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
                 --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)
-            }
-
-            .shadow,
-            .shadow-lg
-            {
-                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
             }
 
             .shadow-lg
@@ -2221,22 +2257,16 @@
                 --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)
             }
 
+            .shadow-lg,
             .shadow-md
-            {
-                --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
-                --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color)
-            }
-
-            .shadow-md,
-            .shadow-xl
             {
                 box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
             }
 
-            .shadow-xl
+            .shadow-md
             {
-                --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1);
-                --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)
+                --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
+                --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color)
             }
 
             .shadow-2xl
@@ -2437,16 +2467,6 @@
 
             @media (min-width:640px)
             {
-                .sm\:flex
-                {
-                    display: flex
-                }
-
-                .sm\:hidden
-                {
-                    display: none
-                }
-
                 .sm\:w-1\/2
                 {
                     width: 50%
@@ -2457,26 +2477,9 @@
                     width: 33.333333%
                 }
 
-                .sm\:w-auto
-                {
-                    width: auto
-                }
-
                 .sm\:gap-4
                 {
                     gap: 1rem
-                }
-
-                .sm\:px-4
-                {
-                    padding-left: 1rem;
-                    padding-right: 1rem
-                }
-
-                .sm\:py-3
-                {
-                    padding-top: .75rem;
-                    padding-bottom: .75rem
                 }
 
                 .sm\:text-xl
@@ -2488,11 +2491,6 @@
 
             @media (min-width:768px)
             {
-                .md\:hidden
-                {
-                    display: none
-                }
-
                 .md\:w-1\/2
                 {
                     width: 50%
@@ -2620,6 +2618,15 @@
                 .xl\:gap-6
                 {
                     gap: 1.5rem
+                }
+            }
+
+            @media (min-width:520px)
+            {
+                .xs\:bg-red-500
+                {
+                    --tw-bg-opacity: 1;
+                    background-color: rgb(239 68 68/var(--tw-bg-opacity))
                 }
             }
 
@@ -2850,17 +2857,60 @@
 
             .breadcrumbs-link:last-child:after
             {
-                content: ''
+                content: "";
             }
 
             .articles-item
             {
-                box-shadow: 2px -2px 2px rgba(240, 240, 240, 0.9), 2px -4px 4px rgba(150, 130, 100, 0.6);
+                box-shadow: 2px -2px 2px rgba(240, 240, 240, 0.9),
+                    2px -4px 4px rgba(150, 130, 100, 0.6);
             }
 
             .aside-nav-item
             {
-                box-shadow: 8px -4px 2px rgba(240, 240, 240, 0.9), 8px -6px 4px rgba(150, 130, 100, 0.6), -4px -4px 2px rgba(39, 13, 133, 0.9);
+                box-shadow: 8px -4px 2px rgba(240, 240, 240, 0.9),
+                    8px -6px 4px rgba(150, 130, 100, 0.6), -4px -4px 2px rgba(39, 13, 133, 0.9);
+            }
+
+            .page-numbers.active
+            {
+                background: #d63869;
+                color: #fff;
+                transform: scale(1.1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .text-shadow-custom
+            {
+                text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.5);
+            }
+
+            @media (max-width: 520px)
+            {
+                .another-element
+                {
+                    order: 1;
+                    width: 100%;
+                }
+
+                .navigation .nav-links .prev
+                {
+                    order: 2;
+                }
+
+                .navigation .nav-links .next
+                {
+                    order: 3;
+                    /* display: none; */
+                }
+            }
+
+            @media (min-width: 521px)
+            {
+                .navigation .another-element
+                {
+                    display: none;
+                }
             }
 
             .custom-auth-xjp
@@ -2882,6 +2932,67 @@
                 {
                     "platform": "unknown",
                     "link": ""
+                }
+            </script>
+        </amp-state>
+        <amp-state id="pageData">
+            <script type="application/json">
+                {
+                    "url": "https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8",
+                    "category": "test",
+                    "page": 2,
+                    "total": 1518
+                }
+            </script>
+        </amp-state>
+        <amp-state id="pagination">
+            <script type="application/json">
+                {
+                    "items": [
+                    {
+                        "content": "前一页",
+                        "href": "blob:///category/test/page/6",
+                        "type": "prev"
+                    },
+                    {
+                        "content": 1,
+                        "href": "blob:///category/test/page/1",
+                        "type": "number"
+                    },
+                    {
+                        "content": "...",
+                        "type": "dots"
+                    },
+                    {
+                        "content": 6,
+                        "href": "blob:///category/test/page/6",
+                        "type": "number"
+                    },
+                    {
+                        "content": 7,
+                        "href": "blob:///category/test/page/7",
+                        "type": "number",
+                        "active": true
+                    },
+                    {
+                        "content": 8,
+                        "href": "blob:///category/test/page/8",
+                        "type": "number"
+                    },
+                    {
+                        "content": "...",
+                        "type": "dots"
+                    },
+                    {
+                        "content": 1538,
+                        "href": "blob:///category/test/page/1538",
+                        "type": "number"
+                    },
+                    {
+                        "content": "后一页",
+                        "href": "blob:///category/test/page/8",
+                        "type": "next"
+                    }]
                 }
             </script>
         </amp-state>
@@ -2967,15 +3078,15 @@
 
         <section class=" py-4 pt-16 lg:pt-24  ">
             <div class="container mx-auto px-6 text-white">
-                <nav class="flex items-center text-lg space-x-2" aria-label="面包屑">
+                <nav class="flex items-center text-lg space-x-1" aria-label="面包屑">
 
                     <a href="https://www.fanqiejsq.com/" class="breadcrumbs-link font-bold text-white hover:text-yellow-400 transition relative after:content-['/'] after:text-white after:mx-2"> 首页 </a>
 
                     <a href="https://www.fanqiejsq.com/category/%e5%bd%b1%e9%9f%b3%e5%8a%a0%e9%80%9f%e5%99%a8/" class="breadcrumbs-link  font-bold text-white hover:text-yellow-400 transition relative after:content-['/'] after:text-white after:mx-2"> 影音加速器 </a>
 
-                    <span class="text-gray-800 text-base">第 3 页</span>
+                    <span class="text-gray-900 text-base">第 3 页</span>
                 </nav>
-                <h2 class="text-xl font-bold mt-2">影音加速器</h2>
+                <h2 class="text-shadow-custom text-xl font-bold mt-2">影音加速器</h2>
             </div>
         </section>
         <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -3096,355 +3207,39 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="w-full sm:w-1/2 p-4">
-                                <div class="articles-item  shadow-lg rounded-lg overflow-hidden border border-gray-200 bg-white p-4">
-                                    <div class="articles-title mb-3">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                                            <h2 class="truncate">微信在新加坡用不了怎么办：海外访问中国网站和应用的解决方案</h2>
-                                        </a>
-                                    </div>
-                                    <div class="articles-img-box mb-3">
-                                        <a class="block" href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/">
-                                            <amp-img class="articles-img" src="https://www.fanqiejsq.com/wp-content/uploads/2024/07/影视-一念关山1.webp" alt="日本怎么打不开大众点评" width="127" height="64" layout="responsive" style="object-fit: cover; border-radius: 8px; ">
-                                            </amp-img>
-
-                                        </a>
-                                    </div>
-                                    <div class="articles-desc text-gray-600 text-sm mb-3 cursor-pointer truncate">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium ">微信在新加坡用不了怎么办</a>
-                                    </div>
-                                    <div class="articles-footer ">
-                                        <div class="w-full text-right">
-                                            <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium">查看详情 →</a>
-                                        </div>
-                                        <div>
-
-                                            <div class="w-full my-1 ">
-                                                <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                                            </div>
-                                            <div class="text-black flex gap-1">
-                                                <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://www.facebook.com/sharer/sharer.php?u=">
-                                                    <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                                            <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-twitter" href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://twitter.com/intent/text=%E9%A6%96%E9%A1%B5&url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                                            <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-weibo" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5" data-target-url="http://service.weibo.com/share/share.php?url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                                                        <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                                            <g fill="#fff">
-                                                                <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                                                </path>
-                                                                <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                                                </path>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="w-full sm:w-1/2 p-4">
-                                <div class="articles-item  shadow-lg rounded-lg overflow-hidden border border-gray-200 bg-white p-4">
-                                    <div class="articles-title mb-3">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                                            <h2 class="truncate">微信在新加坡用不了怎么办：海外访问中国网站和应用的解决方案</h2>
-                                        </a>
-                                    </div>
-                                    <div class="articles-img-box mb-3">
-                                        <a class="block" href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/">
-                                            <amp-img class="articles-img" src="https://www.fanqiejsq.com/wp-content/uploads/2024/07/影视-一念关山1.webp" alt="日本怎么打不开大众点评" width="127" height="64" layout="responsive" style="object-fit: cover; border-radius: 8px; ">
-                                            </amp-img>
-
-                                        </a>
-                                    </div>
-                                    <div class="articles-desc text-gray-600 text-sm mb-3 cursor-pointer truncate">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium ">微信在新加坡用不了怎么办</a>
-                                    </div>
-                                    <div class="articles-footer ">
-                                        <div class="w-full text-right">
-                                            <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium">查看详情 →</a>
-                                        </div>
-                                        <div>
-
-                                            <div class="w-full my-1 ">
-                                                <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                                            </div>
-                                            <div class="text-black flex gap-1">
-                                                <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://www.facebook.com/sharer/sharer.php?u=">
-                                                    <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                                            <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-twitter" href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://twitter.com/intent/text=%E9%A6%96%E9%A1%B5&url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                                            <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-weibo" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5" data-target-url="http://service.weibo.com/share/share.php?url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                                                        <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                                            <g fill="#fff">
-                                                                <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                                                </path>
-                                                                <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                                                </path>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="w-full sm:w-1/2 p-4">
-                                <div class="articles-item  shadow-lg rounded-lg overflow-hidden border border-gray-200 bg-white p-4">
-                                    <div class="articles-title mb-3">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                                            <h2 class="truncate">微信在新加坡用不了怎么办：海外访问中国网站和应用的解决方案</h2>
-                                        </a>
-                                    </div>
-                                    <div class="articles-img-box mb-3">
-                                        <a class="block" href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/">
-                                            <amp-img class="articles-img" src="https://www.fanqiejsq.com/wp-content/uploads/2024/07/影视-一念关山1.webp" alt="日本怎么打不开大众点评" width="127" height="64" layout="responsive" style="object-fit: cover; border-radius: 8px; ">
-                                            </amp-img>
-
-                                        </a>
-                                    </div>
-                                    <div class="articles-desc text-gray-600 text-sm mb-3 cursor-pointer truncate">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium ">微信在新加坡用不了怎么办</a>
-                                    </div>
-                                    <div class="articles-footer ">
-                                        <div class="w-full text-right">
-                                            <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium">查看详情 →</a>
-                                        </div>
-                                        <div>
-
-                                            <div class="w-full my-1 ">
-                                                <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                                            </div>
-                                            <div class="text-black flex gap-1">
-                                                <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://www.facebook.com/sharer/sharer.php?u=">
-                                                    <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                                            <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-twitter" href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://twitter.com/intent/text=%E9%A6%96%E9%A1%B5&url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                                            <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-weibo" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5" data-target-url="http://service.weibo.com/share/share.php?url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                                                        <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                                            <g fill="#fff">
-                                                                <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                                                </path>
-                                                                <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                                                </path>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="w-full sm:w-1/2 p-4">
-                                <div class="articles-item  shadow-lg rounded-lg overflow-hidden border border-gray-200 bg-white p-4">
-                                    <div class="articles-title mb-3">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                                            <h2 class="truncate">微信在新加坡用不了怎么办：海外访问中国网站和应用的解决方案</h2>
-                                        </a>
-                                    </div>
-                                    <div class="articles-img-box mb-3">
-                                        <a class="block" href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/">
-                                            <amp-img class="articles-img" src="https://www.fanqiejsq.com/wp-content/uploads/2024/07/影视-一念关山1.webp" alt="日本怎么打不开大众点评" width="127" height="64" layout="responsive" style="object-fit: cover; border-radius: 8px; ">
-                                            </amp-img>
-
-                                        </a>
-                                    </div>
-                                    <div class="articles-desc text-gray-600 text-sm mb-3 cursor-pointer truncate">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium ">微信在新加坡用不了怎么办</a>
-                                    </div>
-                                    <div class="articles-footer ">
-                                        <div class="w-full text-right">
-                                            <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium">查看详情 →</a>
-                                        </div>
-                                        <div>
-
-                                            <div class="w-full my-1 ">
-                                                <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                                            </div>
-                                            <div class="text-black flex gap-1">
-                                                <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://www.facebook.com/sharer/sharer.php?u=">
-                                                    <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                                            <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-twitter" href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://twitter.com/intent/text=%E9%A6%96%E9%A1%B5&url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                                            <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-weibo" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5" data-target-url="http://service.weibo.com/share/share.php?url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                                                        <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                                            <g fill="#fff">
-                                                                <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                                                </path>
-                                                                <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                                                </path>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="w-full sm:w-1/2 p-4">
-                                <div class="articles-item  shadow-lg rounded-lg overflow-hidden border border-gray-200 bg-white p-4">
-                                    <div class="articles-title mb-3">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                                            <h2 class="truncate">微信在新加坡用不了怎么办：海外访问中国网站和应用的解决方案</h2>
-                                        </a>
-                                    </div>
-                                    <div class="articles-img-box mb-3">
-                                        <a class="block" href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/">
-                                            <amp-img class="articles-img" src="https://www.fanqiejsq.com/wp-content/uploads/2024/07/影视-一念关山1.webp" alt="日本怎么打不开大众点评" width="127" height="64" layout="responsive" style="object-fit: cover; border-radius: 8px; ">
-                                            </amp-img>
-
-                                        </a>
-                                    </div>
-                                    <div class="articles-desc text-gray-600 text-sm mb-3 cursor-pointer truncate">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium ">微信在新加坡用不了怎么办</a>
-                                    </div>
-                                    <div class="articles-footer ">
-                                        <div class="w-full text-right">
-                                            <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium">查看详情 →</a>
-                                        </div>
-                                        <div>
-
-                                            <div class="w-full my-1 ">
-                                                <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                                            </div>
-                                            <div class="text-black flex gap-1">
-                                                <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://www.facebook.com/sharer/sharer.php?u=">
-                                                    <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                                            <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-twitter" href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://twitter.com/intent/text=%E9%A6%96%E9%A1%B5&url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                                            <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-weibo" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5" data-target-url="http://service.weibo.com/share/share.php?url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                                                        <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                                            <g fill="#fff">
-                                                                <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                                                </path>
-                                                                <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                                                </path>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="w-full sm:w-1/2 p-4">
-                                <div class="articles-item  shadow-lg rounded-lg overflow-hidden border border-gray-200 bg-white p-4">
-                                    <div class="articles-title mb-3">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                                            <h2 class="truncate">微信在新加坡用不了怎么办：海外访问中国网站和应用的解决方案</h2>
-                                        </a>
-                                    </div>
-                                    <div class="articles-img-box mb-3">
-                                        <a class="block" href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/">
-                                            <amp-img class="articles-img" src="https://www.fanqiejsq.com/wp-content/uploads/2024/07/影视-一念关山1.webp" alt="日本怎么打不开大众点评" width="127" height="64" layout="responsive" style="object-fit: cover; border-radius: 8px; ">
-                                            </amp-img>
-
-                                        </a>
-                                    </div>
-                                    <div class="articles-desc text-gray-600 text-sm mb-3 cursor-pointer truncate">
-                                        <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium ">微信在新加坡用不了怎么办</a>
-                                    </div>
-                                    <div class="articles-footer ">
-                                        <div class="w-full text-right">
-                                            <a href="https://www.fanqiejsq.com/%e6%97%a5%e6%9c%ac%e6%80%8e%e4%b9%88%e6%89%93%e4%b8%8d%e5%bc%80%e5%a4%a7%e4%bc%97%e7%82%b9%e8%af%84/" class="text-blue-500 hover:text-blue-700 text-sm font-medium">查看详情 →</a>
-                                        </div>
-                                        <div>
-
-                                            <div class="w-full my-1 ">
-                                                <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                                            </div>
-                                            <div class="text-black flex gap-1">
-                                                <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://www.facebook.com/sharer/sharer.php?u=">
-                                                    <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                                            <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-twitter" href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" data-target-url="https://twitter.com/intent/text=%E9%A6%96%E9%A1%B5&url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                                            <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                                                        </svg></span>
-                                                </a>
-                                                <a class="share-weibo" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5" data-target-url="http://service.weibo.com/share/share.php?url=">
-                                                    <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                                                        <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                                            <g fill="#fff">
-                                                                <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                                                </path>
-                                                                <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                                                </path>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                         <div>
+                            <amp-script layout="fixed-height" height="144" script="user-agent-script" data-ampdevmode>
 
-                            <nav class="navigation pagination py-6 px-2">
-                                <div class="nav-links flex justify-center items-center gap-2 sm:gap-4 flex-wrap">
-                                    <a class="prev page-numbers flex items-center gap-1 p-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/">
-                                        <span class="ast-left-arrow text-lg sm:text-xl">←</span> 前一页 </a>
-                                    <div class="w-full sm:w-auto"></div>
-                                    <a class="page-numbers p-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/"> 1 </a>
-                                    <span aria-current="page" class="page-numbers current p-2  bg-blue-600 text-white rounded-md font-semibold"> 2 </span>
-                                    <a class="page-numbers p-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/page/3/"> 3 </a>
-                                    <span class="page-numbers dots p-2  text-gray-500">…</span>
-                                    <a class="page-numbers p-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/page/1518/"> 1,518 </a>
-                                    <div class="w-full sm:w-auto"></div>
-                                    <a class="next page-numbers flex items-center gap-1 p-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" href="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/page/3/"> 后一页 <span class="ast-right-arrow text-lg sm:text-xl">→</span>
-                                    </a>
-                                </div>
-                            </nav>
+                                <nav class="navigation pagination py-6 px-2" id="list-page-container" data-max-page="1518" data-url="https://www.fanqiejsq.com/category/%E5%BD%B1%E9%9F%B3%E5%8A%A0%E9%80%9F%E5%99%A8/">
+                                    <div class="nav-links flex justify-center items-center gap-2 sm:gap-4 flex-wrap">
+                                        <span class="another-element"></span>
 
+                                        <a hidden [hidden]="pageData.page  == 1 || pageData.total < 5" class="prev page-numbers flex items-center gap-1 p-2 h-10  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="(pageData.page - 1 == 1) ?  pageData.url : pageData.url + 'page/' + (pageData.page - 1)">
+                                            <span class="ast-left-arrow text-lg sm:text-xl ">←</span> 前一页 </a>
+
+                                        <a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url"> 1 </a>
+
+                                        <span [hidden]="pageData.page  < 4" class="page-numbers dots  text-gray-500">…</span>
+
+                                        <a [hidden]="pageData.page - 1 <= 1" class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="(pageData.page - 1 == 1) ? pageData.url : pageData.url + 'page/' + (pageData.page - 1)" [text]="pageData.page - 1">
+                                        </a>
+
+                                        <a [hidden]="pageData.page == 1 || pageData.page == pageData.total" class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + pageData.page " [text]="pageData.page">
+                                        </a>
+
+                                        <a [hidden]="pageData.page + 1 >= pageData.total" class="after page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + (pageData.page + 1)" [text]="pageData.page + 1">
+                                        </a>
+
+                                        <span [hidden]="pageData.page + 1 >= pageData.total - 1 || pageData.total < 5 " class="page-numbers dots   text-gray-500">…</span>
+                                        <a class="page-numbers px-3 py-2  text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + pageData.total" [text]="pageData.total">
+                                        </a>
+                                        <a [hidden]="pageData.page == pageData.total || pageData.total < 5" class="next page-numbers flex items-center gap-1 p-2  h-10 text-gray-800 bg-gray-200 rounded-md hover:bg-blue-600 hover:text-white transition-all" [href]="pageData.url + 'page/' + (pageData.page + 1)"> 后一页 <span class="ast-right-arrow text-lg sm:text-xl">→</span>
+                                        </a>
+                                    </div>
+                                </nav>
+
+                            </amp-script>
                         </div>
                     </div>
                     <div class="aside-nav-box  lg:w-80    lg:ml-5 h-full ">
@@ -3750,6 +3545,42 @@ setComDownLinkHref()
                 link: link
             }
         });
+		(async function () {
+    function getPageInfo() {
+        const navId = "list-page-container";
+        const navContainer = document.getElementById(navId);
+        if (!navContainer) {
+            console.warn("⚠️ 没有找到分页的元素：" + navId);
+            return {
+                category: "",
+                page: 1,
+                total: 1,
+                navContainer: null
+            };
+        }
+        // 在amp中，location是一个WorkerLocation，最好的方式是不从url上读取参数。
+        // 使用 getAttribute 读取 data 属性
+        const total = parseInt(navContainer.getAttribute("data-max-page") || 1, 10);
+        const dataUrl = navContainer.getAttribute("data-url")
+        if (!dataUrl) {
+            AMP.setState({
+                pageData: {
+                    total: total
+                }
+            })
+            return
+        }
+        const finalUrl = dataUrl.endsWith('/') ? dataUrl : `${dataUrl}/`
+        AMP.setState({
+            pageData: {
+                url: finalUrl,
+                total: total
+            }
+        })
+
+    }
+    getPageInfo()
+})()
     </script>
     </body>
 </html>
