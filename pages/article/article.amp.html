@@ -24,7 +24,7 @@
         <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
         <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="amp-script-src" content="sha384-J6n2HQC8NjIRuKrMNdwQLkvPdNO4UlnIvnC4e9F_n-ua01C8xicyvNMmfKtbxdN8" />
+        <meta name="amp-script-src" content="sha384-EI9VAjyU21KpznI_GzgFoXZx6bkvv2s7hNcIQUJqw45n3YzJyCHPCuh1iEmtNIZu" />
         <link rel="canonical" href="/article/article.amp.html">
 
         <style amp-boilerplate>
@@ -3171,10 +3171,10 @@
 }
 
 const linkInfo = {
-	Mac: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/',
-	iOS: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/',
-	Windows: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/',
-	Android: 'https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/',
+	Mac: '/pages/down/mac-down/mac-down.amp.html',
+	iOS: '/pages/down/ios-down/ios-down.amp.html',
+	Windows: '/pages/down/win-down/windows-down.amp.html',
+	Android: '/pages/down/android-down/android-down.amp.html',
 	Linux: 'https://www.fanqiejsq.com/download/',
 	Unknown: 'https://www.fanqiejsq.com/download/'
 }
@@ -3201,6 +3201,12 @@ function setComDownLinkHref() {
 			console.error('An error occurred:', error);
 			// 错误处理逻辑
 	}
+	AMP.setState({
+		downJumpInfo: {
+			platform: getOS(),
+			link: link
+		}
+	});
 
 }
 setComDownLinkHref()

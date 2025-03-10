@@ -21,10 +21,10 @@ function getOS() {
 }
 
 const linkInfo = {
-	Mac: '/pages/down/mac-down/mac-down.html',
-	iOS: '/pages/down/ios-down/ios-down.html',
-	Windows: '/pages/down/win-down/windows-down.html',
-	Android: '/pages/down/android-down/android-down.html',
+	Mac: '/pages/down/mac-down/mac-down.amp.html',
+	iOS: '/pages/down/ios-down/ios-down.amp.html',
+	Windows: '/pages/down/win-down/windows-down.amp.html',
+	Android: '/pages/down/android-down/android-down.amp.html',
 	Linux: 'https://www.fanqiejsq.com/download/',
 	Unknown: 'https://www.fanqiejsq.com/download/'
 }
@@ -51,6 +51,12 @@ function setComDownLinkHref() {
 			console.error('An error occurred:', error);
 			// 错误处理逻辑
 	}
+	AMP.setState({
+		downJumpInfo: {
+			platform: getOS(),
+			link: link
+		}
+	});
 
 }
 setComDownLinkHref()
