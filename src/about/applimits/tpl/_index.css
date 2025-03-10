@@ -1,0 +1,47 @@
+body.gradient {
+  color: #000;
+  background: #ebfff6;
+}
+h1 {
+  font-weight: 700;
+  color: #222222;
+  margin: 30px auto 47px;
+}
+
+.header {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+main {
+  max-width: 1140px;
+  margin: 0 auto 0;
+}
+
+.label {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.label::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background-color: #229d63;
+  margin-right: 24px;
+}
+
+.value {
+  box-sizing: border-box;
+  padding-left: 24px;
+  padding-right: 20px;
+  color: #555555;
+  font-size: 15px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 24px;
+}
