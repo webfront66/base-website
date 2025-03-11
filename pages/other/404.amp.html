@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html amp lang="en">
+<!doctype html>
+<html amp>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -429,6 +429,21 @@
             .shadow-md,
             .shadow-xl
             {
+                --tw-ring-offset-shadow: 0 0 #0000;
+                --tw-ring-shadow: 0 0 #0000;
+                --tw-shadow: 0 0 #0000;
+                --tw-shadow-colored: 0 0 #0000
+            }
+
+            .focus\:ring-4
+            {
+                --tw-ring-inset: var(--tw-empty,
+                        /*!*/
+                        /*!*/
+                    );
+                --tw-ring-offset-width: 0px;
+                --tw-ring-offset-color: #fff;
+                --tw-ring-color: rgba(59, 130, 246, .5);
                 --tw-ring-offset-shadow: 0 0 #0000;
                 --tw-ring-shadow: 0 0 #0000;
                 --tw-shadow: 0 0 #0000;
@@ -960,11 +975,6 @@
                 height: 4rem
             }
 
-            .h-24
-            {
-                height: 6rem
-            }
-
             .min-h-screen
             {
                 min-height: 100vh
@@ -1035,11 +1045,6 @@
                 width: 2rem
             }
 
-            .w-24
-            {
-                width: 6rem
-            }
-
             .w-1\/2
             {
                 width: 50%
@@ -1063,11 +1068,6 @@
             .max-w-3xl
             {
                 max-width: 48rem
-            }
-
-            .max-w-6xl
-            {
-                max-width: 72rem
             }
 
             .flex-1
@@ -1186,11 +1186,6 @@
                 grid-template-columns: repeat(3, minmax(0, 1fr))
             }
 
-            .grid-cols-2
-            {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-
             .flex-row
             {
                 flex-direction: row
@@ -1299,13 +1294,6 @@
                 --tw-space-y-reverse: 0;
                 margin-top: calc(1.5rem*(1 - var(--tw-space-y-reverse)));
                 margin-bottom: calc(1.5rem*var(--tw-space-y-reverse))
-            }
-
-            .space-y-4>:not([hidden])~:not([hidden])
-            {
-                --tw-space-y-reverse: 0;
-                margin-top: calc(1rem*(1 - var(--tw-space-y-reverse)));
-                margin-bottom: calc(1rem*var(--tw-space-y-reverse))
             }
 
             .truncate
@@ -1649,6 +1637,12 @@
                 --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(229, 231, 235, 0))
             }
 
+            .from-indigo-600
+            {
+                --tw-gradient-from: #4f46e5;
+                --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(79, 70, 229, 0))
+            }
+
             .via-green-500
             {
                 --tw-gradient-stops: var(--tw-gradient-from), #22c55e, var(--tw-gradient-to, rgba(34, 197, 94, 0))
@@ -1702,6 +1696,16 @@
             .via-gray-300
             {
                 --tw-gradient-stops: var(--tw-gradient-from), #d1d5db, var(--tw-gradient-to, rgba(209, 213, 219, 0))
+            }
+
+            .via-purple-500
+            {
+                --tw-gradient-stops: var(--tw-gradient-from), #a855f7, var(--tw-gradient-to, rgba(168, 85, 247, 0))
+            }
+
+            .via-purple-600
+            {
+                --tw-gradient-stops: var(--tw-gradient-from), #9333ea, var(--tw-gradient-to, rgba(147, 51, 234, 0))
             }
 
             .to-teal-500
@@ -1782,6 +1786,16 @@
             .to-gray-200
             {
                 --tw-gradient-to: #e5e7eb
+            }
+
+            .to-pink-500
+            {
+                --tw-gradient-to: #ec4899
+            }
+
+            .to-pink-600
+            {
+                --tw-gradient-to: #db2777
             }
 
             .bg-cover
@@ -1931,6 +1945,18 @@
                 padding-bottom: .75rem
             }
 
+            .py-20
+            {
+                padding-top: 5rem;
+                padding-bottom: 5rem
+            }
+
+            .py-16
+            {
+                padding-top: 4rem;
+                padding-bottom: 4rem
+            }
+
             .pl-4
             {
                 padding-left: 1rem
@@ -2011,6 +2037,11 @@
                 padding-bottom: 4rem
             }
 
+            .pb-8
+            {
+                padding-bottom: 2rem
+            }
+
             .text-left
             {
                 text-align: left
@@ -2068,6 +2099,18 @@
                 line-height: 1rem
             }
 
+            .text-4xl
+            {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+
+            .text-6xl
+            {
+                font-size: 3.75rem;
+                line-height: 1
+            }
+
             .font-bold
             {
                 font-weight: 700
@@ -2081,6 +2124,11 @@
             .font-medium
             {
                 font-weight: 500
+            }
+
+            .font-extrabold
+            {
+                font-weight: 800
             }
 
             .uppercase
@@ -2385,6 +2433,12 @@
                 transform: var(--tw-transform)
             }
 
+            .hover\:bg-blue-700:hover
+            {
+                --tw-bg-opacity: 1;
+                background-color: rgb(29 78 216/var(--tw-bg-opacity))
+            }
+
             .hover\:text-gray-900:hover
             {
                 --tw-text-opacity: 1;
@@ -2421,6 +2475,19 @@
                 outline-offset: 2px
             }
 
+            .focus\:ring-4:focus
+            {
+                --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+                --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+                box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+            }
+
+            .focus\:ring-blue-500:focus
+            {
+                --tw-ring-opacity: 1;
+                --tw-ring-color: rgb(59 130 246/var(--tw-ring-opacity))
+            }
+
             @media (min-width:640px)
             {
                 .sm\:w-1\/3
@@ -2436,11 +2503,6 @@
 
             @media (min-width:768px)
             {
-                .md\:grid-cols-3
-                {
-                    grid-template-columns: repeat(3, minmax(0, 1fr))
-                }
-
                 .md\:flex-row
                 {
                     flex-direction: row
@@ -2541,6 +2603,42 @@
                     padding-right: 3rem
                 }
 
+                .lg\:py-24
+                {
+                    padding-top: 6rem;
+                    padding-bottom: 6rem
+                }
+
+                .lg\:py-10
+                {
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem
+                }
+
+                .lg\:py-20
+                {
+                    padding-top: 5rem;
+                    padding-bottom: 5rem
+                }
+
+                .lg\:py-1
+                {
+                    padding-top: .25rem;
+                    padding-bottom: .25rem
+                }
+
+                .lg\:py-14
+                {
+                    padding-top: 3.5rem;
+                    padding-bottom: 3.5rem
+                }
+
+                .lg\:py-16
+                {
+                    padding-top: 4rem;
+                    padding-bottom: 4rem
+                }
+
                 .lg\:pt-24
                 {
                     padding-top: 6rem
@@ -2634,32 +2732,11 @@
                 }
             }
 
-            body.gradient
-            {
-                color: #000;
-                background: #fff;
-            }
-
-            h1
-            {
-                color: #222222;
-                font-size: 44px;
-                font-weight: 400;
-                margin-bottom: 20px;
-            }
-
-            h1 span
-            {
-                color: #333333;
-                font-size: 20px;
-                margin-left: 10px;
-            }
-
-            .auth
+            .gradient
             {}
         </style>
     </head>
-    <body class=" gradient gradient-1" role="document" tabindex="0" on="tap:AMP.setState({navState: {expand: false, submenuexpand: false}})">
+    <body role="document" tabindex="0" class="gradient" on="tap:AMP.setState({navState: {expand: false, submenuexpand: false}})">
         <amp-state id="navState">
             <script type="application/json">
                 {
@@ -2757,101 +2834,20 @@
             <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
         </nav>
 
-        <div class=" px-6 lg:px-12  py-8 pt-16 lg:pt-24">
-            <section class="container mx-auto px-8 py-4 lg:max-w-7xl">
-                <div id="content" class="site-content">
-                    <div class="ast-container">
-                        <div id="primary" class="content-area primary">
-                            <main id="main" class="site-main">
-                                <article class="post-3309 page type-page status-publish ast-article-single" id="post-3309" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-                                    <header class="entry-header ast-no-thumbnail ast-no-title ast-header-without-markup">
-                                    </header> 
-                                    <div class="entry-content clear">
-                                        <main class="max-w-6xl mx-auto p-6 space-y-12">
-
-                                            <div class="text-center space-y-4">
-                                                <h1 class="text-3xl font-bold text-gray-800"> 关于我们 <span class="text-blue-500">/ 诚信为本、客户至上、服务至上</span>
-                                                </h1>
-                                                <p class="text-gray-500 text-lg">诚信为本、客户至上、服务至上</p>
-                                                <p class="text-gray-600 leading-relaxed"> 湖南精准量科技有限公司成立于2021年，坐落于国家级软件产业基地，长沙中电软件园B2栋508室。 是以提供集软件开发，互联网运营为服务的公司。 </p>
-                                                <p class="text-gray-600 leading-relaxed"> 拥有扎实的客户基础、完善精湛的技术能力、个性化的服务追求，健全的服务流程。 公司开发团队是一个富有理想和激情的团队，也是一个技术专业化、管理人性化、 创新性和学习型的优秀团队。 </p>
-                                            </div>
-
-                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                                <div class="text-center space-y-3 p-6 border rounded-lg shadow-lg">
-                                                    <amp-img layout="fixed" width="64" height="64" src="/image/about/advantage-1.webp" alt="无限流量"></amp-img>
-                                                    <h2 class="text-xl font-semibold text-gray-800">无限流量</h2>
-                                                    <p class="text-gray-600">稳定加速各大音频软件，不限流量，有效解决卡顿、延迟等常见问题。</p>
-                                                </div>
-                                                <div class="text-center space-y-3 p-6 border rounded-lg shadow-lg">
-                                                    <amp-img layout="fixed" width="64" height="64" src="/image/about/advantage-2.webp" alt="保护隐私"></amp-img>
-                                                    <h2 class="text-xl font-semibold text-gray-800">保护隐私</h2>
-                                                    <p class="text-gray-600">全程高强度数据加密，专线传输，保障用户隐私安全。</p>
-                                                </div>
-                                                <div class="text-center space-y-3 p-6 border rounded-lg shadow-lg">
-                                                    <amp-img layout="fixed" width="64" height="64" src="/image/about/advantage-3.webp" alt="用心服务"></amp-img>
-                                                    <h2 class="text-xl font-semibold text-gray-800">用心服务</h2>
-                                                    <p class="text-gray-600">专业的技术团队，7×24小时实时线路监控，保障用户的加速体验。</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                                <div class="flex flex-col items-center p-6 border rounded-lg shadow-lg space-y-4">
-                                                    <p class="text-lg font-medium text-gray-700">联系客服</p>
-                                                    <a href="https://chatlink.mstatik.com/widget/standalone.html?eid=fa75689103a25ad10f3659573fe3b63e" target="_blank" rel="noopener nofollow">
-                                                        <amp-img layout="fixed" width="96" height="96" src="/image/about/online.webp" alt="在线客服"></amp-img>
-                                                    </a>
-                                                </div>
-                                                <div class="flex flex-col items-center p-6 border rounded-lg shadow-lg space-y-4">
-                                                    <p class="text-lg font-medium text-gray-700">微信公众号</p>
-                                                    <amp-img layout="fixed" width="96" height="96" src="/image/about/contact-qr.webp" alt="公众号二维码"></amp-img>
-                                                </div>
-                                                <div class="flex flex-col items-center p-6 border rounded-lg shadow-lg space-y-4">
-                                                    <p class="text-lg font-medium text-gray-700">联系邮箱</p>
-                                                    <p class="text-gray-600">fanqiejiasuqi@gmail.com</p>
-                                                </div>
-                                            </div>
-                                        </main>
-                                    </div>
-                                </article>
-                            </main>
-                        </div>
-                    </div> 
+        <section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 py-16 lg:py-24">
+            <div class="container mx-auto px-6 lg:px-12 lg:py-16">
+                <div class="text-center text-white">
+                    <h1 class="text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">404</h1>
+                    <p class="text-2xl font-semibold mb-6 animate__animated animate__fadeIn animate__delay-1s">这个页面似乎不存在。 </p>
+                    <p class="text-lg mb-6 animate__animated animate__fadeIn animate__delay-2s"> 看起来指向这里的链接有误。也许试着搜索一下？或返回首页。 </p>
+                    <div>
+                        <a href="/" class="inline-block home-button py-2 px-6  text-lg bg-blue-600 text-white  rounded-full shadow-xl hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 focus:outline-none transition duration-300"> 返回首页 </a>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
         <footer class="bg-white pb-16">
-            <section class="container mx-auto px-8 py-4">
-                <div class="w-full my-1 ">
-                    <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                </div>
-                <div class="text-black flex gap-1	">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F">
-                        <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                            </svg></span>
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F">
-                        <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                            </svg>
-                        </span>
-                    </a>
-                    <a href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5">
-                        <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                            <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                <g fill="#fff">
-                                    <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                    </path>
-                                    <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                    </path>
-                                </g>
-                            </svg>
-                        </span>
-                    </a>
-                </div>
-            </section>
             <section class="container mx-auto px-8 ">
                 <div class="w-full mb-4">
                     <div class="h-1 mx-auto gradient w-full  opacity-25 my-0 py-0 rounded-t"></div>
