@@ -1,0 +1,182 @@
+.grid-item::before {
+  content: attr(data-hot);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4px 10px;
+  background-color: #ff4757;
+  /* 更鲜艳的红色 */
+  color: #fff;
+  font-size: 12px;
+  border-radius: 12px 0 12px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* 添加阴影效果 */
+}
+
+.grid-item::after {
+  content: attr(data-hot3);
+  position: absolute;
+  top: 0;
+  right: 8px;
+  width: 10px;
+  /* 更鲜艳的红色 */
+  color: #ff4757;
+  font-size: 12px;
+  /* 添加阴影效果 */
+}
+
+.vip-tab {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5568;
+  border-bottom: 3px solid transparent;
+  /* 更柔和的灰色 */
+  background-color: #f7fafc;
+  /* 更浅的背景色 */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.vip-tab.active {
+  background: #fff;
+  color: #ff4757;
+  /* 与标签颜色一致 */
+  border-bottom: 3px solid #ff4757;
+  /* 添加底部边框 */
+}
+
+.vip-tab:hover {
+  background-color: #edf2f7;
+  /* 更深的悬停背景色 */
+  color: #2d3748;
+  /* 更深的文字颜色 */
+}
+
+.vip-tab-content.active {
+  display: block;
+}
+
+/* 动画样式 */
+/* .vip-tab-content.active.tab1-exit {
+		animation: slideLeft 0.5s ease-in-out forwards;
+	}
+
+	.vip-tab-content.active.tab2-enter {
+		animation: slideRight 0.3s ease-in-out forwards;
+	} */
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%) rotateY(45deg);
+    /* 从右侧并且有45度的倾斜 */
+    opacity: 0;
+    /* 初始时透明 */
+  }
+
+  60% {
+    transform: translateX(-10%) rotateY(15deg);
+    /* 向左稍微移动，并保持一些倾斜 */
+    opacity: 0.8;
+    /* 透明度渐变 */
+  }
+
+  100% {
+    transform: translateX(0) rotateY(0);
+    /* 最终完全显示且不倾斜 */
+    opacity: 1;
+    /* 最终完全显示 */
+  }
+}
+
+/* end 对应 Tab1 和 Tab2 的显示和隐藏 */
+.vip-icon {
+  display: inline-block;
+  background-image: url("/image/vip-icons.webp");
+  background-size: 338px 150px;
+}
+
+.sub-title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1.25em;
+  background-color: #d53369;
+  margin-right: 22px;
+  vertical-align: middle;
+}
+
+.rights-comparison .vip-icon.has {
+  width: 34px;
+  height: 34px;
+  background-position: -170px -116px;
+  transform: scale(0.6);
+}
+
+.rights-comparison .vip-icon.no {
+  width: 34px;
+  height: 34px;
+  background-position: -214px -116px;
+  transform: scale(0.6);
+}
+
+.pay1 {
+  background-position: 0 -116px;
+}
+
+.pay2 {
+  background-position: -34px -116px;
+}
+
+.pay3 {
+  background-position: -68px -116px;
+}
+
+.pay4 {
+  background-position: -102px -116px;
+}
+
+.pay5 {
+  background-position: -136px -116px;
+}
+
+.vip-tab-content .vip-icon {
+  width: 48px;
+  height: 48px;
+  transform: scale(0.8);
+}
+
+.vip-tab-content .p2 {
+  background-position: -58px 0;
+}
+
+.vip-tab-content .p3 {
+  background-position: -116px 0;
+}
+
+.vip-tab-content .p4 {
+  background-position: -174px 0;
+}
+
+.vip-tab-content .p5 {
+  background-position: -232px 0;
+}
+
+.vip-tab-content .p6 {
+  background-position: -290px 0;
+}

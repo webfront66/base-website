@@ -23,8 +23,9 @@
         <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
         <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="amp-script-src" content="sha384-TBF4dMR2cR3VmgxkAqe90MNOenTw9EAXMvoMCbqOogcrq0WIuNFeYqdgQLC1CQMp" />
-        <link rel="canonical" href="/article/article.amp.html">
+        <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logo.webp" sizes="32x32">
+        <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logox512.webp" sizes="512x512">
+        <link rel="canonical" href="https://www.fanqiejsq.com/" />
 
         <style amp-boilerplate>
             body
@@ -113,8 +114,8 @@
         </noscript>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-        <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 
+        <link rel="preload" href="https://www.fqhgvpn.com/images/home/top-1-530w.webp" as="image">
         <style amp-custom>
             /*! tailwindcss v3.0.0 | MIT License | https://tailwindcss.com*/
             *,
@@ -529,6 +530,11 @@
                 visibility: visible
             }
 
+            .static
+            {
+                position: static
+            }
+
             .fixed
             {
                 position: fixed
@@ -854,6 +860,11 @@
             .inline-block
             {
                 display: inline-block
+            }
+
+            .inline
+            {
+                display: inline
             }
 
             .flex
@@ -2389,6 +2400,11 @@
                 transition-timing-function: cubic-bezier(0, 0, .2, 1)
             }
 
+            .ease-in
+            {
+                transition-timing-function: cubic-bezier(.4, 0, 1, 1)
+            }
+
             .hover\:scale-105:hover
             {
                 --tw-scale-x: 1.05;
@@ -2682,6 +2698,11 @@
                 text-align: center;
             }
 
+            .down-btn-inverse-gradient
+            {
+                background: rgb(88, 19, 122);
+            }
+
             .tomato__header-img
             {
                 width: 1.75rem;
@@ -2727,7 +2748,7 @@
             {
                 .hover-effect:hover .toggleColour
                 {
-                    color: #00FF00;
+                    color: #00ff00;
                 }
             }
 
@@ -2735,7 +2756,7 @@
             {}
         </style>
     </head>
-    <body role="document" tabindex="0" class="leading-normal tracking-normal  gradient " on="tap:AMP.setState({navState: {expand: false, submenuexpand: false}})">
+    <body class=" gradient gradient-1" role="document" tabindex="0" on="tap:AMP.setState({navState: {expand: false, submenuexpand: false}})">
         <amp-state id="navState">
             <script type="application/json">
                 {
@@ -2754,38 +2775,36 @@
             </script>
         </amp-state>
 
-        <nav id="header" class="fixed gradient w-full z-30 top-0 text-white">
+        <nav id="header" class="gradient fixed w-full z-30 top-0 text-white">
             <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
                 <div class="pl-4 flex items-center">
-                    <a class="toggleColour text-white no-underline hover:no-underline  font-bold text-2xl lg:text-4xl flex items-center" href="/pages/home/index.amp.html">
+                    <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center" href="#">
 
-                        <amp-img src="/image/logox512.webp" layout="responsive" width="512" height="512" class="tomato__header-img w-28rem" alt="番茄加速器"></amp-img>
-                        <span class="ml-1 inline-block lg:h-[45px]">番茄加速器</span>
+                        <img src="/image/logox512.png" class="tomato__header-img w-28rem" alt="番茄加速器" decoding="async" />
+                        <span class="ml-1">番茄加速器</span>
                     </a>
                 </div>
                 <div class="block lg:hidden pr-4">
-                    <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" on="tap:AMP.setState({navState: {expand: !navState.expand}})">
+                    <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                         <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Menu</title>
                             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                         </svg>
                     </button>
                 </div>
-                <div class="w-full flex-grow  lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content" role="button" tabindex="0" [class]="' w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 ' + (navState.expand ? 'show' : 'hidden')" on="tap:AMP.setState({navState: {expand: true}})">
-                    <ul class="list-reset lg:flex justify-end flex-1 items-center ">
+                <div class="w-full flex-grow  lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+                    <ul class="list-reset lg:flex justify-end flex-1 items-center">
 
-                        <li>
-                            <amp-script layout="fixed-height" height="40" script="user-agent-script">
-                                <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/download/">客户端下载</a>
-                            </amp-script>
+                        <li class="">
+                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/download/">客户端下载</a>
                         </li>
                         <li class="">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/vip/vip.amp.html">购买VIP</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/vip/">购买VIP</a>
                         </li>
                         <li class="relative parent-menu-item">
                             <div class="flex justify-between hover-effect group">
-                                <a class="toggleColour touch-manipulation lg:inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/game-booster/game-booster.amp.html" title="使用番茄"> 使用番茄 </a>
-                                <span id="show_sub_menu" class="sub-menu-trigger-btn ast-icon icon-arrow flex h-10  flex-1 items-center justify-end text-right px-4 py-3 cursor-pointer" role="button" tabindex="0" on="tap:AMP.setState({navState: {'submenuexpand': !navState.submenuexpand}})">
+                                <a class="toggleColour touch-manipulation lg:inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/vip/"> 使用番茄 </a>
+                                <span id="show_sub_menu" class="sub-menu-trigger-btn ast-icon icon-arrow flex  flex-1 items-center justify-end text-right ">
                                     <svg class="ast-arrow-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="12px" height="16.043px" viewBox="57 35.171 26 16.043" enable-background="new 57 35.171 26 16.043" xml:space="preserve">
                                         <path d="M57.5,38.193l12.5,12.5l12.5-12.5l-2.5-2.5l-10,10l-10-10L57.5,38.193z">
                                         </path>
@@ -2793,38 +2812,38 @@
                                 </span>
                             </div>
 
-                            <div id="sub_menu_3" class="sub-menu relative lg:absolute bg-white" [class]="'sub-menu relative lg:absolute bg-white ' + (navState.submenuexpand ? 'show' : 'hidden')">
+                            <div id="sub_menu_3" class="sub-menu relative lg:absolute bg-white">
                                 <ul class="sub-menu-inner flex flex-col gap-2 p-2 pl-10 lg:p-4">
                                     <li class="menu-item menu-item-type-post_type w-full menu-item-25975">
-                                        <a href="/pages/game-booster/game-booster.amp.html" aria-current="page" class="sub-menu-link w-full inline-block hover:text-red-400	"> 游戏加速 </a>
+                                        <a href="https://www.fanqiejsq.com/game/" aria-current="page" class="sub-menu-link w-full inline-block hover:text-red-400	"> 游戏加速 </a>
                                     </li>
                                     <li class="menu-item menu-item-type-post_type w-full menu-item-25975">
-                                        <a href="/pages/study/study.amp.html" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外留学</a>
+                                        <a href="https://www.fanqiejsq.com/study/" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外留学</a>
                                     </li>
                                     <li class="menu-item menu-item-type-post_type w-full menu-item-25970">
-                                        <a href="/pages/overseas/overseas.amp.html" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外华人</a>
+                                        <a href="https://www.fanqiejsq.com/overseas/" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外华人</a>
                                     </li>
                                     <li class="menu-item menu-item-type-post_type w-full menu-item-25974">
-                                        <a href="/pages/travel/travel.amp.html" class="sub-menu-link w-full inline-block hover:text-red-400	"> 出国旅行</a>
+                                        <a href="https://www.fanqiejsq.com/travel/" class="sub-menu-link w-full inline-block hover:text-red-400	"> 出国旅行</a>
                                     </li>
                                     <li class="menu-item menu-item-type-post_type w-full menu-item-25971">
-                                        <a href="/pages/office/office.amp.html" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外办公</a>
+                                        <a href="https://www.fanqiejsq.com/office/" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外办公</a>
                                     </li>
                                     <li class="menu-item menu-item-type-post_type w-full menu-item-25972">
-                                        <a href="/pages/live/live.amp.html" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外直播</a>
+                                        <a href="https://www.fanqiejsq.com/live/" class="sub-menu-link w-full inline-block hover:text-red-400	"> 海外直播</a>
                                     </li>
                                 </ul>
                             </div>
 
                         </li>
                         <li class="cursor-pointer">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/media-accel-list/media-accel-list.amp.html">影音加速器</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/vip/">影音加速器</a>
                         </li>
                         <li class="cursor-pointer">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/media-accel-list/media-accel-list.amp.html">加速国内游戏</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/vip/">加速国内游戏</a>
                         </li>
                         <li class="cursor-pointer">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/media-accel-list/media-accel-list.amp.html">翻回国内VPN</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/vip/">翻回国内VPN</a>
                         </li>
                     </ul>
 
@@ -2836,14 +2855,14 @@
         <div class="pt-16 lg:pt-24 text-white">
             <div class="container px-6 lg:px-10 mx-auto flex flex-wrap flex-col md:flex-row items-center">
 
-                <div class=" w-full md:w-2/5 ">
+                <div class="flex flex-col w-full md:w-2/5 justify-center items-start md:text-left">
 
-                    <h1 class="my-2 text-lg lg:text-2xl font-bold leading-tight"> 番茄回国加速器，毫秒必争 </h1>
-                    <p class="leading-tight text-sm  lg:text-base"> 在海外玩游戏、看视频、听音乐、做直播、炒股、办公，首选番茄回国加速器。百万海外华人留学生选择！一键回国加速器，快速访问国内网站。急速开启国内各直播平台,解决国内视频、直播、游戏卡顿等问题！ 免费加速主流影音，解锁海外地区限制，独创动态加速技术，流畅的玩国服游戏，超低延迟，稳定不丢包，不限流量。 </p>
+                    <h1 class="my-4 text-lg lg:text-2xl font-bold leading-tight"> 番茄回国加速器，毫秒必争 </h1>
+                    <p class="leading-normal text-base mb-4 lg:text-base"> 在海外玩游戏、看视频、听音乐、做直播、炒股、办公，首选番茄回国加速器。百万海外华人留学生选择！一键回国加速器，快速访问国内网站。急速开启国内各直播平台,解决国内视频、直播、游戏卡顿等问题！ 免费加速主流影音，解锁海外地区限制，独创动态加速技术，流畅的玩国服游戏，超低延迟，稳定不丢包，不限流量。 </p>
                 </div>
 
-                <div class="w-full md:w-3/5 px-2 pt-2 pb-6 lg:py-6 text-center flex justify-end">
-                    <amp-img style="max-width: min(530px, 100%);" src="/image/home/top-1-530w.webp" srcset="/image/home/top-1-278w.webp 278w, /image/home/top-1-375w.webp 375w, /image/home/top-1-530w.webp 530w, /image/home/top-1-636w.webp 636w" width="636" height="435" layout="intrinsic" alt="番茄加速器" sizes="(max-width: 320px) 278px, (max-width: 414px) 375px, (max-width: 750px) 530px, 636w">
+                <div class="w-full md:w-3/5 px-6 pt-2 pb-6 lg:py-6 text-center flex justify-end">
+                    <amp-img style="max-width: min(530px, 100%)" width="530" height="363" layout="intrinsic" alt="番茄加速器" src="https://www.fqhgvpn.com/images/home/top-1-530w.webp">
                     </amp-img>
                 </div>
             </div>
@@ -2909,15 +2928,12 @@
                 <div class="w-full">
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden ">
                         <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-
                             <p class="text-gray-800 text-base px-6 mb-5"> 身处海外，玩游戏、听音乐、看直播，经常延迟高、卡顿丢包、无法连接和播放？用番茄回国VPN一键加速，超低延迟不丢包，畅玩全球游戏，提高网络稳定性。加速王者荣耀、魔兽世界、原神、和平精英、我的世界、英雄联盟等国服游戏、还可以加速优酷、Bilibili、爱奇艺、腾讯视频、QQ音乐、网易云音乐、酷狗音乐、喜马拉雅、CCTV、腾讯体育NBA、YY语音、央视CCTV、咪咕视频等平台。 </p>
                         </a>
                     </div>
-                    <amp-script layout="flex-item" script="user-agent-script">
-                        <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                            <a href="https://www.fanqiejsq.com/download/" class="to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"> 一键加速国服应用和游戏 </a>
-                        </div>
-                    </amp-script>
+                    <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+                        <a href="https://www.fqhgvpn.com/download/" class="to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"> 一键加速国服应用和游戏 </a>
+                    </div>
                 </div>
                 <div class="w-full flex flex-wrap justify-between">
                     <div class=" w-1/2 lg:w-1/4 pt-6 px-2 flex flex-col flex-grow flex-shrink">
@@ -2979,11 +2995,9 @@
                     <div class="w-full lg:w-1/2 p-6">
                         <h3 class="text-lg text-gray-800 font-bold leading-none mb-3"> 回国游戏加速器，加速所有国服游戏 </h3>
                         <p class="text-gray-600 mb-2"> 处异国他乡的你，玩国服游戏延迟高，经常掉线？番茄回国游戏加速器，全球直连专线，专业回国游戏线路，一键加速国服游戏，降低海外延迟，极速稳定不丢包，加速王者荣耀、和平精英、LOL英雄联盟 、魔兽世界、原神、我的世界、永劫无间、阴阳师、逆水寒、剑网3、CF穿越火线、无畏契约等游戏，在海外也能享受和国内一样的游戏体验！ </p>
-                        <amp-script layout="flex-item" script="user-agent-script">
-                            <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                                <a class=" to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="https://www.fanqiejsq.com/download/">立即安装</a>
-                            </div>
-                        </amp-script>
+                        <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+                            <a class=" to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="https://www.fqhgvpn.com/download/">立即安装</a>
+                        </div>
                     </div>
                     <div class="w-full lg:w-1/2 p-6 ">
                         <amp-img src="/image/home/Frame-46-1.webp" width="566" height="268" layout="responsive" alt="回国VPN使用方法">
@@ -2999,11 +3013,9 @@
                     <div class="w-full lg:w-1/2 p-6">
                         <h3 class="text-lg text-gray-800 font-bold leading-none mb-3"> 一键加速，不限流量，超稳定 </h3>
                         <p class="text-gray-600 mb-2"> 番茄回国加速器使用独创的边缘节点技术加速，服务器智能分流，按需加速回国，效果稳定快速回国。在全球提供上百条高速线路，实时监控带宽流量动态调整，保证节点通道畅通，不限流量，不限时长，满足各个地区和国家的加速需求。 </p>
-                        <amp-script layout="flex-item" script="user-agent-script">
-                            <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                                <a class=" to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="https://www.fanqiejsq.com/download/">免费开启加速</a>
-                            </div>
-                        </amp-script>
+                        <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+                            <a class=" to-download com-down-link mx-auto lg:mx-0  gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="https://www.fqhgvpn.com/download/">免费开启加速</a>
+                        </div>
                     </div>
                 </div>
 
@@ -3011,11 +3023,9 @@
                     <div class="w-full lg:w-1/2 p-6">
                         <h3 class="text-lg text-gray-800 font-bold leading-none mb-3"> 全平台支持，随时随地回国 </h3>
                         <p class="text-gray-600 mb-2"> 番茄加速器现已全面支持苹果iPhone & iPad移动设备、Android手机、Windows PC系列、苹果macOS电脑。确保您在任何一个设备和平台上都可以顺畅加速回国。 </p>
-                        <amp-script layout="flex-item" script="user-agent-script">
-                            <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
-                                <a class=" to-download com-down-link mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="https://www.fanqiejsq.com/download/">下载免费使用</a>
-                            </div>
-                        </amp-script>
+                        <div class="flex-1 flex items-center justify-center bg-white rounded-b rounded-t-none overflow-hidden  ">
+                            <a class=" to-download com-down-link mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full  py-2 px-10 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="https://www.fqhgvpn.com/download/">下载免费使用</a>
+                        </div>
                     </div>
                     <div class="w-full lg:w-1/2 p-6 flex tems-center justify-center">
                         <amp-img style="max-width: min(440px, 100%);" width="966" height="674" layout="intrinsic" src="/image/home/Group-9@2x-1.webp" alt="回国VPN使用方法">
@@ -3164,11 +3174,9 @@
                         </p>
                     </li>
                 </ul>
-                <amp-script layout="flex-item" script="user-agent-script">
-                    <div class="flex-1 flex items-center justify-center  rounded-b rounded-t-none overflow-hidden  ">
-                        <a href="https://www.fanqiejsq.com/download/" class="to-download com-down-link mx-auto lg:mx-0  no-underline gradient text-white font-bold rounded-full my-4 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"> 成为VIP，一键加速 </a>
-                    </div>
-                </amp-script>
+                <div class="flex-1 flex items-center justify-center  rounded-b rounded-t-none overflow-hidden  ">
+                    <a href="https://www.fanqiejsq.com/download/" class="to-download com-down-link mx-auto lg:mx-0  no-underline down-btn-inverse-gradient text-white font-bold rounded-full my-4 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"> 成为VIP，一键加速 </a>
+                </div>
             </div>
         </section>
 
@@ -3306,79 +3314,13 @@
 
         </footer>
 
-        <div class="fixed bottom-8 w-full">
+        <div class="fixed bottom-2 w-full">
             <section class="container mx-auto px-6 flex items-center justify-center ">
-                <div class=" rounded-full down-btn-gradient bg-white w-full font-bold lg:w-5/6 auto ">
-                    <amp-script layout="fixed-height" height="40" script="user-agent-script">
-                        <a class="w-full inline-block com-down-link text-white no-underlinehover:text-green-500 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/download/">番茄回国加速器,立即下载</a>
-                    </amp-script>
+                <div class=" rounded-full down-btn-gradient bg-white w-full  lg:w-5/6 auto " style="animation: breathing 2s infinite;">
+                    <a class="to-download com-down-link w-full  inline-block text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/download/">番茄回国加速器,立即下载</a>
                 </div>
             </section>
         </div>
 
-        <script id="user-agent-script" type="text/plain" target="amp-script"> function getOS() {
-	const userAgent = navigator.userAgent,
-			platform = navigator.platform,
-			macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-			windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-			iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-
-	if (macosPlatforms.includes(platform)) {
-			return 'Mac';
-	} else if (iosPlatforms.includes(platform)) {
-			return 'iOS';
-	} else if (windowsPlatforms.includes(platform)) {
-			return 'Windows';
-	} else if (/Android/.test(userAgent)) {
-			return 'Android';
-	} else if (/Linux/.test(platform)) {
-			return 'Linux';
-	}
-
-	return 'Unknown';
-}
-
-const linkInfo = {
-	Mac: '/pages/down/mac-down/mac-down.amp.html',
-	iOS: '/pages/down/ios-down/ios-down.amp.html',
-	Windows: '/pages/down/win-down/windows-down.amp.html',
-	Android: '/pages/down/android-down/android-down.amp.html',
-	Linux: 'https://www.fanqiejsq.com/download/',
-	Unknown: 'https://www.fanqiejsq.com/download/'
-}
-let link = 'https://www.fanqiejsq.com/download/'
-function setComDownLinkHref() {
-	const system = getOS()
-	const downPageLink = linkInfo[system]
-	if (!downPageLink) {
-			return
-	}
-
-	link = downPageLink
-	try {
-			const comDownLinkDom = Array.from(document.querySelectorAll('.com-down-link'));
-			if (!comDownLinkDom || !comDownLinkDom.length) {
-					return;
-			}
-			comDownLinkDom.forEach(item => {
-					if (item.hasAttribute('href')) {
-							item.setAttribute('href', downPageLink)
-					}
-			})
-	} catch (error) {
-			console.error('An error occurred:', error);
-			// 错误处理逻辑
-	}
-	AMP.setState({
-		downJumpInfo: {
-			platform: getOS(),
-			link: link
-		}
-	});
-
-}
-setComDownLinkHref()
-
-  </script>
     </body>
 </html>
