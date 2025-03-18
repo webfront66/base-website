@@ -8,4 +8,5 @@ node_modules
 .ignore.page
 ./dist
 /dist
-
+/old_src
+/pages
