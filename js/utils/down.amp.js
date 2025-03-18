@@ -1,62 +1,65 @@
-function getOS() {
-	const userAgent = navigator.userAgent,
+(function () {
+	const time = 2500
+	function getOS () {
+		const userAgent = navigator.userAgent,
 			platform = navigator.platform,
 			macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
 			windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
 			iosPlatforms = ['iPhone', 'iPad', 'iPod'];
 
-	if (macosPlatforms.includes(platform)) {
+		if (macosPlatforms.includes(platform)) {
 			return 'Mac';
-	} else if (iosPlatforms.includes(platform)) {
+		} else if (iosPlatforms.includes(platform)) {
 			return 'iOS';
-	} else if (windowsPlatforms.includes(platform)) {
+		} else if (windowsPlatforms.includes(platform)) {
 			return 'Windows';
-	} else if (/Android/.test(userAgent)) {
+		} else if (/Android/.test(userAgent)) {
 			return 'Android';
-	} else if (/Linux/.test(platform)) {
+		} else if (/Linux/.test(platform)) {
 			return 'Linux';
+		}
+
+		return 'Unknown';
 	}
 
-	return 'Unknown';
-}
-
-const linkInfo = {
-	Mac: '/pages/down/mac-down/mac-down.amp.html',
-	iOS: '/pages/down/ios-down/ios-down.amp.html',
-	Windows: '/pages/down/win-down/windows-down.amp.html',
-	Android: '/pages/down/android-down/android-down.amp.html',
-	Linux: 'https://www.fanqiejsq.com/download/',
-	Unknown: 'https://www.fanqiejsq.com/download/'
-}
-let link = 'https://www.fanqiejsq.com/download/'
-function setComDownLinkHref() {
-	const system = getOS()
-	const downPageLink = linkInfo[system]
-	if (!downPageLink) {
+	const linkInfo = {
+		Mac: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/',
+		iOS: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/',
+		Windows: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/',
+		Android: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/',
+		Linux: 'https://www.fqhgvpn.com/download/',
+		Unknown: 'https://www.fqhgvpn.com/download/'
+	}
+	function setComDownLinkHref () {
+		const system = getOS()
+		const downPageLink = linkInfo[system]
+		if (!downPageLink) {
 			return
-	}
-
-	link = downPageLink
-	try {
+		}
+		try {
+			AMP.setState({
+				downJumpInfo: {
+					platform: getOS(),
+					link: downPageLink
+				}
+			});
 			const comDownLinkDom = Array.from(document.querySelectorAll('.com-down-link'));
 			if (!comDownLinkDom || !comDownLinkDom.length) {
-					return;
+				return;
 			}
 			comDownLinkDom.forEach(item => {
-					if (item.hasAttribute('href')) {
-							item.setAttribute('href', downPageLink)
-					}
+				if (item.hasAttribute('href')) {
+					item.setAttribute('href', downPageLink)
+				}
 			})
-	} catch (error) {
+		} catch (error) {
 			console.error('An error occurred:', error);
 			// 错误处理逻辑
-	}
-	AMP.setState({
-		downJumpInfo: {
-			platform: getOS(),
-			link: link
 		}
-	});
 
-}
-setComDownLinkHref()
+	}
+
+	setTimeout(() => {
+		setComDownLinkHref()
+	}, time)
+})()

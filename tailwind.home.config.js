@@ -12,7 +12,12 @@ module.exports = {
     extend: {
       colors: {
       },
+      fontFamily: {
+        sans: ['sans-serif'],
+      },
     },
   },
   plugins: [],
+  corePlugins: {
+  }
 }
