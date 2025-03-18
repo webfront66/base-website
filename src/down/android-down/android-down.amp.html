@@ -3,15 +3,14 @@
 
 <head>
     @@include('templates/htmlTpl/_meta.ejs')
-    <meta name="amp-script-src" content="sha384-Q5JcJRI-b9OwCx94ft3-bPvbQnrGxaXPUXParfATsqVTfuZPM-DiF8AJZy1uergf" />
-    <link rel="canonical" href="/article/article.amp.html">
+    <link rel="canonical"
+        href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/">
     <!-- 引入样式 -->
     @@include('templates/cssTpl/_link.css.amp.ejs')
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-
+    <link rel="preload" href="https://www.fqhgvpn.com/images/down/android-banner.webp" as="image">
 
     <style amp-custom>
         @@include('css/tailwind.down.amp.css') @@include('css/family.css') @@include('css/com.page.css') @@include('src/down/css/down.com.css') .custom-auth-xjp {}
@@ -159,44 +158,10 @@
     </div>
 
     <!-- app下载 -->
-    <section class="bg-white text-gray-800  pt-12 ">
+    <section class="bg-white border-b text-gray-800  pt-12 ">
         <!-- max-w-5xl -->
-        <div class="container px-6  mx-auto ">
-
-            <div class="  w-full flex flex-wrap  justify-around		">
-
-                <a class="down-link flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
-                    href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/">
-                    <amp-img src="/image/down/_20231216161742-1.png" width="48" height="48" layout="fixed"
-                        alt="Windows版">
-                    </amp-img>
-                    <span class="">Windows版</span>
-                </a>
-                <a class="down-link flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
-                    href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/">
-                    <amp-img src="/image/down/_20231216161731-1.png" width="48" height="48" layout="fixed"
-                        alt="Windows版">
-                    </amp-img>
-                    <span class="">macOS版</span>
-                </a>
-                <a class="down-link flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
-                    href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/">
-                    <amp-img src="/image/down/_20231216161725-1.png" width="48" height="48" layout="fixed"
-                        alt="Windows版">
-                    </amp-img>
-                    <span class="">iOS版</span>
-                </a>
-                <a class="down-link active flex flex-col items-center w-1/2 sm:w-1/4 text-gray-800 p-2 pt-3"
-                    href="https://www.fanqiejsq.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/">
-                    <amp-img src="/image/down/_20231216161716-1.png" width="48" height="48" layout="fixed"
-                        alt="Windows版">
-                    </amp-img>
-                    <span class="">Android版</span>
-                </a>
-            </div>
-
-
-
+        <div class="container px-6  mx-auto pb-8">
+            @@include('src/down/android-down/tpl/_section.down.purple.ejs')
         </div>
     </section>
     <!-- end app 下载 -->

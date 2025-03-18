@@ -47,17 +47,17 @@ body.gradient {
 }
 
 .vip-tab.active {
-  background: #fff;
-  color: #ff4757;
+  background: rgb(88, 19, 122, 1);
+  color: #fff;
   /* 与标签颜色一致 */
   border-bottom: 3px solid #ff4757;
   /* 添加底部边框 */
 }
 
 .vip-tab:hover {
-  background-color: #edf2f7;
+  background-color: rgba(37, 24, 211, 0.7);
   /* 更深的悬停背景色 */
-  color: #2d3748;
+  color: #fff;
   /* 更深的文字颜色 */
 }
 

@@ -3,23 +3,17 @@
 
 <head>
     <!-- 引入公共的meata -->
-    @@include('src/vip/tpl/_meta.ejs')
-    <meta name="amp-script-src" content="sha384-qyNrROJ-Rkq7v2g8g_TbIhc8AS3WRtdb8yYzSLp4QLLjnPlPUZWfd6JlFJ2Ni0S2" />
-    <link rel="canonical" href="/vip/vip.amp.html">
+    @@include('templates/htmlTpl/_meta.ejs')
+    <link rel="canonical" href="https://www.fanqiejsq.com/vip/">
     <!-- 引入样式 -->
     @@include('templates/cssTpl/_link.css.amp.ejs')
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-
 
     <style amp-custom>
         @@include('css/tailwind.vip.amp.css') @@include('css/family.css') @@include('css/com.page.css') @@include('src/vip/tpl/vip.css') .custom-auth-xjp {}
     </style>
-
-
-
 
 
 </head>
@@ -136,15 +130,6 @@
 
     @@include('templates/ampTpl/_com.down.link.amp.ejs')
 
-
-    <!-- 
-		正确的type应该是 text/plain,
-		如果有需要格式化，可将type去掉，格式化完成后，再加上去。
-    -->
-    <script id="user-agent-script" type="text/plain" target="amp-script">
-        @@include('js/utils/down.amp.js')
-        
-    </script>
 </body>
 
 </html>

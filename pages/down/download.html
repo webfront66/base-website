@@ -23,10 +23,11 @@
         <meta property="article:modified_time" content="2024-04-17T08:17:33+00:00" />
         <meta property="twitter:image" content="https://www.fanqiejsq.com/wp-content/uploads/2023/12/icon116_3@2x-1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logo.webp" sizes="32x32">
+        <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logox512.webp" sizes="512x512">
         <link rel="canonical" href="https://www.fanqiejsq.com/download/">
         <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-        <meta name="amp-script-src" content="sha384-7c9j6Di-jm8MwtpfJf7AF4qcjyKO8ixzfUu09raptyi_lvlCS5w808AyNbHp61y0">
+        <meta http-equiv="refresh" content="3;url=https://www.fqhgvpn.com/android-down.amp.html">
         <style amp-boilerplate>
             body
             {
@@ -190,53 +191,5 @@
             <p class="loading-text">设备检测完成，正在为您跳转...</p>
             <a href="https://www.fqhgvpn.com" class="home-button">返回首页</button>
         </div>
-        <script id="device-check-script" type="text/javascript" target="amp-script">
-            (function()
-            {
-                function getOS()
-                {
-                    const userAgent = navigator.userAgent,
-                        platform = navigator.platform,
-                        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-                        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-                        iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-                    if (macosPlatforms.includes(platform))
-                    {
-                        return 'Mac';
-                    }
-                    else if (iosPlatforms.includes(platform))
-                    {
-                        return 'iOS';
-                    }
-                    else if (windowsPlatforms.includes(platform))
-                    {
-                        return 'Windows';
-                    }
-                    else if (/Android/.test(userAgent))
-                    {
-                        return 'Android';
-                    }
-                    else if (/Linux/.test(platform))
-                    {
-                        return 'Linux';
-                    }
-                    return 'Unknown';
-                }
-                const linkInfo = {
-                    Mac: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/',
-                    iOS: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/',
-                    Windows: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/',
-                    Android: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/',
-                    Linux: 'https://www.fqhgvpn.com/',
-                    Unknown: 'https://www.fqhgvpn.com/'
-                }
-                const system = getOS()
-                const downPageLink = linkInfo[system]
-                if (downPageLink)
-                {
-                    window.location.href = downPageLink;
-                }
-            })();
-        </script>
     </body>
 </html>
