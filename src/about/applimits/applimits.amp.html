@@ -3,14 +3,12 @@
 
 <head>
 	@@include('templates/htmlTpl/_meta.ejs')
-	<meta name="amp-script-src" content="sha384-Q5JcJRI-b9OwCx94ft3-bPvbQnrGxaXPUXParfATsqVTfuZPM-DiF8AJZy1uergf" />
-	<link rel="canonical" href="/article/article.amp.html">
+	<link rel="canonical" href="https://www.fanqiejsq.com/applimits/">
 	<!-- 引入样式 -->
 	@@include('templates/cssTpl/_link.css.amp.ejs')
 
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
 	<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-	<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 
 
 	<style amp-custom>
@@ -65,14 +63,7 @@
 
 	@@include('templates/ampTpl/_com.down.link.amp.ejs')
 
-	<!-- 
-		正确的type应该是 text/plain,
-		如果有需要格式化，可将type去掉，格式化完成后，再加上去。
-    -->
-	<script id="user-agent-script" type="text/plain" target="amp-script">
-		@@include('js/utils/down.amp.js')
-        
-    </script>
+
 
 
 </body>

@@ -25,8 +25,7 @@
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logo.webp" sizes="32x32">
         <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logox512.webp" sizes="512x512">
-        <meta name="amp-script-src" content="sha384-49G88a09jJDyQ2PrEKZlSRFP2TlzLBQSEei3bQ7FYp-q7unY8gMh7hvlQ1sosClf" />
-        <link rel="canonical" href="/article/article.amp.html">
+        <link rel="canonical" href="https://www.fanqiejsq.com/applimits/">
 
         <style amp-boilerplate>
             body
@@ -115,7 +114,6 @@
         </noscript>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-        <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
         <style amp-custom>
             /*! tailwindcss v3.0.0 | MIT License | https://tailwindcss.com*/
             *,
@@ -684,6 +682,11 @@
             .z-0
             {
                 z-index: 0
+            }
+
+            .z-50
+            {
+                z-index: 50
             }
 
             .m-8
@@ -2746,7 +2749,7 @@
                     <ul class="list-reset lg:flex justify-end flex-1 items-center ">
 
                         <li>
-                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/download/">客户端下载</a>
+                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fqhgvpn.com/download/">客户端下载</a>
                         </li>
                         <li class="">
                             <a class="w-full toggleColour inline-block text-black lg:text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/vip/vip.amp.html">购买VIP</a>
@@ -2988,80 +2991,13 @@
 
         </footer>
 
-        <div class="fixed bottom-8 w-full lg:hidden">
+        <div class="fixed bottom-8 w-full lg:hidden z-50">
             <section class="container mx-auto px-6 flex items-center justify-center ">
                 <div class=" rounded-full down-btn-gradient bg-white w-full font-bold lg:w-5/6 auto ">
-                    <a class="w-full inline-block com-down-link text-white no-underlinehover:text-green-500 hover:text-underline py-2 px-4" href="https://www.fanqiejsq.com/download/">番茄回国加速器,立即下载</a>
+                    <a class="w-full inline-block com-down-link text-white no-underlinehover:text-green-500 hover:text-underline py-2 px-4" href="https://www.fqhgvpn.com/download/">番茄回国加速器,立即下载</a>
                 </div>
             </section>
         </div>
 
-        <script id="user-agent-script" type="text/plain" target="amp-script"> (function () {
-	const time = 2500
-	function getOS () {
-		const userAgent = navigator.userAgent,
-			platform = navigator.platform,
-			macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-			windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-			iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-
-		if (macosPlatforms.includes(platform)) {
-			return 'Mac';
-		} else if (iosPlatforms.includes(platform)) {
-			return 'iOS';
-		} else if (windowsPlatforms.includes(platform)) {
-			return 'Windows';
-		} else if (/Android/.test(userAgent)) {
-			return 'Android';
-		} else if (/Linux/.test(platform)) {
-			return 'Linux';
-		}
-
-		return 'Unknown';
-	}
-
-	const linkInfo = {
-		Mac: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/',
-		iOS: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/',
-		Windows: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/',
-		Android: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/',
-		Linux: 'https://www.fqhgvpn.com/download/',
-		Unknown: 'https://www.fqhgvpn.com/download/'
-	}
-	function setComDownLinkHref () {
-		const system = getOS()
-		const downPageLink = linkInfo[system]
-		if (!downPageLink) {
-			return
-		}
-		try {
-			AMP.setState({
-				downJumpInfo: {
-					platform: getOS(),
-					link: downPageLink
-				}
-			});
-			const comDownLinkDom = Array.from(document.querySelectorAll('.com-down-link'));
-			if (!comDownLinkDom || !comDownLinkDom.length) {
-				return;
-			}
-			comDownLinkDom.forEach(item => {
-				if (item.hasAttribute('href')) {
-					item.setAttribute('href', downPageLink)
-				}
-			})
-		} catch (error) {
-			console.error('An error occurred:', error);
-			// 错误处理逻辑
-		}
-
-	}
-
-	setTimeout(() => {
-		setComDownLinkHref()
-	}, time)
-})()
-
-    </script>
     </body>
 </html>
