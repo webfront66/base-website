@@ -241,12 +241,14 @@
 
 
 
+    <div class="pb-10 lg:pb-0 bg-white">
+        <!--Footer-->
+        @@include('templates/ampTpl/_footer.amp.ejs')
+        <!-- end Footer -->
 
-    <!--Footer-->
-    @@include('templates/ampTpl/_footer.amp.ejs')
-    <!-- end Footer -->
+    </div>
 
-    <div class="fixed bottom-2 w-full">
+    <div class="fixed bottom-8 w-full lg:hidden">
         <section class="container mx-auto px-6 flex flex-col lg:flex-row  gap-2 lg:gap-10 items-center justify-center">
             <div class="rounded-full down-btn-gradient bg-white w-full lg:w-1/2 auto shadow-lg">
                 <a class="w-full inline-block text-white no-underline hover:text-green-500 hover:text-underline py-1 px-4"
@@ -259,15 +261,6 @@
             </div>
         </section>
     </div>
-
-    <!-- 
-		正确的type应该是 text/plain,
-		如果有需要格式化，可将type去掉，格式化完成后，再加上去。
-    -->
-    <script id="user-agent-script" type="text/plain" target="amp-script">
-		@@include('js/utils/down.amp.js')
-        
-    </script>
 
 
 </body>

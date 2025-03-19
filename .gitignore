@@ -9,4 +9,6 @@ node_modules
 ./dist
 /dist
 /old_src
+./pages
 /pages
+pages

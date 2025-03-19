@@ -2578,6 +2578,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 0.5rem;
   }
 
+  .lg\:pb-0 {
+    padding-bottom: 0px;
+  }
+
+  .lg\:pb-8 {
+    padding-bottom: 2rem;
+  }
+
   .lg\:text-left {
     text-align: left;
   }
