@@ -26,7 +26,6 @@
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logo.webp" sizes="32x32">
         <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logox512.webp" sizes="512x512">
-        <meta name="amp-script-src" content="sha384-49G88a09jJDyQ2PrEKZlSRFP2TlzLBQSEei3bQ7FYp-q7unY8gMh7hvlQ1sosClf" />
         <link rel="canonical" href="/article/article.amp.html">
 
         <style amp-boilerplate>
@@ -116,7 +115,6 @@
         </noscript>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-        <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
         <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
         <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
         <style amp-custom>
@@ -1694,6 +1692,16 @@
                 padding-bottom: 4rem
             }
 
+            .pr-8
+            {
+                padding-right: 2rem
+            }
+
+            .pl-6
+            {
+                padding-left: 1.5rem
+            }
+
             .text-left
             {
                 text-align: left
@@ -2060,12 +2068,6 @@
                 transform: var(--tw-transform)
             }
 
-            .hover\:bg-blue-600:hover
-            {
-                --tw-bg-opacity: 1;
-                background-color: rgb(37 99 235/var(--tw-bg-opacity))
-            }
-
             .hover\:text-gray-900:hover
             {
                 --tw-text-opacity: 1;
@@ -2326,7 +2328,7 @@
 
             .gradient-1
             {
-                background-image: radial-gradient(circle, #EDD8DA 1px, transparent 1px);
+                background-image: radial-gradient(circle, #edd8da 1px, transparent 1px);
                 background-size: 5px 5px;
                 color: #000;
             }
@@ -2338,12 +2340,23 @@
 
             .breadcrumbs-link:last-child:after
             {
-                content: ''
+                content: "";
             }
 
             .aside-nav-item
             {
-                box-shadow: 8px -4px 2px rgba(240, 240, 240, 0.9), 8px -6px 4px rgba(150, 130, 100, 0.6), -4px -4px 2px #d53369;
+                box-shadow: 8px -4px 2px rgba(240, 240, 240, 0.9),
+                    8px -6px 4px rgba(150, 130, 100, 0.6), -4px -4px 2px #d53369;
+            }
+
+            .bg-blue
+            {
+                background: blue;
+            }
+
+            .bg-blue:hover
+            {
+                transform: translateY(-1px);
             }
 
             .article-content h1,
@@ -2397,7 +2410,7 @@
             .article-content ol,
             .article-content ul
             {
-                margin: 10px 20px
+                margin: 10px 20px;
             }
 
             .article-content ol li::marker
@@ -2427,7 +2440,9 @@
 
             .article-content .cust-video-wrapper .cust-video-tc
             {
-                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+                background-image: linear-gradient(to bottom,
+                        rgba(0, 0, 0, 0.6),
+                        rgba(0, 0, 0, 0));
                 left: 0;
                 position: absolute;
                 top: 0;
@@ -2437,7 +2452,7 @@
             .article-content .video-title,
             .article-content .cust-video-wrapper .cust-video-tt
             {
-                color: #FFF;
+                color: #fff;
                 font-family: Roboto, sans-serif;
                 font-size: 16px;
                 height: auto;
@@ -2771,18 +2786,18 @@
                                 </ol>
                             </div>
                         </div>
-                        <div class="px-12">
+                        <div class="pr-8 pl-6">
 
                             <nav class="bg-gray-100 p-4 rounded-lg shadow-md">
                                 <div class="nav-links flex justify-between items-center">
 
                                     <div class="nav-previous">
-                                        <a class="prev flex items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105" href="https://www.fanqiejsq.com/" rel="prev">
+                                        <a class="prev flex items-center bg-blue   text-white font-semibold py-2 px-4 rounded-lg  " href="https://www.fanqiejsq.com/" rel="prev">
                                             <span class="mr-2">←</span> 前一篇文章 </a>
                                     </div>
 
                                     <div class="nav-next">
-                                        <a class="next flex items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105" href="https://www.fanqiejsq.com/" rel="next"> 后一篇文章 <span class="ml-2">→</span>
+                                        <a class="next flex items-center bg-blue   text-white font-semibold py-2 px-4 rounded-lg " href="https://www.fanqiejsq.com/" rel="next"> 后一篇文章 <span class="ml-2">→</span>
                                         </a>
                                     </div>
                                 </div>
@@ -3029,72 +3044,5 @@
             </section>
         </div>
 
-        <script id="user-agent-script" type="text/plain" target="amp-script"> (function () {
-	const time = 2500
-	function getOS () {
-		const userAgent = navigator.userAgent,
-			platform = navigator.platform,
-			macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-			windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-			iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-
-		if (macosPlatforms.includes(platform)) {
-			return 'Mac';
-		} else if (iosPlatforms.includes(platform)) {
-			return 'iOS';
-		} else if (windowsPlatforms.includes(platform)) {
-			return 'Windows';
-		} else if (/Android/.test(userAgent)) {
-			return 'Android';
-		} else if (/Linux/.test(platform)) {
-			return 'Linux';
-		}
-
-		return 'Unknown';
-	}
-
-	const linkInfo = {
-		Mac: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/',
-		iOS: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/',
-		Windows: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/',
-		Android: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/',
-		Linux: 'https://www.fqhgvpn.com/download/',
-		Unknown: 'https://www.fqhgvpn.com/download/'
-	}
-	function setComDownLinkHref () {
-		const system = getOS()
-		const downPageLink = linkInfo[system]
-		if (!downPageLink) {
-			return
-		}
-		try {
-			AMP.setState({
-				downJumpInfo: {
-					platform: getOS(),
-					link: downPageLink
-				}
-			});
-			const comDownLinkDom = Array.from(document.querySelectorAll('.com-down-link'));
-			if (!comDownLinkDom || !comDownLinkDom.length) {
-				return;
-			}
-			comDownLinkDom.forEach(item => {
-				if (item.hasAttribute('href')) {
-					item.setAttribute('href', downPageLink)
-				}
-			})
-		} catch (error) {
-			console.error('An error occurred:', error);
-			// 错误处理逻辑
-		}
-
-	}
-
-	setTimeout(() => {
-		setComDownLinkHref()
-	}, time)
-})()
-
-    </script>
     </body>
 </html>

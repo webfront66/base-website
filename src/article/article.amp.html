@@ -4,14 +4,12 @@
 <head>
 	<!-- 引入公共的meata -->
 	@@include('templates/htmlTpl/_meta.ejs')
-	<meta name="amp-script-src" content="sha384-Q5JcJRI-b9OwCx94ft3-bPvbQnrGxaXPUXParfATsqVTfuZPM-DiF8AJZy1uergf" />
 	<link rel="canonical" href="/article/article.amp.html">
 	<!-- 引入样式 -->
 	@@include('templates/cssTpl/_link.css.amp.ejs')
 
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
 	<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-	<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 	<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
@@ -68,7 +66,7 @@
 					<div class="article-content px-8 py-4 rotate-[0.5deg]">
 						@@include('src/article/tpl/_article-content.amp.ejs')
 					</div>
-					<div class="px-12">
+					<div class="pr-8 pl-6">
 						@@include('src/article/tpl/_articles-nav.ejs')
 					</div>
 				</div>
@@ -100,21 +98,6 @@
 	@@include('templates/ampTpl/_footer.amp.ejs')
 
 	@@include('templates/ampTpl/_com.down.link.amp.ejs')
-
-	<!-- <script defer src="/js/utils/scroll.js"></script> -->
-	<!-- <script defer src="/js/utils/menu.js"></script>
-	<script defer src="/js/utils/subMenu.js"></script>
-	<script defer src="/js/utils/down.js"></script> -->
-	<!-- <script defer src="/js/article/custom-play-video.js"></script> -->
-
-	<!-- 
-		正确的type应该是 text/plain,
-		如果有需要格式化，可将type去掉，格式化完成后，再加上去。
-    -->
-	<script id="user-agent-script" type="text/plain" target="amp-script">
-		@@include('js/utils/down.amp.js')
-        
-    </script>
 
 
 </body>

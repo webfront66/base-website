@@ -23,6 +23,14 @@
 .text-shadow-custom {
   text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.5);
 }
+.text-blue {
+  color: blue;
+  transition: all 0.2s ease;
+}
+.text-blue:hover {
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
 @media (max-width: 520px) {
   .another-element {
     order: 1;
