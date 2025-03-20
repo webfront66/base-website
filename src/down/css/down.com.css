@@ -1,20 +1,20 @@
 .list-item::before {
-	content: "";
-	width: 10px;
-	height: 6px;
-	position: absolute;
-	left: 0;
-	top: 12px;
-	transform: rotate(-45deg);
-	border-bottom: 2px solid #229d63;
-	border-left: 2px solid #229d63;
+  content: "";
+  width: 10px;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  transform: rotate(-45deg);
+  border-bottom: 2px solid #229d63;
+  border-left: 2px solid #229d63;
 }
 
 .down-link.active span {
-	font-weight: 700;
-	color: #f06d8e;
+  font-weight: 700;
+  color: #d43b68;
 }
 
 .down-link.active img {
-	filter: brightness(1.5);
+  filter: brightness(1.5);
 }
