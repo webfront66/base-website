@@ -6,9 +6,15 @@
 	<link rel="canonical" href="https://www.fanqiejsq.com/study/">
 	<!-- 引入样式 -->
 	@@include('templates/cssTpl/_link.css.amp.ejs')
-
+	<meta name="amp-script-src" content="sha384-bYVjvuFX_0VFxdC9mEPtlTCu-6IO5SlRbc4AUZa6Zk43Zy2loTwUZlFyvEnS5rcZ">
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
 	<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+	<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+
+	<!-- <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+	<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script> -->
+
 	<link rel="preload" href="https://www.fqhgvpn.com/images/overseas/out-col-b1.webp" as="image">
 
 	<style amp-custom>
@@ -42,7 +48,7 @@
 	</amp-state>
 
 	<!-- 头部 -->
-	@@include('templates/ampTpl/_header.amp.ejs')
+	<!-- @@include('templates/ampTpl/_header.amp.ejs') -->
 	<!-- end 头部 -->
 
 
@@ -59,6 +65,27 @@
 	@@include('templates/ampTpl/_footer.amp.ejs')
 
 	@@include('templates/ampTpl/_com.down.link.amp.ejs')
+	
+
+	<amp-state id="reportLogInfo">
+		<script type="application/json">
+			{
+				"host": "unknown",
+				"path": "/src"
+			}
+		</script>
+	</amp-state>
+	<amp-script layout="fixed-height" height="10" script="reportLog">
+		<div>&nbsp;</div>
+	</amp-script>
+
+
+
+	<script id="reportLog" type="text/plain" target="amp-script">
+		@@include('js/reportlog.amp.js')
+	</script>
+
+
 
 
 

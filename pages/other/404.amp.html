@@ -25,7 +25,6 @@
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logo.webp" sizes="32x32">
         <link rel="icon" type="image/x-icon" href="https://www.fqhgvpn.com/images/logox512.webp" sizes="512x512">
-        <meta name="amp-script-src" content="sha384-49G88a09jJDyQ2PrEKZlSRFP2TlzLBQSEei3bQ7FYp-q7unY8gMh7hvlQ1sosClf" />
         <link rel="canonical" href="/article/article.amp.html">
 
         <style amp-boilerplate>
@@ -115,7 +114,6 @@
         </noscript>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-        <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
         <style amp-custom>
             /*! tailwindcss v3.0.0 | MIT License | https://tailwindcss.com*/
             *,
@@ -2759,7 +2757,7 @@
                     <ul class="list-reset lg:flex justify-end flex-1 items-center ">
 
                         <li>
-                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="https://www.fqhgvpn.com/download/">客户端下载</a>
+                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/down/win-down/windows-down.amp.html">客户端下载</a>
                         </li>
                         <li class="">
                             <a class="w-full toggleColour inline-block text-black lg:text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/vip/vip.amp.html">购买VIP</a>
@@ -2767,7 +2765,7 @@
                         <li class="relative parent-menu-item">
                             <div class="flex justify-between hover-effect group">
                                 <a class="toggleColour touch-manipulation lg:inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="/pages/game-booster/game-booster.amp.html" title="使用番茄"> 使用番茄 </a>
-                                <span id="show_sub_menu" class="sub-menu-trigger-btn ast-icon icon-arrow flex h-10  flex-1 items-center justify-end text-right px-4 py-3 cursor-pointer" role="button" tabindex="0" on="tap:AMP.setState({navState: {'submenuexpand': !navState.submenuexpand}})">
+                                <span id="show_sub_menu" class="sub-menu-trigger-btn ast-icon icon-arrow flex h-10  flex-1 items-center justify-end text-right px-4 py-3 cursor-pointer" role="button" tabindex="0" aria-label="展开子菜单" on="tap:AMP.setState({navState: {'submenuexpand': !navState.submenuexpand}})">
                                     <svg class="ast-arrow-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="12px" height="16.043px" viewBox="57 35.171 26 16.043" enable-background="new 57 35.171 26 16.043" xml:space="preserve">
                                         <path d="M57.5,38.193l12.5,12.5l12.5-12.5l-2.5-2.5l-10,10l-10-10L57.5,38.193z">
                                         </path>
@@ -2940,72 +2938,5 @@
             </section>
         </div>
 
-        <script id="user-agent-script" type="text/plain" target="amp-script"> (function () {
-	const time = 2500
-	function getOS () {
-		const userAgent = navigator.userAgent,
-			platform = navigator.platform,
-			macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-			windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-			iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-
-		if (macosPlatforms.includes(platform)) {
-			return 'Mac';
-		} else if (iosPlatforms.includes(platform)) {
-			return 'iOS';
-		} else if (windowsPlatforms.includes(platform)) {
-			return 'Windows';
-		} else if (/Android/.test(userAgent)) {
-			return 'Android';
-		} else if (/Linux/.test(platform)) {
-			return 'Linux';
-		}
-
-		return 'Unknown';
-	}
-
-	const linkInfo = {
-		Mac: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8mac%E4%B8%8B%E8%BD%BD/',
-		iOS: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8ios%E4%B8%8B%E8%BD%BD/',
-		Windows: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8windows%E4%B8%8B%E8%BD%BD/',
-		Android: 'https://www.fqhgvpn.com/%E5%9B%9E%E5%9B%BD%E5%8A%A0%E9%80%9F%E5%99%A8android%E4%B8%8B%E8%BD%BD/',
-		Linux: 'https://www.fqhgvpn.com/download/',
-		Unknown: 'https://www.fqhgvpn.com/download/'
-	}
-	function setComDownLinkHref () {
-		const system = getOS()
-		const downPageLink = linkInfo[system]
-		if (!downPageLink) {
-			return
-		}
-		try {
-			AMP.setState({
-				downJumpInfo: {
-					platform: getOS(),
-					link: downPageLink
-				}
-			});
-			const comDownLinkDom = Array.from(document.querySelectorAll('.com-down-link'));
-			if (!comDownLinkDom || !comDownLinkDom.length) {
-				return;
-			}
-			comDownLinkDom.forEach(item => {
-				if (item.hasAttribute('href')) {
-					item.setAttribute('href', downPageLink)
-				}
-			})
-		} catch (error) {
-			console.error('An error occurred:', error);
-			// 错误处理逻辑
-		}
-
-	}
-
-	setTimeout(() => {
-		setComDownLinkHref()
-	}, time)
-})()
-
-    </script>
     </body>
 </html>
