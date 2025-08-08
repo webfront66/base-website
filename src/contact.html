@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  @@include('templates/htmlTpl/_meta.ejs')
+  <!-- 引入样式 -->
+  @@include('templates/cssTpl/_link.css.ejs')
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  </style>
+  <title>首页</title>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+<!--Nav -->
+@@include('layouts/partials/_header.html')
+<!-- end Nav -->
+
+<!--  start banner  -->
+<div class="pt-16 lg:pt-24 bg-[#6200ea]">
+  <div style="height: 300px;">
+    @@include('src/home/_banner.ejs')
+  </div>
+</div>
+
+<!-- start 公司介绍  -->
+@@include('src/home/_section_1.ejs')
+<!-- end 公司介绍-->
+
+<!--  start 品牌理念-->
+@@include('src/home/_section_2.ejs')
+<!-- end 品牌理念-->
+
+
+<!--  start 经营理念-->
+@@include('src/home/_section_3.ejs')
+<!-- end 经营理念-->
+
+<!--  start 业务介绍-->
+@@include('src/home/_section_4.ejs')
+<!-- end 业务介绍-->
+
+<!--Hero-->
+@@include('layouts/partials/_wave.top.html')
+@@include('src/home/_section_5.ejs')
+
+
+
+
+
+<!--Footer-->
+@@include('layouts/partials/_footer.html')
+
+
+<!-- <script defer src="/js/utils/scroll.js"></script> -->
+<script defer src="/assets/js/utils/menu.js"></script>
+<script defer src="/assets/js/utils/subMenu.js"></script>
+<!-- @@include('templates/jsTpl/extral.ejs') -->
+
+</body>
+
+</html>

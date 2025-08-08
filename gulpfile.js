@@ -35,7 +35,7 @@ gulp.task('html', () => {
       indent_inner_html: true,  // 格式化嵌套标签
       unformatted: ['code', 'pre', 'textarea'], // 不格式化的标签
     }))
-    .pipe(replace(/<!--[\s\S]*?-->/g, ''))  // **去除所有 HTML 注释**
+    // .pipe(replace(/<!--[\s\S]*?-->/g, ''))  // **去除所有 HTML 注释**
     .pipe(replace(/\n\s*\n+/g, '\n\n'))
 
     .pipe(gulp.dest('pages'))
@@ -64,6 +64,7 @@ gulp.task('html', () => {
 
 // 实时监控模板文件和其他源文件的变化
 gulp.task('watch', () => {
+  gulp.watch('layouts/**/*.html', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('templates/**/*.ejs', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('src/**/*.js', gulp.series('html')); // 监听 .amp.html 文件
   gulp.watch('src/**/*.css', gulp.series('html')); // 监听 .amp.html 文件
