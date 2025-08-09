@@ -66,3 +66,20 @@ Tailwind Toolbox 基于 [Tailwind CSS](https://www.tailwindcss.com/) 框架，Ta
 
 
 log.js:232 [Action] "scroll" event with "low" trust is not allowed to invoke "amp.setState".
+
+
+### 联系我们
+
+
+
+**信息**
+> https://etsu.co.jp/contact.html
+> infor@etsu.co.jp 信息窗口，适用于一般性咨询媒体联系合作邀请等 sales@etsu.co.jp 销售用，产品咨询，报价请求等 recruit@etsu.co.jp 招聘用，会加到公司招聘页面
+
+> 接口调试。
+
+### 业务介绍。
+
+1. 静态图片。
+2. 轮播图片。
+3. 业务介绍。
