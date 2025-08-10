@@ -1,11 +1,15 @@
 :root {
   --color-bg: #FFFDF5;   /* 背景 */
   --color-gold: #D4AF37; /* Logo/主题金色 */
+  --gold: rgb(228, 170, 61);
+  --gold-dark: rgb(171, 128, 46);
+}
+:root {
+
 }
 
 .bg-theme   { background-color: var(--color-bg); }
-.text-gold  { color: var(--color-gold); }
-.fill-gold  { fill: var(--color-gold); }
+
 .border-gold{ border-color: var(--color-gold); }
 
 .gradient {
@@ -14,9 +18,19 @@
 .gradient {
   background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
 }
-#header {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.text-gold {
+  color: var(--gold);
 }
+.text-gold-dark {
+  color: var(--gold-dark);
+}
+.hover\:text-gold:hover {
+  color: var(--gold-dark);
+}
+.hover\:text-gold-dark:hover {
+  color: var(--gold-dark);
+}
+.fill-gold  { fill: var(--color-gold); }
 /* 按钮渐变 */
 .down-btn-gradient {
   background: linear-gradient(90deg, #f06d8e 0%, #f7c857 100%);
