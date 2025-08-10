@@ -1,0 +1,86 @@
+:root {
+  --color-bg: #FFFDF5;   /* 背景 */
+  --color-gold: #D4AF37; /* Logo/主题金色 */
+  --gold: rgb(228, 170, 61);
+  --gold-dark: rgb(171, 128, 46);
+}
+:root {
+
+}
+
+.bg-theme   { background-color: var(--color-bg); }
+
+.border-gold{ border-color: var(--color-gold); }
+
+.gradient {
+  background: linear-gradient(90deg, #3a506b 0%, #1c2541 100%);
+}
+.gradient {
+  background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+}
+.text-gold {
+  color: var(--gold);
+}
+.text-gold-dark {
+  color: var(--gold-dark);
+}
+.hover\:text-gold:hover {
+  color: var(--gold-dark);
+}
+.hover\:text-gold-dark:hover {
+  color: var(--gold-dark);
+}
+.fill-gold  { fill: var(--color-gold); }
+/* 按钮渐变 */
+.down-btn-gradient {
+  background: linear-gradient(90deg, #f06d8e 0%, #f7c857 100%);
+  /* background: linear-gradient(90deg, #d53369 0%, #f7c857 50%, #f06d8e 100%); */
+  text-align: center;
+}
+
+.down-btn-inverse-gradient {
+  background: rgb(88, 19, 122);
+}
+
+.tomato__header-img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.sub-menu {
+  display: none;
+  opacity: 0;
+  top: 100%;
+
+  transition: opacity 0.3s ease;
+}
+
+.sub-menu.show {
+  display: block;
+  opacity: 1;
+}
+
+/* 当父元素悬浮时，给 <a> 元素添加 hover 样式 */
+
+@media (min-width: 1024px) {
+  .sub-menu {
+    width: 10rem;
+  }
+
+  .parent-menu-item:hover .sub-menu {
+    display: block;
+    opacity: 1;
+
+    background-color: #fff;
+  }
+
+  .sub-menu-trigger-btn {
+    fill: #fff;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hover-effect:hover .toggleColour {
+    color: #00ff00;
+  }
+}
