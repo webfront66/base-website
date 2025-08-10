@@ -1,39 +1,53 @@
-name: Deploy Static Site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "master" ]
-  workflow_dispatch:
+    branches: ["main", "master"]  # 触发分支
+  workflow_dispatch:              # 允许手动触发
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # 获取完整提交历史（某些静态站点生成器需要）
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload Pages Artifact
+      # 关键步骤：指定上传 pages 目录
+      - name: Upload pages directory
         uses: actions/upload-pages-artifact@v2
         with:
-          path: "pages/"  # 关键修改：只上传pages目录内容
+          path: 'pages/'  # 你的静态网站目录
 
-      - name: Deploy to GitHub Pages
-        id: deployment
+      # 自动启用 GitHub Pages（如果未启用）
+      - name: Enable GitHub Pages
+        uses: actions/github-script@v6
+        with:
+          script: |
+            try {
+              await github.rest.pages.getPagesSite({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              })
+            } catch (error) {
+              if (error.status === 404) {
+                await github.rest.pages.createPagesSite({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  source: {
+                    branch: 'main',     # 替换为你的分支
+                    path: '/',          # 保持根目录，因为已在 upload 步骤指定子目录
+                  }
+                })
+              } else {
+                throw error
+              }
+            }
+
+      # 部署
+      - name: Deploy
         uses: actions/deploy-pages@v2
