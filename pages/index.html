@@ -45,6 +45,7 @@
                 background-position: center;
             }
         </style>
+        <script defer src="./assets/js/utils/customSwiper.js"></script>
         <title>首页</title>
     </head>
     <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
@@ -155,102 +156,99 @@
             </script>
         </section>
         <script>
-            document.addEventListener('DOMContentLoaded', () =>
-            {
-                const DURATION = 1500 * 1000; // 2 秒轮播
-                const track = document.getElementById('track');
-                const slides = track.children;
-                const dots = document.querySelectorAll('.dot');
-                const total = slides.length;
-                const width = 100;
-                let index = 1; // 从真实第 1 张开始
-                /* 初始位置 */
-                track.style.transform = `translateX(-${width}%)`;
-                /* 更新圆点高亮 */
-                const updateDots = i =>
-                {
-                    if (!dots && !dots.length)
-                    {
-                        return;
-                    }
-                    dots.forEach((d, idx) => d.classList.toggle('opacity-100', idx === (i - 1 + 3) % 3) || d.classList.toggle('opacity-60', idx !== (i - 1 + 3) % 3));
-                };
-                updateDots(index);
-                /* 下一张（无缝） */
-                const next = () =>
-                {
-                    index++;
-                    if (index === total - 1)
-                    {
-                        index = 1;
-                    }
-                    track.style.transition = 'transform .6s ease';
-                    track.style.transform = `translateX(-${index * width}%)`;
-                    track.addEventListener('transitionend', function handler()
-                    {
-                        if (index === total - 1)
-                        {
-                            track.style.transition = 'none';
-                            index = 1;
-                            track.style.transform = `translateX(-${width}%)`;
-                        }
-                        updateDots(index);
-                        track.removeEventListener('transitionend', handler);
-                    });
-                };
-                /* 上一张（无缝） */
-                const prev = () =>
-                {
-                    index--;
-                    if (index < 0)
-                    {
-                        index = total - 2
-                    }
-                    track.style.transition = 'transform .6s ease';
-                    track.style.transform = `translateX(-${index * width}%)`;
-                    track.addEventListener('transitionend', function handler()
-                    {
-                        if (index === 0)
-                        {
-                            track.style.transition = 'none';
-                            index = total - 2;
-                            track.style.transform = `translateX(-${index * width}%)`;
-                        }
-                        updateDots(index);
-                        track.removeEventListener('transitionend', handler);
-                    });
-                };
-                /* 点击圆点/按钮 */
-                dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.index + 1)));
-                document.getElementById('next').addEventListener('click', next);
-                document.getElementById('prev').addEventListener('click', prev);
-
-                function go(i)
-                {
-                    index = i;
-                    track.style.transition = 'transform .6s ease';
-                    track.style.transform = `translateX(-${index * width}%)`;
-                    updateDots(index);
-                }
-                /* 自动轮播 */
-                function main()
-                {
-                    let timer = setInterval(next, DURATION);
-                    const carousel = document.getElementById('carousel');
-                    carousel.addEventListener('mouseenter', () =>
-                    {
-                        clearInterval(timer)
-                        timer = null;
-                    });
-                    carousel.addEventListener('mouseleave', () =>
-                    {
-                        clearInterval(timer)
-                        timer = null;
-                        timer = setInterval(next, DURATION)
-                    });
-                }
-                main()
-            })
+            // document.addEventListener('DOMContentLoaded', () => {
+            //     const DURATION = 1500 * 1000;        // 2 秒轮播
+            //     const track = document.getElementById('track');
+            //     const slides = track.children;
+            //     const dots = document.querySelectorAll('.dot');
+            //     const total = slides.length;
+            //     const width = 100;
+            //     let index = 1;                // 从真实第 1 张开始
+            //
+            //     /* 初始位置 */
+            //     track.style.transform = `translateX(-${width}%)`;
+            //
+            //     /* 更新圆点高亮 */
+            //     const updateDots = i => {
+            //         if (!dots && !dots.length) {
+            //             return;
+            //         }
+            //         dots.forEach((d, idx) =>
+            //             d.classList.toggle('opacity-100', idx === (i - 1 + 3) % 3) ||
+            //             d.classList.toggle('opacity-60', idx !== (i - 1 + 3) % 3)
+            //         );
+            //     };
+            //     updateDots(index);
+            //
+            //     /* 下一张（无缝） */
+            //     const next = () => {
+            //
+            //         index++;
+            //         if (index === total - 1) {
+            //             index = 1;
+            //         }
+            //         track.style.transition = 'transform .6s ease';
+            //         track.style.transform = `translateX(-${index * width}%)`;
+            //
+            //         track.addEventListener('transitionend', function handler() {
+            //             if (index === total - 1) {
+            //                 track.style.transition = 'none';
+            //                 index = 1;
+            //                 track.style.transform = `translateX(-${width}%)`;
+            //             }
+            //             updateDots(index);
+            //             track.removeEventListener('transitionend', handler);
+            //         });
+            //     };
+            //
+            //     /* 上一张（无缝） */
+            //     const prev = () => {
+            //         index--;
+            //         if (index < 0) {
+            //             index = total - 2
+            //         }
+            //         track.style.transition = 'transform .6s ease';
+            //         track.style.transform = `translateX(-${index * width}%)`;
+            //
+            //         track.addEventListener('transitionend', function handler() {
+            //             if (index === 0) {
+            //                 track.style.transition = 'none';
+            //                 index = total - 2;
+            //                 track.style.transform = `translateX(-${index * width}%)`;
+            //             }
+            //             updateDots(index);
+            //             track.removeEventListener('transitionend', handler);
+            //         });
+            //     };
+            //
+            //     /* 点击圆点/按钮 */
+            //     dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.index + 1)));
+            //     document.getElementById('next').addEventListener('click', next);
+            //     document.getElementById('prev').addEventListener('click', prev);
+            //
+            //     function go(i) {
+            //         index = i;
+            //         track.style.transition = 'transform .6s ease';
+            //         track.style.transform = `translateX(-${index * width}%)`;
+            //         updateDots(index);
+            //     }
+            //     /* 自动轮播 */
+            //     function main() {
+            //         let timer = setInterval(next, DURATION );
+            //         const carousel = document.getElementById('carousel');
+            //         carousel.addEventListener('mouseenter', () => {
+            //             clearInterval(timer)
+            //             timer = null;
+            //         });
+            //         carousel.addEventListener('mouseleave', () => {
+            //             clearInterval(timer)
+            //             timer = null;
+            //             timer = setInterval(next, DURATION)
+            //         });
+            //     }
+            //     main()
+            //
+            // })
         </script>
         <!-- start 公司介绍  -->
         <!-- 公司介绍 -->
@@ -278,7 +276,7 @@
             <div class="container px-6 mx-auto m-8 ">
                 <!-- 两列，中间 8（=2rem）空档，永不换行 -->
                 <div class="flex flex-row  flex-wrap ">
-                    <div class="md:w-full w-1/2 p-2">
+                    <div class="sm:w-full md:w-full w-full p-2 text-center">
                         <div class="w-full text-center font-bold text-black pb-4">品牌理念</div>
                         <div class="w-full text-center text-black mb-4">
                             <div> “越界·探索” </div>
@@ -291,13 +289,13 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="md:w-1/3 w-1/2 p-2">
+                    <div class="sm:w-full md:w-1/3 w-1/2 p-2">
                         <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_2_1.jpg" alt="一键加速，不限流量，超稳定" />
                     </div>
-                    <div class="md:w-1/3 w-1/2 p-2">
+                    <div class="sm:w-full md:w-1/3 w-1/2 p-2">
                         <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
                     </div>
-                    <div class="md:w-1/3 w-1/2 p-2">
+                    <div class="sm:w-full md:w-1/3 w-1/2 p-2">
                         <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_2_2.jpg" alt="一键加速，不限流量，超稳定" />
                     </div>
                 </div>
@@ -489,6 +487,15 @@
         <!-- end footer -->
         <!-- <script defer src="/js/utils/scroll.js"></script> -->
         <script defer src="./assets/js/utils/menu.js"></script>
-        <!--<script defer src="./assets/js/utils/customSwiper.js"></script>-->
+        <script>
+            document.addEventListener('DOMContentLoaded', () =>
+            {
+                initCarousel(
+                {
+                    trackId: 'track',
+                    carouselId: 'carousel',
+                })
+            })
+        </script>
     </body>
 </html>

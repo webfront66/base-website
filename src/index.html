@@ -23,6 +23,7 @@
         }
 
     </style>
+    <script defer src="./assets/js/utils/customSwiper.js"></script>
     <title>首页</title>
 
 </head>
@@ -64,7 +65,17 @@
 
 <!-- <script defer src="/js/utils/scroll.js"></script> -->
 <script defer src="./assets/js/utils/menu.js"></script>
-<!--<script defer src="./assets/js/utils/customSwiper.js"></script>-->
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        initCarousel({
+            trackId: 'track',
+            carouselId: 'carousel',
+        })
+    })
+</script>
+
 <!-- @@include('templates/jsTpl/extral.ejs') -->
 
 </body>
