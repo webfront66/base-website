@@ -6,7 +6,13 @@
     @@include('templates/htmlTpl/_meta.ejs')
     <!-- 引入样式 -->
     @@include('templates/cssTpl/_link.css.ejs')
+    <link
+            rel="stylesheet"
+            href="./assets/css/swiper-bundle.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
+<!--    <script defer src="./assets/js/utils/customSwiper.js"></script>-->
+<!--    <script src="./assets/js/utils/swiper-bundle.min.js"></script>-->
     <style>
         .track
         {
@@ -21,9 +27,9 @@
             background-size: cover;
             background-position: center;
         }
-
     </style>
-    <script defer src="./assets/js/utils/customSwiper.js"></script>
+
+
     <title>首页</title>
 
 </head>
@@ -69,10 +75,12 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        initCarousel({
-            trackId: 'track',
-            carouselId: 'carousel',
-        })
+        if (window.initCarousel && typeof initCarousel === 'function') {
+            initCarousel({
+                trackId: 'track',
+                carouselId: 'carousel',
+            })
+        }
     })
 </script>
 

@@ -29,10 +29,26 @@
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <link rel="stylesheet" href="./assets/css/family.css" />
         <link rel="stylesheet" href="./assets/css/com.page.css">
+        <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <!--    <script defer src="./assets/js/utils/customSwiper.js"></script>-->
+        <!--    <script src="./assets/js/utils/swiper-bundle.min.js"></script>-->
         <style>
+            .track
+            {
+                display: flex;
+                transition: transform .6s ease;
+            }
+
+            .slide
+            {
+                flex: 0 0 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+            }
         </style>
-        <title>首页2</title>
+        <title>首页</title>
     </head>
     <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
         <!--Nav -->
@@ -43,13 +59,13 @@
                 <div class="pl-4 flex items-center">
                     <a class="toggleColour text-white no-underline hover:no-underline font-bold text-1xl lg:text-2xl flex items-center" href="./index.html">
                         <!--Icon from: http://www.potlabicons.com/ -->
-                        <img src="./assets/image/logo_light.png" class="tomato__header-img" alt="越 etuc" decoding="async" />
+                        <img src="./assets/image/logo-light.png" class="tomato__header-img" alt="越 etuc" decoding="async" />
                         <!--        <span class="ml-1 text-amber-100" style="color:rgb(228 170 61);">越etsu</span>-->
                     </a>
                 </div>
                 <!-- nav-toggle -->
                 <div class="block lg:hidden pr-4">
-                    <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <button id="nav-toggle" class="flex items-center p-1 text-gold hover:text-gold focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                         <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Menu</title>
                             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -63,19 +79,19 @@
                             <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Active</a>
                     </li> -->
                         <li class="">
-                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="./index.html">首页</a>
+                            <a class="to-download com-down-link w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-gold	 hover:text-underline py-2 px-4" href="./index.html">首页</a>
                         </li>
                         <li class="">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline  hover:text-green-500	 hover:text-underline py-2 px-4" href="./about.html">公司概况</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline  hover:text-gold	 hover:text-underline py-2 px-4" href="./about.html">公司概况</a>
                         </li>
                         <li class="cursor-pointer">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="./services.html">业务介绍</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-gold	 hover:text-underline py-2 px-4" href="./services.html">业务介绍</a>
                         </li>
                         <li class="cursor-pointer">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="./careers.html">企业招骋</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-gold	 hover:text-underline py-2 px-4" href="./careers.html">企业招骋</a>
                         </li>
                         <li class="cursor-pointer">
-                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-green-500	 hover:text-underline py-2 px-4" href="./contact.html">联系我们</a>
+                            <a class="w-full toggleColour inline-block text-black lg:text-white no-underline hover:text-gold	 hover:text-underline py-2 px-4" href="./contact.html">联系我们</a>
                         </li>
                     </ul>
                 </div>
@@ -84,31 +100,171 @@
         </nav>
         <!-- end common header -->
         <!-- end Nav -->
-        <!--  start banner  -->
-        <div class="pt-16 lg:pt-24 bg-[#6200ea]">
-            <div style="height: 300px;">
-                <div>
-                    <div class="container px-6 mx-auto m-8 ">
-                        <div> this is banner </div>
-                        <div>
-                            <p> 先把几个页面架子搭起来再说</p>
-                            <p> 首页的几个模块差不多就长这样，品牌理念那里，应该是这样的，pc端 </p>
-                            <p> 品牌 </p>
-                        </div>
+        <!--  start banner   -->
+        <section class="pt-16  relative bg-center home-banner">
+            <div id="carousel" class="relative w-full   h-[calc(100vh-4rem)] overflow-hidden ">
+                <!-- 轨道：首尾克隆实现无缝 -->
+                <div id="track" class="track h-full">
+                    <div class="slide h-full bg-[url('./assets/image/home/home_banner_1.jpg')]">
+                    </div>
+                    <div class="slide h-full bg-[url('./assets/image/home/home_banner_04.jpg')]">
+                    </div>
+                    <div class="slide h-full bg-[url('./assets/image/home/home_banner_2.jpg')]">
+                    </div>
+                    <div class="slide h-full bg-[url('./assets/image/home/home_banner_1.jpg')]">
+                    </div>
+                    <div class="slide h-full bg-[url('./assets/image/home/home_banner_04.jpg')]">
                     </div>
                 </div>
+                <!-- 左右按钮：PC 显示 / 手机隐藏 -->
+                <button id="prev" class="flex absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 text-white rounded-full px-3 py-2 text-2xl z-10"> ‹ </button>
+                <button id="next" class="flex absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 text-white rounded-full px-3 py-2 text-2xl z-10"> › </button>
+                <!-- 金色小圆点：始终显示 -->
+                <!-- 圆点行：独立绝对居中 -->
+                <!-- 金色小圆点：始终显示 -->
+                <div id="dots" class="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    <span data-index="0" class="dot w-3 h-3 rounded-full bg-[#E4AA3D] opacity-60 cursor-pointer"></span>
+                    <span data-index="1" class="dot w-3 h-3 rounded-full bg-[#E4AA3D] opacity-60 cursor-pointer"></span>
+                    <span data-index="2" class="dot w-3 h-3 rounded-full bg-[#E4AA3D] opacity-60 cursor-pointer"></span>
+                </div>
+                <!-- 箭头行：独立绝对居中 -->
+                <!-- 闪烁向下箭头（外层定位，内层动画） -->
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
+                    <button id="scrollHint" class="animate-bounce text-white hover:text-gold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
+                            <path d="M12 4v16m0 0l-7-7m7 7l7-7" />
+                        </svg>
+                        <!--                <svg xmlns="http://www.w3.org/2000/svg"-->
+                        <!--                     class="w-7 h-7" fill="none" viewBox="0 0 24 24"-->
+                        <!--                     stroke="currentColor" stroke-width="2.5"-->
+                        <!--                     stroke-linecap="square" stroke-linejoin="miter">-->
+                        <!--                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>-->
+                        <!--                </svg>-->
+                    </button>
+                </div>
             </div>
-        </div>
+            <script>
+                /* 点击箭头 → 平滑滚动到 section 底部 */
+                document.getElementById('scrollHint').addEventListener('click', () =>
+                {
+                    const banner = document.querySelector('.home-banner');
+                    const offset = banner.offsetHeight - 64; // 轮播高度
+                    window.scrollTo(
+                    {
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                });
+            </script>
+        </section>
+        <script>
+            // document.addEventListener('DOMContentLoaded', () => {
+            //     const DURATION = 1500 * 1000;        // 2 秒轮播
+            //     const track = document.getElementById('track');
+            //     const slides = track.children;
+            //     const dots = document.querySelectorAll('.dot');
+            //     const total = slides.length;
+            //     const width = 100;
+            //     let index = 1;                // 从真实第 1 张开始
+            //
+            //     /* 初始位置 */
+            //     track.style.transform = `translateX(-${width}%)`;
+            //
+            //     /* 更新圆点高亮 */
+            //     const updateDots = i => {
+            //         if (!dots && !dots.length) {
+            //             return;
+            //         }
+            //         dots.forEach((d, idx) =>
+            //             d.classList.toggle('opacity-100', idx === (i - 1 + 3) % 3) ||
+            //             d.classList.toggle('opacity-60', idx !== (i - 1 + 3) % 3)
+            //         );
+            //     };
+            //     updateDots(index);
+            //
+            //     /* 下一张（无缝） */
+            //     const next = () => {
+            //
+            //         index++;
+            //         if (index === total - 1) {
+            //             index = 1;
+            //         }
+            //         track.style.transition = 'transform .6s ease';
+            //         track.style.transform = `translateX(-${index * width}%)`;
+            //
+            //         track.addEventListener('transitionend', function handler() {
+            //             if (index === total - 1) {
+            //                 track.style.transition = 'none';
+            //                 index = 1;
+            //                 track.style.transform = `translateX(-${width}%)`;
+            //             }
+            //             updateDots(index);
+            //             track.removeEventListener('transitionend', handler);
+            //         });
+            //     };
+            //
+            //     /* 上一张（无缝） */
+            //     const prev = () => {
+            //         index--;
+            //         if (index < 0) {
+            //             index = total - 2
+            //         }
+            //         track.style.transition = 'transform .6s ease';
+            //         track.style.transform = `translateX(-${index * width}%)`;
+            //
+            //         track.addEventListener('transitionend', function handler() {
+            //             if (index === 0) {
+            //                 track.style.transition = 'none';
+            //                 index = total - 2;
+            //                 track.style.transform = `translateX(-${index * width}%)`;
+            //             }
+            //             updateDots(index);
+            //             track.removeEventListener('transitionend', handler);
+            //         });
+            //     };
+            //
+            //     /* 点击圆点/按钮 */
+            //     dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.index + 1)));
+            //     document.getElementById('next').addEventListener('click', next);
+            //     document.getElementById('prev').addEventListener('click', prev);
+            //
+            //     function go(i) {
+            //         index = i;
+            //         track.style.transition = 'transform .6s ease';
+            //         track.style.transform = `translateX(-${index * width}%)`;
+            //         updateDots(index);
+            //     }
+            //     /* 自动轮播 */
+            //     function main() {
+            //         let timer = setInterval(next, DURATION );
+            //         const carousel = document.getElementById('carousel');
+            //         carousel.addEventListener('mouseenter', () => {
+            //             clearInterval(timer)
+            //             timer = null;
+            //         });
+            //         carousel.addEventListener('mouseleave', () => {
+            //             clearInterval(timer)
+            //             timer = null;
+            //             timer = setInterval(next, DURATION)
+            //         });
+            //     }
+            //     main()
+            //
+            // })
+        </script>
         <!-- start 公司介绍  -->
         <!-- 公司介绍 -->
-        <section class="border-b py-1 lg:py-8 bg-amber-50">
+        <section class="border-b py-1  lg:py-8  bg-[#faf9f7]">
             <div class="container px-6 mx-auto m-8 ">
-                <div class="w-full text-center text-bold text-black">公司介绍</div>
-                <div class="w-full text-center text-black mb-4">xxxxx</div>
+                <div class="w-full text-center font-bold text-gold pb-4 ">公司介绍</div>
+                <div class="w-full text-center text-black mb-4">
+                    <p class="text-left"> 越 etuc 是一家致力于创新与品质的新锐企业，专注于为客户提供前沿的解决方案和卓越的服务体验。我们以“超越期待，智创未来”为核心，融合科技与人文，打造兼具实用性与美感的品牌生态。 </p>
+                    <p class="text-left"> etuc 取自“Exceed Towards Unique Creativity”（超越，迈向独特创造），寓意我们不断突破界限，追求卓越。公司业务涵盖【可根据实际业务补充，如科技研发、创意设计、品牌咨询、数字营销等】，致力于成为行业中的引领者，为客户、合作伙伴及社会创造长期价值。 </p>
+                </div>
                 <!-- 两列，中间 8（=2rem）空档，永不换行 -->
-                <div class="grid grid-cols-2 gap-x-8">
-                    <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
-                    <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
+                <div class="grid grid-cols-2 gap-x-4">
+                    <img class="w-full h-full max-w-[600px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
+                    <img class="w-full h-full max-w-[600px] mx-auto" src="./assets/image/home/home_section_1_2.jpg" alt="一键加速，不限流量，超稳定" />
                 </div>
             </div>
         </section>
@@ -122,31 +278,90 @@
             <div class="container px-6 mx-auto m-8 ">
                 <!-- 两列，中间 8（=2rem）空档，永不换行 -->
                 <div class="flex flex-row  flex-wrap ">
-                    <div class="md:w-full w-1/2 p-2">
-                        <div class="w-full text-left text-bold text-black">品牌理念</div>
-                        <div class="w-full text-left text-black mb-4">xxxxx</div>
+                    <div class="sm:w-full md:w-full w-full p-2 text-center">
+                        <div class="w-full text-center font-bold text-black pb-4">品牌理念</div>
+                        <div class="w-full text-center text-black mb-4">
+                            <div> “越界·探索” </div>
+                            <ul>
+                                <li>越界（Beyond Limits）：打破常规思维，挑战行业边界，探索未知可能。</li>
+                                <li> 探索（Explore）：保持好奇心，以敏锐洞察力发掘趋势，引领变革。 </li>
+                                <!--                        <li>-->
+                                <!--                            共生（Symbiosis）：注重可持续发展，追求商业价值与社会价值的平衡，与用户、环境和谐共生。-->
+                                <!--                        </li>-->
+                            </ul>
+                        </div>
                     </div>
-                    <div class="md:w-1/3 w-1/2 p-2">
+                    <div class="sm:w-full md:w-1/3 w-full p-2">
+                        <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_2_1.jpg" alt="一键加速，不限流量，超稳定" />
+                    </div>
+                    <div class="sm:w-full md:w-1/3 w-full p-2">
                         <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
                     </div>
-                    <div class="md:w-1/3 w-1/2 p-2">
-                        <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
-                    </div>
-                    <div class="md:w-1/3 w-1/2 p-2">
-                        <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
+                    <div class="sm:w-full md:w-1/3 w-full p-2">
+                        <img class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_2_2.jpg" alt="一键加速，不限流量，超稳定" />
                     </div>
                 </div>
             </div>
         </section>
+        <script type="module">
+            var galleryThumbs = new Swiper('.gallery-thumbs',
+            {
+                spaceBetween: 10,
+                slidesPerView: 4,
+                loop: true,
+                freeMode: true,
+                loopedSlides: 5, //looped slides should be the same
+                watchSlidesProgress: true,
+            });
+            var galleryTop = new Swiper('.gallery-top',
+            {
+                spaceBetween: 10,
+                loop: true,
+                loopedSlides: 5, //looped slides should be the same
+                navigation:
+                {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                thumbs:
+                {
+                    swiper: galleryThumbs,
+                },
+            });
+        </script>
         <!-- end 品牌理念-->
         <!--  start 经营理念-->
         <!-- 经营理念 -->
         <section class="border-b py-1 lg:py-8 bg-amber-50">
             <div class="container px-6 mx-auto m-8 ">
-                <div class="w-full text-left text-bold text-black">经营理念</div>
                 <div class="flex lg:flex-row  flex-col  justify-between items-center">
                     <div class="lg:w-1/2 w-full break-all flex flex-col justify-between">
-                        <div class="w-full text-left text-black mb-4 pr-2"> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX </div>
+                        <div class="w-full text-center font-bol	  text-gold pb-4">经营理念</div>
+                        <div class="w-full text-center text-black mb-4 pr-2">
+                            <div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <span>精益求精</span>
+                                    <span>——</span> 以极致态度打磨产品与服务，细节成就卓越。
+                                </li>
+                                <li>
+                                    <span>突破边界</span>
+                                    <span>——</span>
+                                    <span>拒绝平庸，用创新思维重构行业标准。</span>
+                                </li>
+                                <li>
+                                    <span>价值共生</span>
+                                    <span>——</span>
+                                    <span> 与客户、员工、伙伴共享成长，实现多维共赢。 </span>
+                                </li>
+                                <li>
+                                    <span>长期主义</span>
+                                    <span>——</span>
+                                    <span> 不做短视追逐，专注可持续的竞争力与影响力。 </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="lg:w-1/2  w-full">
                         <img class="w-full max-w-[600px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
@@ -159,43 +374,46 @@
         <!-- 业务简介 -->
         <section class="bg-white border-b py-8">
             <div class="container px-6 mx-auto m-8">
+                <h3 class="text-lg text-center text-gold font-bold leading-none mb-3">业务介绍</h3>
+                <hr />
                 <!--   中古物品回收贸易    -->
                 <div class="flex flex-wrap items-center">
-                    <div class="w-full lg:w-1/2 p-6">
-                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3"> 中古物品回收贸易 </h3>
-                        <p class="text-gray-600 mb-2">xxxxxxxxxxxxxx </p>
+                    <div class="w-full lg:w-1/2 p-4">
+                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3">中古物品回收贸易</h3>
+                        <p class="text-gray-600 mb-2">专业回收各类中古奢侈品、艺术品及收藏品，提供专业鉴定、合理估价和一站式交易服务。我们致力于为闲置物品寻找新价值，让珍贵物品重获新生。</p>
                     </div>
-                    <div class="w-full lg:w-1/2 p-6 flex items-center justify-center">
-                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
+                    <div class="w-full lg:w-1/2 p-4 flex items-center justify-center">
+                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_4_1.jpg" alt="专业中古物品鉴定与回收服务" />
                     </div>
                 </div>
                 <!--    高端珠宝设计贩卖    -->
                 <div class="flex flex-wrap flex-col-reverse lg:flex-row	items-center">
-                    <div class="w-full lg:w-1/2 p-6 items-center justify-center">
-                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
+                    <div class="w-full lg:w-1/2 p-4 items-center justify-center">
+                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_4_2.jpg" alt="定制高端珠宝设计与销售" />
                     </div>
-                    <div class="w-full lg:w-1/2 p-6">
-                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3"> 高端珠宝设计贩卖 </h3>
-                        <p class="text-gray-600 mb-2">xxx长，满足各个地区和国家的加速需求。 </p>
+                    <div class="w-full lg:w-1/2 p-4 text-right">
+                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3">高端珠宝设计定制</h3>
+                        <p class="text-gray-600 mb-2">由国际认证珠宝设计师团队打造，采用珍稀宝石与贵金属，提供个性化定制服务。从设计草图到成品交付，为您呈现独一无二的珠宝艺术。</p>
                     </div>
                 </div>
+                <!--    高端私人健身指导    -->
                 <div class="flex flex-wrap items-center">
-                    <div class="w-full lg:w-1/2 p-6">
-                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3"> 高端私人健身指导 </h3>
-                        <p class="text-gray-600 mb-2">xxxxxxx </p>
+                    <div class="w-full lg:w-1/2 p-4">
+                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3">高端私人健身指导</h3>
+                        <p class="text-gray-600 mb-2">由国家级健身教练提供一对一专属训练计划，结合运动科学和营养学，量身打造健身方案。无论增肌减脂还是康复训练，助您达成理想体态。</p>
                     </div>
-                    <div class="w-full lg:w-1/2 p-6 flex tems-center justify-center">
-                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
+                    <div class="w-full lg:w-1/2 p-4 flex tems-center justify-center">
+                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_4_3.jpg" alt="个性化私人健身训练服务" />
                     </div>
                 </div>
                 <!--   水下机器人租赁    -->
                 <div class="flex flex-wrap flex-col-reverse lg:flex-row	items-center">
-                    <div class="w-full lg:w-1/2 p-6 flex tems-center justify-center">
-                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_1_1.jpg" alt="一键加速，不限流量，超稳定" />
+                    <div class="w-full lg:w-1/2 p-4 flex tems-center justify-center">
+                        <img style="max-width: min(440px, 100%);" class="w-full max-w-[400px] mx-auto" src="./assets/image/home/home_section_4_4.jpg" alt="专业水下机器人租赁服务1" />
                     </div>
-                    <div class="w-full lg:w-1/2 p-6">
-                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3"> 水下机器人租赁 </h3>
-                        <p class="text-gray-600 mb-2">xxxxxxx </p>
+                    <div class="w-full lg:w-1/2 p-4 text-right">
+                        <h3 class="text-lg text-gray-800 font-bold leading-none mb-3">水下机器人专业租赁</h3>
+                        <p class="text-gray-600 mb-2">提供工业级水下机器人租赁服务，配备高清摄像、机械臂等专业模块，适用于水下勘探、工程检测、科研考察等多种场景，专业技术团队全程支持。</p>
                     </div>
                 </div>
             </div>
@@ -224,7 +442,7 @@
         <section class="border-b lg:py-8 px-6 py-12 mb-12">
             <div class="container mx-auto flex flex-col md:flex-row justify-center gap-6 md:gap-8">
                 <!-- 招聘入口 -->
-                <a href="/recruit" class="flex-1 max-w-sm p-6 bg-amber-50 rounded-xl shadow hover:shadow-lg transition">
+                <a href="./careers.html" class="flex-1 max-w-sm p-6 bg-amber-50 rounded-xl shadow hover:shadow-lg transition">
                     <h3 class="text-xl font-bold text-amber-700 mb-2">查看职位</h3>
                     <p class="text-sm text-gray-600">最新岗位 · 立即投递</p>
                 </a>
@@ -237,66 +455,29 @@
         </section>
         <!--Footer-->
         <!-- start footer -->
-        <footer class="bg-white text-black pb-10">
-            <section class="container mx-auto px-8 py-4">
-                <div class="w-full my-1 ">
-                    <div class="text-sm font-bold leading-tight text-gray-800"> Spread the love</div>
-                </div>
-                <div class="text-black flex gap-1	">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" alt="facebook">
-                        <span class="heateor_sss_svg" style="background-color:#3c589a;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42">
-                                <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path>
-                            </svg></span>
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=%E9%A6%96%E9%A1%B5&url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F" alt="twitter">
-                        <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-4 -4 39 39">
-                                <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff"></path>
-                            </svg></span>
-                    </a>
-                    <a href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanqiejsqcom.cnvpn.top%2F&title=%E9%A6%96%E9%A1%B5" alt="weibo">
-                        <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_sina_weibo" style="background-color:#ddd;width:35px;height:35px;border-radius:999px;display:inline-block;opacity:1;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
-                            <svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-                                <g fill="#fff">
-                                    <path d="M13.92 24.99c-4.303.424-8.02-1.52-8.3-4.346-.278-2.827 2.987-5.463 7.292-5.888 4.304-.426 8.018 1.52 8.297 4.345.274 2.83-2.987 5.468-7.29 5.89m8.61-9.38c-.367-.11-.62-.184-.428-.663.416-1.046.458-1.946.01-2.59-.846-1.204-3.155-1.14-5.8-.03 0-.004-.834.362-.62-.297.406-1.31.345-2.407-.29-3.04-1.435-1.437-5.255.055-8.53 3.33C4.422 14.77 3 17.37 3 19.617c0 4.3 5.513 6.913 10.907 6.913 7.07 0 11.776-4.105 11.776-7.37 0-1.97-1.66-3.09-3.15-3.55m4.693-7.87a6.89 6.89 0 0 0-6.55-2.12h-.002a.997.997 0 0 0-.765 1.182.99.99 0 0 0 1.18.765 4.91 4.91 0 0 1 4.66 1.508 4.899 4.899 0 0 1 1.02 4.787.995.995 0 1 0 1.894.615v-.004a6.883 6.883 0 0 0-1.44-6.732m-2.622 2.37a3.343 3.343 0 0 0-3.192-1.03.852.852 0 0 0-.655 1.016.854.854 0 0 0 1.016.657v.003a1.655 1.655 0 0 1 1.564.502c.406.453.514 1.066.338 1.606h.005a.858.858 0 1 0 1.63.528 3.345 3.345 0 0 0-.7-3.28">
-                                    </path>
-                                    <path d="M14.16 19.87c-.15.26-.484.383-.746.275-.256-.104-.335-.393-.19-.646.15-.255.47-.378.725-.276.26.094.35.386.21.644m-1.375 1.76c-.417.666-1.308.957-1.98.65-.66-.302-.855-1.072-.44-1.72.413-.645 1.274-.933 1.94-.653.673.287.888 1.054.48 1.724m1.564-4.7c-2.047-.533-4.364.49-5.254 2.293-.904 1.84-.028 3.884 2.04 4.552 2.144.69 4.67-.368 5.55-2.354.865-1.943-.216-3.943-2.336-4.49">
-                                    </path>
-                                </g>
-                            </svg>
-                        </span>
-                    </a>
-                </div>
-            </section>
-            <section class="container mx-auto px-8 pb-6 ">
-                <div class="w-full mb-4">
-                    <div class="h-1 mx-auto gradient w-full  opacity-25 my-0 py-0 rounded-t"></div>
-                </div>
-                <div class="flex flex-col xl:flex-row flex-wrap items-center text-gray-800 gap-2 xl:gap-6 justify-center">
-                    <p>
-                        <span style="font-size: 14px;"> 友情链接： <a href="/" target="_blank" class="hover:text-red-400" rel="noopener">微工具 </a>
-                            <a href="/" target="_blank" class="hover:text-red-400" rel="noopener">xx</a>
-                        </span>
-                    </p>
-                    <p>
-                        <a href="/" target="_blank" rel="noopener" class="hover:text-red-400">
-                            <span style="font-size: 14px;">xxxx </span>
-                        </a>
-                        <a href="/" target="_blank" rel="noopener" class="hover:text-red-400"><span style="font-size: 14px;">xxxx </span>
-                        </a>
-                        <a href="/" target="_blank" rel="noopener" class="hover:text-red-400"><span style="font-size: 14px;">xxxx</span>
-                        </a>
-                    </p>
+        <footer class="bg-white text-black ">
+            <section class="container mx-auto px-8 p-6 ">
+                <div class="flex flex-row items-center justify-center
+         text-gray-800 ">
                     <p><span style="font-size: 14px;">Copyright © 2003 </span></p>
-                    <p><span style="font-size: 14px;">互联网虚拟专用网业务许可证 0</span></p>
-                    <p><span style="font-size: 14px;">
-                            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow" class="hover:text-red-400">JAPA I202304234号-2</a></span></p>
                 </div>
             </section>
-            <!-- end 尾部第三部分 -->
         </footer>
         <!-- end footer -->
         <!-- <script defer src="/js/utils/scroll.js"></script> -->
         <script defer src="./assets/js/utils/menu.js"></script>
-        <script defer src="./assets/js/utils/subMenu.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () =>
+            {
+                if (window.initCarousel && typeof initCarousel === 'function')
+                {
+                    initCarousel(
+                    {
+                        trackId: 'track',
+                        carouselId: 'carousel',
+                    })
+                }
+            })
+        </script>
     </body>
 </html>
