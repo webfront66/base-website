@@ -1,53 +1,45 @@
-name: Deploy to GitHub Pages
+name: Deploy static content to Pages
 
 on:
+  # 在推送到 master 分支时触发
   push:
-    branches: ["main", "master"]  # 触发分支
-  workflow_dispatch:              # 允许手动触发
+    branches: ["master"]
 
+  # 允许从 Actions 标签手动运行此工作流
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限以允许部署到 GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# 只允许一个并发部署，跳过正在运行和最新排队之间的运行
+# 但不会取消正在进行的运行，以确保生产部署能够完成
+concurrency:
+  group: "pages"
+  cancel-inprogress: false
+
 jobs:
+  # 单次部署作业
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 关键步骤：指定上传 pages 目录
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload pages directory
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: 'pages/'  # 你的静态网站目录
+          # 指定要上传的静态文件目录
+          path: 'pages/'
 
-      # 自动启用 GitHub Pages（如果未启用）
-      - name: Enable GitHub Pages
-        uses: actions/github-script@v6
-        with:
-          script: |
-            try {
-              await github.rest.pages.getPagesSite({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-              })
-            } catch (error) {
-              if (error.status === 404) {
-                await github.rest.pages.createPagesSite({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  source: {
-                    branch: 'main',     # 替换为你的分支
-                    path: '/',          # 保持根目录，因为已在 upload 步骤指定子目录
-                  }
-                })
-              } else {
-                throw error
-              }
-            }
-
-      # 部署
-      - name: Deploy
-        uses: actions/deploy-pages@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
