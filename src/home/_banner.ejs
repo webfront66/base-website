@@ -1,4 +1,4 @@
-<section class="pt-16  relative bg-center home-banner">
+<section class="pt-16  relative bg-center target-section">
     <div id="carousel" class="relative w-full   h-[calc(100vh-4rem)] overflow-hidden ">
         <!-- 轨道：首尾克隆实现无缝 -->
         <div id="track" class="track h-full">
@@ -38,8 +38,8 @@
         <!-- 箭头行：独立绝对居中 -->
         <!-- 闪烁向下箭头（外层定位，内层动画） -->
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
-            <button id="scrollHint"
-                    class="animate-bounce text-white hover:text-gold transition-colors">
+            <button
+                    class="scroll-hint animate-bounce text-white hover:text-gold transition-colors">
 
                 <svg xmlns="http://www.w3.org/2000/svg"
                      class="w-7 h-7" fill="none" viewBox="0 0 24 24"
@@ -47,26 +47,12 @@
                      stroke-linecap="square" stroke-linejoin="miter">
                     <path d="M12 4v16m0 0l-7-7m7 7l7-7"/>
                 </svg>
-<!--                <svg xmlns="http://www.w3.org/2000/svg"-->
-<!--                     class="w-7 h-7" fill="none" viewBox="0 0 24 24"-->
-<!--                     stroke="currentColor" stroke-width="2.5"-->
-<!--                     stroke-linecap="square" stroke-linejoin="miter">-->
-<!--                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>-->
-<!--                </svg>-->
+
             </button>
         </div>
     </div>
 
 
-
-    <script>
-        /* 点击箭头 → 平滑滚动到 section 底部 */
-        document.getElementById('scrollHint').addEventListener('click', () => {
-            const banner = document.querySelector('.home-banner');
-            const offset = banner.offsetHeight - 64;          // 轮播高度
-            window.scrollTo({ top: offset, behavior: 'smooth' });
-        });
-    </script>
 
 </section>
 

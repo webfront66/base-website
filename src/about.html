@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
-
   @@include('templates/htmlTpl/_meta.ejs')
   <!-- 引入样式 -->
   @@include('templates/cssTpl/_link.css.ejs')
+  <link
+          rel="stylesheet"
+          href="./assets/css/swiper-bundle.min.css"
+  />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-  </style>
+  <script defer src="./assets/js/utils/customSwiper.js"></script>
+  <script defer src="./assets/js/index.js"></script>
   <title>公司概况</title>
 
 </head>
@@ -19,11 +22,7 @@
 <!-- end Nav -->
 
 <!--  start banner  -->
-<div class="pt-16 lg:pt-24 bg-[#6200ea]">
-  <div style="height: 300px;">
-    @@include('src/about/_banner.ejs')
-  </div>
-</div>
+@@include('src/about/_banner.ejs')
 
 <!-- start 公司介绍  -->
 @@include('src/about/_section_1.ejs')
