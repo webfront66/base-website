@@ -1,0 +1,329 @@
+<section class="border-b py-8 lg:py-12 bg-amber-50">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div id="contactForm" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">お名前：</label>
+                <input type="text" id="name" name="name" required data-rule="required"
+                       class="text-black mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <p id="nameError" class="text-red-500 text-sm hidden">お名前を入力してください。</p>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">メールアドレス：</label>
+                <input type="email" id="email" name="email" required data-rule="email"
+                       class="text-black mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <p id="emailError" class="text-red-500 text-sm hidden">有効なメールアドレスを入力してください。</p>
+            </div>
+            <div>
+                <label for="category" class="block text-sm font-medium text-gray-700">分類：</label>
+                <div class="relative mt-1">
+                    <button id="categoryButton"
+                            class="relative w-full bg-white text-black border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                        <span id="selectedCategory" class="block truncate">選択してください</span>
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                 fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <ul id="categoryList"
+                        class="hidden absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                        aria-activedescendant="listbox-item-3">
+                        <li id="listbox-item-1" class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9"
+                            role="option" data-value="info">一般・メディア・協業
+                        </li>
+                        <li id="listbox-item-2" class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9"
+                            role="option" data-value="sales">製品・見積もり
+                        </li>
+                        <li id="listbox-item-3" class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9"
+                            role="option" data-value="recruit">採用関連
+                        </li>
+                    </ul>
+                    <!-- 隐藏的输入框用于存储选中的分类值 -->
+                    <input type="hidden" id="selectedCategoryValue" name="category" value="info">
+                </div>
+                <p id="categoryError" class="text-red-500 text-sm hidden">分類を選択してください。</p>
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700">お問い合わせ内容：</label>
+                <textarea id="message" name="message" rows="4" required data-rule="required"
+                          class="text-black mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                <p id="messageError" class="text-red-500 text-sm hidden">お問い合わせ内容を入力してください。</p>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button type="button" id="resetBtn"
+                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                    リセット
+                </button>
+                <button type="button" id="submitBtn"
+                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    送信
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 验证码全屏覆盖页面 -->
+<div id="verifyOverlay"
+     class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center transform translate-y-full transition-transform duration-300 ease-in-out"
+     style="display: none;">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96 text-center relative">
+        <button id="closeBtn" class="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-700">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <h2 class="text-lg font-medium mb-4">メールに届いた認証コードを入力してください：</h2>
+        <p class="text-sm text-gray-500 mb-6">
+            ご登録いただいたメールアドレスに認証コードが送信されました。以下の入力欄に認証コードを入力してください。</p>
+        <input type="text" id="verifyCodeInput" name="verify_code"
+               class="w-full border border-gray-300 rounded-md p-2 mb-4 text-black" required>
+        <button type="button" id="verifySubmitBtn"
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            確認
+        </button>
+    </div>
+</div>
+
+
+<script>
+    // 校验函数
+    const TIME_OUT = 1000;
+    function validateField(inputId, errorId, rule) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        let isValid = true;
+
+        error.classList.add('hidden');
+
+        if (rule === 'required' && !input.value.trim()) {
+            error.classList.remove('hidden');
+            isValid = false;
+        } else if (rule === 'email' && (!input.value.trim() || !input.value.includes('@'))) {
+            error.classList.remove('hidden');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    // 失焦校验
+    document.getElementById('name').addEventListener('blur', function () {
+        validateField('name', 'nameError', 'required');
+    });
+
+    document.getElementById('email').addEventListener('blur', function () {
+        validateField('email', 'emailError', 'email');
+    });
+
+    document.getElementById('message').addEventListener('blur', function () {
+        validateField('message', 'messageError', 'required');
+    });
+
+    // 设置默认分类
+    function setDefaultCategory() {
+        const categoryList = document.getElementById('categoryList');
+        // 获取第二个 li 元素
+        const defaultItem = categoryList.querySelectorAll('li')[1];
+        if (defaultItem) {
+            const selectedCategory = document.getElementById('selectedCategory');
+            const selectedCategoryValue = document.getElementById('selectedCategoryValue');
+            selectedCategory.textContent = defaultItem.textContent;
+            selectedCategoryValue.value = defaultItem.getAttribute('data-value');
+        }
+    }
+
+    // 页面加载时设置默认分类
+    setDefaultCategory();
+
+    const sendCodeDom = document.getElementById('submitBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // 点击发送按钮时校验
+    if (sendCodeDom) {
+        sendCodeDom.addEventListener('click', function (e) {
+            const target = e.target;
+            const isDisabled = target.getAttribute('disabled') || target.getAttribute('data-disabled') === 'true';
+            if (!!isDisabled) {
+                return;
+            }
+
+            let isValid = true;
+
+            // 校验名字
+            if (!validateField('name', 'nameError', 'required')) isValid = false;
+
+            // 校验邮箱
+            if (!validateField('email', 'emailError', 'email')) isValid = false;
+
+            // 校验分类
+            const selectedCategoryValue = document.getElementById('selectedCategoryValue');
+            if (!selectedCategoryValue.value) {
+                document.getElementById('categoryError').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('categoryError').classList.add('hidden');
+            }
+
+            // 校验内容
+            if (!validateField('message', 'messageError', 'required')) isValid = false;
+
+            // 如果所有校验通过，调用接口
+            if (isValid) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const category = selectedCategoryValue.value;
+                const message = document.getElementById('message').value.trim();
+                target.setAttribute('disabled', true);
+                target.setAttribute('data-disabled', true);
+                setTimeout(() => {
+                    target.removeAttribute('disabled');
+                    target.removeAttribute('data-disabled');
+                }, TIME_OUT);
+                joinEmail({ name, email, category, message });
+            }
+        });
+    }
+
+    // 点击重置按钮时重置表单
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('selectedCategoryValue').value = '';
+            document.getElementById('selectedCategory').textContent = '選択してください';
+            document.getElementById('message').value = '';
+            setDefaultCategory()
+        });
+    }
+
+    async function joinEmail(options) {
+        try {
+            const formData = new FormData();
+            formData.append('name', options.name);
+            formData.append('email', options.email);
+            formData.append('category', options.category);
+            formData.append('message', options.message);
+
+            const response = await fetchWithTimeout('https://etsu.co.jp/contact_process.php', {
+                method: 'POST',
+                body: formData,
+                timeout: TIME_OUT // 设置超时时间为 10 秒
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                joinSuccesed();
+            } else {
+                showToast({ type: 'error', message: data.message || 'エラーが発生しました。' });
+            }
+        } catch (error) {
+            showToast({ type: 'error', message: 'エラーが発生しました。' });
+        } finally {
+            sendCodeDom.removeAttribute('disabled');
+            sendCodeDom.removeAttribute('data-disabled');
+        }
+    }
+
+    function joinSuccesed() {
+        document.getElementById('verifyOverlay').style.display = 'flex';
+        document.getElementById('verifyOverlay').classList.remove('translate-y-full');
+        document.getElementById('verifyOverlay').classList.add('translate-y-0');
+    }
+
+    document.getElementById('closeBtn').addEventListener('click', function () {
+        document.getElementById('verifyOverlay').style.display = 'none';
+        document.getElementById('verifyOverlay').classList.remove('translate-y-0');
+        document.getElementById('verifyOverlay').classList.add('translate-y-full');
+    });
+
+    document.getElementById('verifySubmitBtn').addEventListener('click', function () {
+        const verifyCode = document.getElementById('verifyCodeInput').value.trim();
+        if (verifyCode) {
+            finalSubmit();
+        } else {
+            showToast({ type: 'error', message: '認証コードを入力してください！' });
+        }
+    });
+
+    async function finalSubmit() {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const category = document.getElementById('selectedCategoryValue').value;
+        const message = document.getElementById('message').value.trim();
+        const verifyCode = document.getElementById('verifyCodeInput').value.trim();
+
+        try {
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('category', category);
+            formData.append('message', message);
+            formData.append('verify_code', verifyCode);
+
+            const response = await fetchWithTimeout('https://etsu.co.jp/contact_send.php', {
+                method: 'POST',
+                body: formData,
+                timeout: TIME_OUT // 设置超时时间为 10 秒
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('selectedCategoryValue').value = '';
+                document.getElementById('selectedCategory').textContent = '選択してください';
+                document.getElementById('message').value = '';
+                document.getElementById('verifyCodeInput').value = '';
+
+                document.getElementById('verifyOverlay').style.display = 'none';
+                document.getElementById('verifyOverlay').classList.remove('translate-y-0');
+                document.getElementById('verifyOverlay').classList.add('translate-y-full');
+
+                showToast({ type: 'success', message: 'お問い合わせをありがとうございました！' });
+            } else {
+                showToast({ type: 'error', message: data.message || 'エラーが発生しました。' });
+            }
+        } catch (error) {
+            showToast({ type: 'error', message: 'エラーが発生しました。' });
+        }
+    }
+
+    // 自定义下拉菜单逻辑
+    const categoryButton = document.getElementById('categoryButton');
+    const categoryList = document.getElementById('categoryList');
+    const selectedCategory = document.getElementById('selectedCategory');
+    const selectedCategoryValue = document.getElementById('selectedCategoryValue');
+
+    categoryButton.addEventListener('click', function () {
+        categoryList.classList.toggle('hidden');
+    });
+
+    categoryList.addEventListener('click', function (event) {
+        if (event.target.tagName.toLowerCase() === 'li') {
+            const value = event.target.getAttribute('data-value');
+            selectedCategory.textContent = event.target.textContent;
+            selectedCategoryValue.value = value; // 设置隐藏输入框的值
+            categoryList.classList.add('hidden');
+            console.log('Selected category:', value);
+        }
+    });
+
+
+</script>
